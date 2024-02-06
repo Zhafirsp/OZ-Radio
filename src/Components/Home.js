@@ -1,16 +1,17 @@
 import React, { useState, useRef, useEffect  } from 'react';
 import BannerBackground from "../Assets/home-banner-background.png";
 import BannerImage from "../Assets/Logo.png";
-import NavigationBar from "./Navbar";
 import PlayButton  from "./PlayButton";
 import RadioStationPicker from './RadioStationPicker';
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Home = () => {
   const audioRef = useRef(null);
   const [selectedStation, setSelectedStation] = useState('');
   const [isPlaying, setIsPlaying] = useState(false);
   const [isRotating, setIsRotating] = useState(false);
-  const [volume, setVolume] = useState(50);
+  // const [volume, setVolume] = useState(50);
 
   const radioStations = [
     { name: 'Bandung', frequency: '103.1 FM', url: 'http://45.64.97.211:1031/;stream.nsv' },
@@ -26,9 +27,22 @@ const Home = () => {
     setIsRotating(false); // Hentikan rotasi saat stasiun berubah
   };
 
+  useEffect(() => {
+    const audio = audioRef.current;
+    const handleCanPlay = () => {
+      // Audio telah dimuat, lakukan sesuatu jika diperlukan
+    };
+    audio.addEventListener('canplaythrough', handleCanPlay);
+    return () => {
+      audio.removeEventListener('canplaythrough', handleCanPlay);
+    };
+  }, []);
+
   const handlePlayPause = () => {
     const audio = audioRef.current;
 
+    if (audio.readyState >= audio.HAVE_ENOUGH_DATA) {
+      // Elemen audio sudah siap untuk diputar
     if (isPlaying) {
       audio.pause();
       setIsRotating(false);
@@ -36,18 +50,24 @@ const Home = () => {
       audio.play();
       setIsRotating(true);
     }
-
     setIsPlaying(!isPlaying);
-  };
-
-  const handleVolumeChange = (e) => {
-    const newVolume = parseInt(e.target.value, 10);
-    setVolume(newVolume);
-    audioRef.current.volume = newVolume / 100;
-  };
+    } else {
+    toast("Still Loading Please Wait", {
+      type: "error",
+      theme:"dark",
+      pauseOnFocusLoss: false
+    });
+  }
+};
+  // const handleVolumeChange = (e) => {
+  //   const newVolume = parseInt(e.target.value, 10);
+  //   setVolume(newVolume);
+  //   audioRef.current.volume = newVolume / 100;
+  // };
 
   return (
     <section>
+      <ToastContainer />
     <div className="home-container" id="Home">
       <div className="home-banner-container">
         <div className="home-bannerImage-container">
@@ -74,7 +94,7 @@ const Home = () => {
           <PlayButton onPlayPause={handlePlayPause} isPlaying={isPlaying} />
             </div>
           <div>
-            <audio ref={audioRef} src={selectedStation?.url} volume={volume / 100} />
+            <audio ref={audioRef} src={selectedStation?.url} />
           </div>
         <div>
             
