@@ -23,8 +23,8 @@ const Home = () => {
   const handleStationChange = (e) => {
     const selectedStationInfo = radioStations.find(station => station.name === e.target.value);
     setSelectedStation(selectedStationInfo);
-    setIsPlaying(false); // Stop pemutaran jika stasiun berubah
-    setIsRotating(false); // Hentikan rotasi saat stasiun berubah
+    setIsPlaying(false);
+    setIsRotating(false);
   };
 
   useEffect(() => {
@@ -41,6 +41,16 @@ const Home = () => {
   const handlePlayPause = () => {
     const audio = audioRef.current;
 
+    if (!selectedStation) {
+      // Jika pengguna belum memilih stasiun radio, tampilkan alert
+      toast("Please Select the Radio Station", {
+        type: "error",
+        theme:"dark",
+        pauseOnFocusLoss: false
+      });
+      return; // Hentikan eksekusi lebih lanjut dari fungsi
+    }
+
     if (audio.readyState >= audio.HAVE_ENOUGH_DATA) {
       // Elemen audio sudah siap untuk diputar
     if (isPlaying) {
@@ -53,7 +63,7 @@ const Home = () => {
     setIsPlaying(!isPlaying);
     } else {
     toast("Still Loading Please Wait", {
-      type: "error",
+      type: "warning",
       theme:"dark",
       pauseOnFocusLoss: false
     });
