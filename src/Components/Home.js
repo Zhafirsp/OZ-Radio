@@ -14,7 +14,7 @@ const Home = () => {
   // const [volume, setVolume] = useState(50);
 
   const radioStations = [
-    { name: 'Bandung', frequency: '103.1 FM', url: 'http://45.64.97.211:1031/;stream.nsv' },
+    { name: 'Bandung', frequency: '103.1 FM', url: 'https://s3.vinhostmedia.com/1031/;stream' },
     { name: 'Jakarta', frequency: '90.8 FM', url: 'https://streaming.ozradiojakarta.com:8443/ozjakarta' },
     { name: 'Bali', frequency: '101.2 FM', url: 'https://void.idserverhost.com:8008/stream' },
     { name: 'Aceh', frequency: '102.8 FM', url: 'http://103.29.212.166:9968/;stream/1' },
