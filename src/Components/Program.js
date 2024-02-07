@@ -25,7 +25,7 @@ const Program = () => {
   ];
   return (
     <section>
-    <div className="work-section-wrapper" data-aos="fade-left">
+    <div className="work-section-wrapper" data-aos="fade-left"> 
       <div className="work-section-top" id="program">
         <h1 className="primary-heading">Programs</h1>
       </div>

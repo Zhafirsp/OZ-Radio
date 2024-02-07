@@ -4,6 +4,8 @@ import { Carousel } from 'react-bootstrap';
 import { BsInstagram, BsTwitter } from "react-icons/bs";
 import { FaTiktok   } from "react-icons/fa";
 import AOS from 'aos';
+import BannerBackground from "../Assets/bg1.png";
+import BannerBackground2 from "../Assets/bg2.png";
 AOS.init();
 
 
@@ -42,6 +44,12 @@ const Broadcaster = () => {
       <section>
     <div className="work-section-wrapper" id="broadcaster" data-aos="fade-up">
       <div className="work-section-top">
+        <div className="broadcast-bannerImage-container">
+          <img src={BannerBackground} alt="" />
+        </div>
+        <div className="broadcast2-bannerImage-container">
+          <img src={BannerBackground2} alt="" />
+        </div>
         <h1 className="primary-heading">Broadcaster</h1>
       </div>
       <Carousel>
