@@ -1,12 +1,11 @@
 import React, { useState, useRef, useEffect  } from 'react';
-import BannerBackground from "../Assets/home-banner-background.png";
-import BannerImage from "../Assets/Logo.png";
+import BannerBackground from "../Assets/Img/home-banner-background.png";
+import BannerImage from "../Assets/Img/Logo.png";
 import PlayButton  from "./PlayButton";
 import RadioStationPicker from './RadioStationPicker';
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
 
-const Home = () => {
+const RadioPlayer = () => {
   const audioRef = useRef(null);
   const [selectedStation, setSelectedStation] = useState('');
   const [isPlaying, setIsPlaying] = useState(false);
@@ -14,9 +13,9 @@ const Home = () => {
   // const [volume, setVolume] = useState(50);
 
   const radioStations = [
-    { name: 'Bandung', frequency: '103.1 FM', url: 'https://s3.vinhostmedia.com/1031/;stream' },
+    { name: 'Bandung', frequency: '103.1 FM', url: 'https://streaming.ozradiojakarta.com:8443/ozradiobandung' },
     { name: 'Jakarta', frequency: '90.8 FM', url: 'https://streaming.ozradiojakarta.com:8443/ozjakarta' },
-    { name: 'Bali', frequency: '101.2 FM', url: 'https://void.idserverhost.com:8008/stream' },
+    { name: 'Bali', frequency: '101.2 FM', url: 'https://streaming.ozradiojakarta.com:8443/ozradiobali' },
     { name: 'Aceh', frequency: '102.8 FM', url: 'http://103.29.212.166:9968/;stream/1' },
   ];
 
@@ -78,10 +77,10 @@ const Home = () => {
   return (
     <section>
       <ToastContainer />
-    <div className="home-container" id="Home">
+    <div className="home-container" id="Home" data-aos="fade-up">
       <div className="home-banner-container">
         <div className="home-bannerImage-container">
-          <img src={BannerBackground} alt="" />
+          {/* <img src={BannerBackground} alt="" /> */}
         </div>
         <div className="home-text-section">
           <h1 className="primary-heading">
@@ -106,9 +105,6 @@ const Home = () => {
           <div>
             <audio ref={audioRef} src={selectedStation?.url} />
           </div>
-        <div>
-            
-          </div>
         </div>
         <div className="home-image-section my-5">
             <img  
@@ -122,4 +118,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default RadioPlayer;

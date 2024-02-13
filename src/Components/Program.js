@@ -1,9 +1,7 @@
 import React from "react";
-import crsl1 from "../Assets/crsl1.png"
-import crsl2 from "../Assets/crsl2.png"
-import crsl3 from "../Assets/crsl3.jpg"
-import AOS from 'aos';
-AOS.init();
+import crsl1 from "../Assets/Img/crsl1.png"
+import crsl2 from "../Assets/Img/crsl2.png"
+import crsl3 from "../Assets/Img/crsl3.jpg"
 
 const Program = () => {
   const programData = [

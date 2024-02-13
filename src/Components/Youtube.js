@@ -1,8 +1,6 @@
 import React from "react";
-import AboutBackground from "../Assets/about-background.png";
+import AboutBackground from "../Assets/Img/about-background.png";
 import { Container } from 'react-bootstrap';
-import AOS from 'aos';
-AOS.init();
 
 const Youtube = () => {
   return (

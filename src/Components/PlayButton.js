@@ -1,17 +1,16 @@
 import React, { useState, useRef } from 'react';
-import { FiPlay, FiPause } from "react-icons/fi";
+import { PiPlayCircleThin , PiPauseCircleThin  } from "react-icons/pi";
 
 const PlayButton  = ({ onPlayPause, isPlaying }) => {
 
   return (
     <div>
-      <button 
-        className="secondary-button" 
+      <a 
+        className="play-button" 
         id="RadioPlayer" 
-        style={{ marginLeft:"-10px", }} 
         onClick={onPlayPause}>
-          {isPlaying ? <FiPause/> : <FiPlay/>}
-      </button>
+          {isPlaying ? <PiPauseCircleThin/> : <PiPlayCircleThin/>}
+      </a>
     </div>
   );
 };
