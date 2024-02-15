@@ -1,9 +1,41 @@
 .hero {
+  position: relative;
+  color: white;
+}
+
+.hero h1{
+  color: white !important;
+}
+
+.hero h3{
+  color: white !important;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  filter: blur(10px);
+  z-index: -1; /* Mengatur lapisan belakang */
+}
+
+.container {
+  z-index: 1; /* Mengatur lapisan depan */
+}
+
+.span-hero {
+  color: #F49C27;
+}
+
+
+/* .hero {
   margin: 50px 0;
   color: #fff;
 }
 .hero a {
-  /* color: #fff;  */
   text-decoration: none;
   color: inherit;
   display: inline-block;
@@ -126,4 +158,4 @@
     grid-row-start: 15;
     grid-row-end: 20;
   }
-}
+} */

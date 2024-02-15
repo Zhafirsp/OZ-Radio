@@ -13,6 +13,7 @@ import Homepages from "./Pages/home/Homepages";
 import SinglePage from "./Pages/singlePages/singlePage";
 import Culture from "./Components/culture/Culture"
 import SinglePageSlider from "./Pages/singlePages/slider/singlePageSlider";
+import InterviewPage from "./Pages/interviewPage";
 
 function App() {
 
@@ -51,6 +52,7 @@ function App() {
       <Route path="/about" element={<About />} />
       <Route path="/radio" element={<RadioPlayer />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/interview" element={<InterviewPage />} />
       <Route exact path='/singlepage/:id' component={SinglePage} />
       <Route exact path='/culture' component={Culture} />
       </Routes>

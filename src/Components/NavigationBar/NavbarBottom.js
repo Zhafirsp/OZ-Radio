@@ -61,7 +61,7 @@ const NavBottom = () => {
                                 <NavDropdown.Item href="https://bandung.ozradio.id/">Bandung (103.1 FM)</NavDropdown.Item>
                                 <NavDropdown.Item href="https://ozradiojakarta.com/">Jakarta (90.8 FM)</NavDropdown.Item>
                                 <NavDropdown.Item href="https://ozradiobali.id/">Bali (101.2 FM)</NavDropdown.Item>
-                                <NavDropdown.Item href="#">Aceh (102.8 FM) </NavDropdown.Item>
+                                {/* <NavDropdown.Item href="#">Aceh (102.8 FM) </NavDropdown.Item> */}
                             </NavDropdown>
                             <Nav.Link href="#">Listen</Nav.Link>
                             <Nav.Link href="#">Watch</Nav.Link>

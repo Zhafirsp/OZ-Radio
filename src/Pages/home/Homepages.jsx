@@ -7,20 +7,22 @@ import Program from '../../Components/Program';
 import RadioPlayer from '../../Components/RadioPlayer';
 import Hero from '../../Components/Hero';
 import SinglePageSlider from "../singlePages/slider/singlePageSlider";
-import Interview from "./interview/interview";
+import Interview from "../../Components/interview";
+import Event from "../../Components/events";
 
 const Homepages = () => {
   return (
     <>
-      {/* <Hero /> */}
-      <Hero/>
-      {/* <Interview /> */}
+      <Hero />
+      {/* <Hero/> */}
+      <Interview />
+      <Event/>
       <RadioPlayer />
       <Youtube />
       <Program />
       <Homes />
       <SinglePageSlider />
-      <Discover />
+      {/* <Discover /> */}
     </>
   )
 }

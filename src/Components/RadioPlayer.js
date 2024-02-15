@@ -16,7 +16,7 @@ const RadioPlayer = () => {
     { name: 'Bandung', frequency: '103.1 FM', url: 'https://streaming.ozradiojakarta.com:8443/ozradiobandung' },
     { name: 'Jakarta', frequency: '90.8 FM', url: 'https://streaming.ozradiojakarta.com:8443/ozjakarta' },
     { name: 'Bali', frequency: '101.2 FM', url: 'https://streaming.ozradiojakarta.com:8443/ozradiobali' },
-    { name: 'Aceh', frequency: '102.8 FM', url: 'http://103.29.212.166:9968/;stream/1' },
+    // { name: 'Aceh', frequency: '102.8 FM', url: 'http://103.29.212.166:9968/;stream/1' },
   ];
 
   const handleStationChange = (e) => {
