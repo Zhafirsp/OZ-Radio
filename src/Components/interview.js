@@ -49,10 +49,19 @@ const Interview = () => {
     cssEase: 'linear',
     responsive: [
       {
+        breakpoint: 1600,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 1,
+          slidesToScroll: 1,
           infinite: true,
           dots: true
         }
@@ -60,9 +69,8 @@ const Interview = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2
+          slidesToShow: 1,
+          slidesToScroll: 1,
         }
       },
       {
@@ -77,22 +85,22 @@ const Interview = () => {
   return (
     <section>
     <Container>
-      <div className="about-section-text-container" data-aos="fade-up">
+      <div className="interview" data-aos="fade-up">
         <Row>
           <Col className="mb-3">
             <h1 className="display-5 fw-bold">
               Catch up with the laters interviews
             </h1>
           </Col>
-          <Col lg={2} className="mt-3 button-interview">
-          <a href="/interview"><Button variant="outline-dark">More</Button></a>
+          <Col sm={1} lg={2} className="mt-3 button-interview">
+          <a href="/interview"><Button variant="outline-dark ms-5">Load More</Button></a>
           </Col>
         </Row>
         <Row lg={12} md={8} xs={2} className="g-2 slider-row ">
       <Slider {...settings}>
         {interviewData.map((data) => (
         <Col key={data.image}>
-            <Card style={{ margin:'10px' }}>
+            <Card style={{ marginLeft:'10px' }}>
               <div className="info-boxes-img-container">
                 <Card.Img src={data.image} alt="" width={"150px"} />
               </div>

@@ -7,7 +7,7 @@ import { Col, Row, Container, Card, Button } from 'react-bootstrap';
 import Slider from "react-slick";
 import { BsCollectionPlay } from "react-icons/bs";
 import { Parallax, Background } from "react-parallax";
-import podcast_2 from '../../Assets/Img/Hero.png'
+import podcast_2 from '../../Assets/Img/podcast_2.jpg'
 
 const InterviewPage = () => {
  
@@ -79,7 +79,8 @@ const InterviewPage = () => {
 
   const styles = {
    width: "100%",
-   backgroundSize: "cover",
+   backgroundSize: "cover", 
+   height: '100%'
   };
 
    return (
@@ -100,7 +101,7 @@ const InterviewPage = () => {
           <Row lg={8}>
             <iframe 
               style={{ borderRadius:"12px", marginTop:"-175px"}} 
-              src="https://open.spotify.com/embed/episode/7c0Id3XQCOaT3KjGbjMsy9?utm_source=generator" 
+              src="https://open.spotify.com/embed/show/2os8ztmszBkBYNaLUGuxJ4?utm_source=generator" 
               width="50%" 
               height="152" 
               frameBorder="0" 

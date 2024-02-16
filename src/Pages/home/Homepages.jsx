@@ -8,7 +8,8 @@ import RadioPlayer from '../../Components/RadioPlayer';
 import Hero from '../../Components/Hero';
 import SinglePageSlider from "../singlePages/slider/singlePageSlider";
 import Interview from "../../Components/interview";
-import Event from "../../Components/events";
+import Event from "../../Components/event/events";
+import Logo from "../../Components/Logo";
 
 const Homepages = () => {
   return (
@@ -17,11 +18,12 @@ const Homepages = () => {
       {/* <Hero/> */}
       <Interview />
       <Event/>
-      <RadioPlayer />
-      <Youtube />
-      <Program />
-      <Homes />
-      <SinglePageSlider />
+      <Logo />
+      {/* <RadioPlayer /> */}
+      {/* <Youtube /> */}
+      {/* <Program /> */}
+      {/* <Homes /> */}
+      {/* <SinglePageSlider /> */}
       {/* <Discover /> */}
     </>
   )

@@ -6,9 +6,9 @@ const Youtube = () => {
   return (
     <section>
     <Container>
-      <div className="about-background-image-container">
+      {/* <div className="about-background-image-container">
         <img src={AboutBackground} alt="" />
-      </div>
+      </div> */}
       <div className="about-section-text-container" data-aos="fade-up">
         <h1 className="primary-heading">
           Youtube <span style={{ color:"#FCBB33" }}>OZ Radio</span>

@@ -10,7 +10,7 @@ img {
 }
 .App {
   min-height: 100vh;
-  width: 85vw;
+  /* width: 85vw; */
   max-width: 1900px;
   margin: 0rem auto;
 }
@@ -80,7 +80,7 @@ img {
 
 .getwaves {
   margin-left:-140px;
-  margin-right:-230px; 
+  margin-right:-130px; 
   margin-bottom:-230px;
 }
 .RadioStation{
@@ -93,7 +93,7 @@ body {
 }
 
 body {
-  background-color: #f6f6f6;
+  background-color: #fff;
 }
 .home-oz {
   font-size: 100px;
@@ -436,7 +436,7 @@ a:active {
 .footer-wrapper {
   margin: 6rem 0rem;
   display: flex;
-  margin-top: 10rem;
+  margin-top: 1rem;
 }
 .footer-logo-container {
   max-width: 110px;
@@ -735,6 +735,11 @@ a:active {
   }
   .footer-wrapper {
     flex-direction: column;
+  } 
+  .footer-section-one {
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-left: -45px !important;
   }
   .footer-section-two {
     flex-direction: column;
@@ -793,12 +798,17 @@ a:active {
   margin-left: -85px;
 }
 
+.terms {
+  text-decoration: underline !important;
+}
+
 .icons-footer {
-  text-align: center;
+  /* text-align: center;
   justify-content: center;
   display: flex;
-  align-items: center;
-  /* margin-left: 10px; */
+  align-items: center; */
+  font-size: 24px;
+  margin-left: -15px;
 }
 
   .button-navtop {

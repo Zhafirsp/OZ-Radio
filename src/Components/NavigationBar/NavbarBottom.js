@@ -58,13 +58,13 @@ const NavBottom = () => {
                         </Offcanvas>
                         <Nav.Link href="/">Home</Nav.Link>
                             <NavDropdown title="City" id="navbarScrollingDropdown">
-                                <NavDropdown.Item href="https://bandung.ozradio.id/">Bandung (103.1 FM)</NavDropdown.Item>
-                                <NavDropdown.Item href="https://ozradiojakarta.com/">Jakarta (90.8 FM)</NavDropdown.Item>
-                                <NavDropdown.Item href="https://ozradiobali.id/">Bali (101.2 FM)</NavDropdown.Item>
+                                <NavDropdown.Item href="https://bandung.ozradio.id/" target='_blank'>Bandung (103.1 FM)</NavDropdown.Item>
+                                <NavDropdown.Item href="https://ozradiojakarta.com/" target='_blank'>Jakarta (90.8 FM)</NavDropdown.Item>
+                                <NavDropdown.Item href="https://ozradiobali.id/" target='_blank'>Bali (101.2 FM)</NavDropdown.Item>
                                 {/* <NavDropdown.Item href="#">Aceh (102.8 FM) </NavDropdown.Item> */}
                             </NavDropdown>
                             <Nav.Link href="#">Listen</Nav.Link>
-                            <Nav.Link href="#">Watch</Nav.Link>
+                            <Nav.Link href="/youtube">Watch</Nav.Link>
                             <Nav.Link href="#">Read</Nav.Link>
                             <Nav.Link href="#">Playlist</Nav.Link>
                             <Nav.Link href="#">Event</Nav.Link>

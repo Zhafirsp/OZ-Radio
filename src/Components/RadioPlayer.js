@@ -4,6 +4,7 @@ import BannerImage from "../Assets/Img/Logo.png";
 import PlayButton  from "./PlayButton";
 import RadioStationPicker from './RadioStationPicker';
 import { ToastContainer, toast } from "react-toastify";
+import { Container } from 'react-bootstrap';
 
 const RadioPlayer = () => {
   const audioRef = useRef(null);
@@ -77,6 +78,7 @@ const RadioPlayer = () => {
   return (
     <section>
       <ToastContainer />
+      <Container>
     <div className="home-container" id="Home" data-aos="fade-up">
       <div className="home-banner-container">
         <div className="home-bannerImage-container">
@@ -114,6 +116,7 @@ const RadioPlayer = () => {
         </div>
       </div>
     </div>
+    </Container>
     </section>
   );
 };

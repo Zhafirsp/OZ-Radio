@@ -14,6 +14,7 @@ import SinglePage from "./Pages/singlePages/singlePage";
 import Culture from "./Components/culture/Culture"
 import SinglePageSlider from "./Pages/singlePages/slider/singlePageSlider";
 import InterviewPage from "./Pages/interviewPage";
+import Youtube from "./Components/Youtube";
 
 function App() {
 
@@ -54,6 +55,7 @@ function App() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/interview" element={<InterviewPage />} />
       <Route exact path='/singlepage/:id' component={SinglePage} />
+      <Route path="/youtube" element={<Youtube />} />
       <Route exact path='/culture' component={Culture} />
       </Routes>
       <Footer />

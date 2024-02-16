@@ -24,7 +24,7 @@ const SinglePageSlider = () => {
   }
   return (
     <>
-      <section className='singlePopular'>
+      <section className='singlePopular mx-5'>
         <div className='content'>
           <Slider {...settings}>
             {popular.map((val) => {
