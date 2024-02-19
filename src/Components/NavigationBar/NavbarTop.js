@@ -1,11 +1,12 @@
-// NavTop.jsx
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import PlayButton from '../PlayButton';
 import { ToastContainer, toast } from "react-toastify";
 import oz_bdg from '../../Assets/Img/logo_oz_bdg.png'
 import oz_jkt from '../../Assets/Img/logo_oz_jkt.png'
 import oz_bali from '../../Assets/Img/logo_oz_bali.png'
+import '../../Assets/Css/nav_top.css'
+import * as xml_js from 'xml-js';
 
 const NavTop = () => {
   const audioRef = useRef(null);
@@ -21,12 +22,17 @@ const NavTop = () => {
     { name: 'Bali', image: oz_bali, frequency: '101.2 FM', url: 'https://streaming.ozradiojakarta.com:8443/ozradiobali' }
   ];
 
+  const [streamData, setStreamData] = useState({
+    Bandung: { streamName: '', currentlyPlaying: '' },
+    Jakarta: { streamName: '', currentlyPlaying: '' },
+    Bali: { streamName: '', currentlyPlaying: '' }
+  });
+
   const handlePlayPause = (stationName) => {
     const audio = audioRef.current;
     const isPlaying = playStates[stationName];
 
     if (isPlaying) {
-      // if (audio && !audio.paused) {
         try {
           audio.pause(); 
           setPlayStates(prevState => ({
@@ -39,7 +45,6 @@ const NavTop = () => {
             theme:"dark",
             pauseOnFocusLoss: false
           });
-        // }
       }
     } else {
       // Stop playing all stations
@@ -79,6 +84,39 @@ const NavTop = () => {
       }
     }
   };
+   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://streaming.ozradiojakarta.com:8443/status.xsl');
+        const xmlData = await response.text();
+    
+        // Parse XML to JavaScript object using xml-js
+        const parsedData = xml_js.parse(xmlData, { compact: true });
+    
+        const parsedStreamData = {};
+        const sourceElements = parsedData.icestats.source;
+    
+        sourceElements.forEach(sourceElement => {
+          const streamName = sourceElement.Stream_Name._text;
+          const currentlyPlaying = sourceElement.title._text;
+    
+          const mountPoint = sourceElement.mount._text.split('/')[1];
+    
+          parsedStreamData[mountPoint] = {
+            streamName: streamName,
+            currentlyPlaying: currentlyPlaying
+          };
+        });
+    
+        setStreamData(parsedStreamData);
+      } catch (error) {
+        console.error('Error fetching ', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
 
   return (
     <>
@@ -86,13 +124,17 @@ const NavTop = () => {
             <div className="navbar-top custom-nav col-md-8 offset-md-2" variant="underline" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               {radioStations.map((station, index) => (
                 <div key={index} style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src={station.image} alt="" className="px-1" style={{ width:'150px' , marginRight:'-150px' }} />
+                  <img src={station.image} alt="" className="px-1 img-radio" style={{ width:'150px' , marginRight:'-150px' }} />
                   {/* <div className='fs-5 fw-medium'>{station.name}</div> */}
                   <PlayButton
                     className="button-navtop"
                     onPlayPause={() => handlePlayPause(station.name)}
                     isPlaying={playStates[station.name]}
                   />
+                   <div>
+                    {/* <p>Stream Name: {streamData[station.name]?.streamName}</p>
+                    <p>Currently Playing: {streamData[station.name]?.currentlyPlaying}</p> */}
+                  </div>
                 </div>
               ))}
             </div>

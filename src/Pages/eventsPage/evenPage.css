@@ -1,0 +1,27 @@
+.eventPage{
+  margin-top: -155px;
+}
+
+
+.event_content{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+.table-event{
+  text-align: center;
+  justify-content: center;
+}
+
+.event_img{
+  max-width: 850px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.event-content{
+  width: 90%;
+}

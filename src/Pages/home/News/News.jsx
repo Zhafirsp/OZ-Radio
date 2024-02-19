@@ -1,9 +1,9 @@
 import React, { useState } from "react"
-import "./hero.css"
+import "./news.css"
 import Card from "./Card"
 import { hero } from "../../../Data/dummyData"
 
-const Hero = () => {
+const News = () => {
   const [items, setIems] = useState(hero)
 
   return (
@@ -23,4 +23,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default News
