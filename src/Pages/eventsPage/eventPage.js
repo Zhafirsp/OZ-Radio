@@ -110,7 +110,7 @@ const EventPages = () => {
                 <Row>
                   <Col className="mb-3">
                     <h1 className="display-5 fw-bold text-center">
-                      Upcoming <span style={{ color:"#F49C27" }} className="home-oz">OZ Radio </span> Events
+                      Upcoming <span style={{ color:"#F49C27" }}>OZ Radio </span> Events + In-Studio Sessions
                     </h1>
                   </Col>
                 </Row>
