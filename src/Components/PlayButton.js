@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { Button } from 'react-bootstrap';
 import { PiPlayCircleThin , PiPauseCircleThin  } from "react-icons/pi";
 
 const PlayButton  = ({ onPlayPause, isPlaying }) => {
@@ -8,7 +9,8 @@ const PlayButton  = ({ onPlayPause, isPlaying }) => {
       <a 
         className="play-button" 
         id="RadioPlayer" 
-        onClick={onPlayPause}>
+        onClick={onPlayPause}
+        style={{  }}>
           {isPlaying ? <PiPauseCircleThin/> : <PiPlayCircleThin/>}
       </a>
     </div>

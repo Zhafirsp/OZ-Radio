@@ -4,29 +4,47 @@ import CardEvent from "../../Components/event/cardEvent";
 import satine from '../../Assets/Img/satine_interview.jpg'
 import '../eventsPage/evenPage.css'
 import danilla from "../../Assets/Img/danilla_interview.jpg"
+import rimba from "../../Assets/Img/rimba_interview.jpg"
 
 const EventPages = () => {
   return (
     <div className="eventPage">
-    <section style={{ backgroundColor:"#f6f6f6" }} className="event" data-aos="fade-down" >
+      <div className="about-section-text-container py-5 event-header">
+        <h1 className="display-5 fw-bold text-center">
+            Upcoming <span style={{ color:"#F49C27" }} className="home-oz">OZ Radio </span> Events
+        </h1>
+      </div>
+    <section style={{ backgroundColor:"#f6f6f6" }} className="event"  data-aos="fade-right">
     <Container>
       <div className="about-section-text-container py-5">
-        <Row>
-          <Col className="mb-3">
-            <h1 className="display-5 fw-bold text-center">
-              Upcoming <span style={{ color:"#F49C27" }}>OZ Radio </span> Events
-            </h1>
-          </Col>
-        </Row>
-      <CardEvent/>
+        <div class="card_container d-flex">
+        <article class="card__article mx-5 d-flex">
+              <div className="card__content">
+                <img src={danilla} alt="image" width={"500px"} className="mx-5" />
+                <div className="card__data">
+                      <span className="card__description">February 21</span>
+                      <h3 className="card__title fw-bold fs-5"><a href="/single-event">DJ Shadow session on OZ Radio (BROADCAST ONLY)</a></h3>
+                      <a href="/single-event" className="card__button">OZ - STUDIO (NW ROOMS)</a>
+                 </div>
+              </div>
+                  <div className="card__content">
+                    <img src={rimba} alt="image" width={"500px"} className="mx-5"/>
+                    <div className="card__data">
+                      <span className="card__description">February 20</span>
+                      <h2 className="card__title fw-bold fs-5">Black History is Now</h2>
+                      <a href="#" className="card__button">Learn More</a>
+                    </div>
+                  </div>
+            </article>
+          </div>
       </div>
     </Container>
     </section>
-      <div className="about-section-text-container py-5" style={{ marginTop:"-10px" }}>
+      <div className="about-section-text-container py-5" style={{ marginTop:"-10px" }} data-aos="fade-left">
         <Row>
           <Col className="mb-3">
             <h1 className="display-5 fw-bold text-center">
-              <span style={{ color:"#F49C27" }}>MoPOP's 2024 </span> Sound Off! Showcase
+              <span style={{ color:"#F49C27" }} className="home-oz">MoPOP's 2024 </span> Sound Off! Showcase
             </h1>
           </Col>
         </Row>
@@ -83,7 +101,7 @@ const EventPages = () => {
                 <Row>
                   <Col className="mb-3">
                     <h1 className="display-5 fw-bold text-center">
-                      Upcoming <span style={{ color:"#F49C27" }}>OZ Radio </span> Events
+                      Upcoming <span style={{ color:"#F49C27" }} className="home-oz">OZ Radio </span> Events
                     </h1>
                   </Col>
                 </Row>

@@ -18,7 +18,6 @@ img {
   pointer-events: none;
 }
 
-
 @media (prefers-reduced-motion: no-preference) {
   .rotating-image.rotate {
     animation: rotating-image-spin infinite 20s linear;
@@ -87,13 +86,11 @@ img {
   margin-left: 90px;
   margin-bottom: 10px;
 }
-body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
 
 body {
   background-color: #fff;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 .home-oz {
   font-size: 100px;
@@ -282,6 +279,9 @@ margin-left: 175px !important;
       background-color: transparent;
       text-decoration: none;
     }
+    .play-button:hover {
+      cursor: pointer;
+    }
 }
 
 .secondary-button {
@@ -415,7 +415,7 @@ a:active {
 .footer-wrapper {
   margin: 6rem 0rem;
   display: flex;
-  margin-top: 1rem;
+  margin-top: 3rem;
 }
 .footer-logo-container {
   max-width: 110px;
@@ -763,7 +763,7 @@ a:active {
     }
 
   .navbar-bottom {
-    margin-top: 150px;
+    margin-top: 190px;
     display: flex;
     /* margin-top: 150px; */
   }

@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   color: white;
-  margin-top: 15px;
+  /* margin-top: -px; */
 }
 
 .hero h1{

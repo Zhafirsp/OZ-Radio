@@ -7,19 +7,20 @@ const Contact = () => {
       <h1 className="primary-heading">Have Question In Mind?</h1>
       <h1 className="primary-heading">Contact Us</h1>
       <div className="contact-oz">
-        <p className="primary-text">103.1 FM OZ Radio Bandung</p>
+        <p className="primary-text">101.2 FM OZ Radio Bali</p>
         <div className="custom-border"></div>
         <p className="primary-text">
-          <a href="https://maps.app.goo.gl/AnUiRBRNTJNHPY8J7">
-          Jl. Setrasari II No.14, Sukarasa<br/>
-          Kota Bandung 40152</a><br/>
-          Ph : <a href = "https://wa.me/62817771031 ">+62 817 771 031</a><br/>
+        <a href="https://maps.app.goo.gl/8egLbd2N97EBE5JKA">
+          Kompleks Pertokoan Sunset Indah IIB Blok 5<br/>
+          Sunset Road Kuta, Bali 80361</a><br/>
+          Ph : <a href = "https://wa.me/628999401012 ">+62 899 940 101 2</a><br/>
+          Email: <a href = "mailto: programozbali@gmail.com">programozbali@gmail.com</a><br/>
           Instagram:
-            <a 
+             <a 
               className="text-decoration-none" 
-              href="https://www.instagram.com/ozradiobandung/">
-                @ozradiobandung
-            </a>
+              href="https://www.instagram.com/d_ozradiobali/">
+                @d_ozradiobali
+            </a> 
           </p>
         </div>
         <div className="contact-oz">
@@ -38,38 +39,21 @@ const Contact = () => {
                 @ozradiojakarta
             </a> 
         </p>
-        </div> 
-        <div className="contact-oz">
-        <p className="primary-text">101.2 FM OZ Radio Bali</p>
-        <div className="custom-border"></div>
-        <p className="primary-text">
-        <a href="https://maps.app.goo.gl/8egLbd2N97EBE5JKA">
-          Kompleks Pertokoan Sunset Indah IIB Blok 5<br/>
-          Sunset Road Kuta, Bali 80361</a><br/>
-          Ph : <a href = "https://wa.me/628999401012 ">+62 899 940 101 2</a><br/>
-          Email: <a href = "mailto: programozbali@gmail.com">programozbali@gmail.com</a><br/>
-          Instagram:
-             <a 
-              className="text-decoration-none" 
-              href="https://www.instagram.com/d_ozradiobali/">
-                @d_ozradiobali
-            </a> 
-          </p>
         </div>
-        <div className="contact-oz">
-        <p className="primary-text">102.8 FM OZ Radio Aceh</p>
+      <div className="contact-oz">
+        <p className="primary-text">103.1 FM OZ Radio Bandung</p>
         <div className="custom-border"></div>
         <p className="primary-text">
-        <a href="https://maps.app.goo.gl/WjeWyDGS9y8CLE5KA">
-          Jl. Teuku Iskandar, Lambhuk<br/>
-          Ulee Kareng, Aceh 23127</a><br/>
-          Ph : 065 180 107 17<br/>
+          <a href="https://maps.app.goo.gl/AnUiRBRNTJNHPY8J7">
+          Jl. Setrasari II No.14, Sukarasa<br/>
+          Kota Bandung 40152</a><br/>
+          Ph : <a href = "https://wa.me/62817771031 ">+62 817 771 031</a><br/>
           Instagram:
-             <a 
+            <a 
               className="text-decoration-none" 
-              href="https://www.instagram.com/ozradioaceh/">
-                @ozradioaceh
-            </a> 
+              href="https://www.instagram.com/ozradiobandung/">
+                @ozradiobandung
+            </a>
           </p>
         </div>
         <div className="contact-oz">

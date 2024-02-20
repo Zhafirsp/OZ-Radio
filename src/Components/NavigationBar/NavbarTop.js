@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import oz_bdg from '../../Assets/Img/logo_oz_bdg.png'
 import oz_jkt from '../../Assets/Img/logo_oz_jkt.png'
 import oz_bali from '../../Assets/Img/logo_oz_bali.png'
+import song from '../../Assets/Img/song.jpg'
 import '../../Assets/Css/nav_top.css'
 import * as xml_js from 'xml-js';
 
@@ -17,9 +18,9 @@ const NavTop = () => {
   });
 
   const radioStations = [
-    { name: 'Bandung', image: oz_bdg, frequency: '103.1 FM', url: 'https://streaming.ozradiojakarta.com:8443/ozradiobandung' },
+    { name: 'Bali', image: oz_bali, frequency: '101.2 FM', url: 'https://streaming.ozradiojakarta.com:8443/ozradiobali' },
     { name: 'Jakarta', image: oz_jkt, frequency: '90.8 FM', url: 'https://streaming.ozradiojakarta.com:8443/ozjakarta' },
-    { name: 'Bali', image: oz_bali, frequency: '101.2 FM', url: 'https://streaming.ozradiojakarta.com:8443/ozradiobali' }
+    { name: 'Bandung', image: oz_bdg, frequency: '103.1 FM', url: 'https://streaming.ozradiojakarta.com:8443/ozradiobandung' },
   ];
 
   const [streamData, setStreamData] = useState({
@@ -120,28 +121,38 @@ const NavTop = () => {
 
   return (
     <>
+    <div className='topnav'>
+        <div className="blur-navtop" style={{ backgroundImage: `url(${song})` }} />
         <Container fluid>
-            <div className="navbar-top custom-nav col-md-8 offset-md-2" variant="underline" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              {radioStations.map((station, index) => (
-                <div key={index} style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src={station.image} alt="" className="px-1 img-radio" style={{ width:'150px' , marginRight:'-150px' }} />
-                  {/* <div className='fs-5 fw-medium'>{station.name}</div> */}
-                  <PlayButton
-                    className="button-navtop"
-                    onPlayPause={() => handlePlayPause(station.name)}
-                    isPlaying={playStates[station.name]}
-                  />
-                   <div>
-                    {/* <p>Stream Name: {streamData[station.name]?.streamName}</p>
-                    <p>Currently Playing: {streamData[station.name]?.currentlyPlaying}</p> */}
-                  </div>
+          <div className="navbar-top custom-nav col-md-8 offset-md-2" variant="underline" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'relative' }}>
+            {radioStations.map((station, index) => (
+              <div key={index} style={{ display: 'flex', alignItems: 'center' }}>
+                <img src={station.image} alt="" className="px-1 img-radio" style={{ width:'150px' , marginRight:'-150px' }} />
+                <PlayButton
+                  className="btn button-navtop"
+                  onPlayPause={() => handlePlayPause(station.name)}
+                  isPlaying={playStates[station.name]}
+                />
+                 <div>
+                  {/* <p>Stream Name: {streamData[station.name]?.streamName}</p>
+                  <p>Currently Playing: {streamData[station.name]?.currentlyPlaying}</p> */}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
+          </div>
+          <div className="navbar-song custom-nav col-md-8 offset-md-2" variant="underline" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop:'-20px' }}>
+          <img src={song} alt="" className="px-1 img-radio" style={{ width:'150px', height:'100px' }} />
+                <div className='song-text ms-3'>
+                <p className='fw-bold mt-2'>NOW PLAYING</p>
+                <p style={{ marginTop:'-10px' }}>Midnight in a Perfect World</p>
+                <p className='fw-bolder' style={{ marginTop:'-10px' }}>ML Buch -Kali Uchis</p>
+                </div>
+          </div>
         </Container>
-      <br />
-      <audio ref={audioRef} />
-      <ToastContainer/>
+        <br />
+        <audio ref={audioRef} />
+        <ToastContainer/>
+      </div>
     </>
   );
 };

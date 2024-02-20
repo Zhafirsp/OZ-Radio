@@ -51,7 +51,7 @@ const Footer = () => {
       </div>
       <div className="footer-section-four col-md-4 me-5">
       <h2>Follow Us</h2>
-        <ul class="col-md-4 d-flex align-items-center list-unstyled icons-footer">
+        <ul class="col-md-3 d-flex align-items-center list-unstyled icons-footer">
             <li class="ms-3"><a href="https://www.instagram.com/ozradiobandung/"><BsInstagram /></a></li>
             <li class="ms-3"><a href="https://twitter.com/ozradiobandung?s=20"><BsTwitter /></a></li>
             <li class="ms-3"><a href="https://www.youtube.com/@OZRADIO"><BsYoutube /></a></li>
