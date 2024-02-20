@@ -112,7 +112,7 @@ const Video = () => {
           <iframe 
           width="100%"
           height="720"
-          src="https://www.youtube.com/embed/videoseries?si=5laDsCde24-eNESR&amp;list=PLm64bs3A73om9WjfuXZvmIwTj7rqEdaG_" 
+          src="https://www.youtube.com/embed/videoseries?si=5laDsCde24-eNESR&amp;list=PLm64bs3A73om9WjfuXZvmIwTj7rqEdaG_&autoplay=1" 
           title="OzClusive" 
           allowFullScreen>
           </iframe>

@@ -94,6 +94,15 @@ const EventPages = () => {
               </tr>
             </tbody>
           </table>
+          <iframe 
+          width="770" 
+          height="415" 
+          src="https://www.youtube.com/embed/DxbRSL8-nB8?si=FEQCmpi5p3Z1oECK&autoplay=1" 
+          title="YouTube video player"
+          className="mb-5 d-block ms-auto me-auto"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+          </iframe>
           </Container>
           <section style={{ backgroundColor:"#f6f6f6" }} data-aos="fade-down" >
             <Container>
