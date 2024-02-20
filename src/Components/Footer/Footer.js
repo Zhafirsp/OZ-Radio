@@ -19,7 +19,7 @@ const Footer = () => {
               <h5><a href="#"   className="text-decoration-none">Sport</a></h5>
               <h5><a href="#"  className="text-decoration-none">Lifestyle</a></h5>
               <h5><a href="#"  className="text-decoration-none">Education</a></h5>
-              <h5><a href="#"  className="text-decoration-none">Politc</a></h5>
+              <h5><a href="#"  className="text-decoration-none">Politic</a></h5>
             </Col>
             <Col>
               <h5><a href="#"  className="text-decoration-none">Comedy</a></h5>
@@ -42,9 +42,9 @@ const Footer = () => {
       <div className="footer-section-three col-md-3 me-5">
         <div className="footer-section-columns me-5">
         <h2>About Us</h2>
-        <h5><a href = "#">About</a></h5>
+        <h5><a href = "/about">About</a></h5>
         <h5><a href = "/radio">OZ Radio</a></h5>
-        <h5><a href = "#">OZ TV</a></h5>
+        <h5><a href = "/youtube">OZ TV</a></h5>
         <h5><a href = "/contact">Partnership</a></h5>
         <h5><a href = "#">Service</a></h5>
         </div>
