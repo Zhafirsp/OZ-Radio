@@ -13,7 +13,7 @@ const Logo = () => {
 
     // Buat instansi Typed.js dengan elemen DOM yang telah didapatkan
     var typed = new Typed(element, {
-      strings: ["Delivering music we do", "in style"],
+      strings: ["Delivering music we do ...", "in style"],
       typeSpeed: 150,
       backSpeed: 150,
       loop: true,
@@ -51,9 +51,9 @@ const Logo = () => {
         </div>
         <div class="logo_nav">
             <ul class="nav justify-content-center fw-bold fs-4">
-              <li><a href="#" class="nav-link px-5">ABOUT</a></li>
+              <li><a href="/about" class="nav-link px-5">ABOUT</a></li>
               <li><a href="#" class="nav-link px-5 ">PRIVACY POLICY/TERMS</a></li>
-              <li><a href="#" class="nav-link">CONTACT</a></li>
+              <li><a href="/contact" class="nav-link">CONTACT</a></li>
             </ul>
         </div>
       </Container>

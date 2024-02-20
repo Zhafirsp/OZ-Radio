@@ -54,7 +54,7 @@ const NavBottom = () => {
                             <Nav.Link href="/event">Events</Nav.Link>
                             <hr/>
                             <Nav.Link href="#">Sustainability</Nav.Link>
-                            <Nav.Link href="#">Advertising</Nav.Link>
+                            <Nav.Link href="/contact">Advertising</Nav.Link>
                             <Nav.Link href="#">Community</Nav.Link>
                             <Nav.Link href="/contact">Contact Us</Nav.Link>
                             <Nav.Link href="/about">About</Nav.Link>
