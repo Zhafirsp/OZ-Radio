@@ -40,7 +40,7 @@ const News = () => {
           </Row>
         </div>
           <div className="load-more text-center">
-            <Button className="btn-dark" onClick={loadMore}>Load More</Button>
+            <Button variant="outline-dark" className="" onClick={loadMore}>Load More</Button>
           </div>
     </>
   );

@@ -58,7 +58,7 @@ const EventPages = () => {
               <br/>
               As a legacy under-21 music showcase in the Pacific Northwest, MoPOP’s Sound Off! connects young artists with the tools and resources to dig into their sound, grow their business skills, and level up their artistry. Participants receive professional mentoring to guide them through the ins and outs of the industry, gathering insider knowledge, valuable community contacts, and life-changing experience as they gear up to show the world exactly what they have to say. Then they unleash it all with a fully realized live performance at our world-class venue, complete with light show, tech crew, and hordes of screaming fans.
               </p>
-              <Button variant="dark" className="text-center start-50 position-relative py-2 px-4 border border-secondary rounded-pill fs-5">Get Tickets Now</Button>
+              <Button variant="outline-dark" className="text-center start-50 position-relative py-2 px-4 border border-secondary rounded-pill fs-5">Get Tickets Now</Button>
             </Col>
           </div>
           </Row>
