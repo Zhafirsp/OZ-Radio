@@ -11,7 +11,12 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
+  max-width: 50%;
+}
+
+.event-showcase {
+  margin-top: 10px;
+  position: relative;
 }
 
 .table-event{
@@ -20,7 +25,7 @@
 }
 
 .event_img{
-  max-width: 850px;
+  max-width: 650px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -28,4 +33,30 @@
 
 .event-content{
   width: 90%;
+}
+
+.card__article {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1000px) {
+  .table-event {
+    margin-top: 300px !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .event-header-text{
+    margin-bottom: 200px;
+    margin-top: -120px;
+  }
+
+  .event_img{
+    max-width: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

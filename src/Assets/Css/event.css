@@ -12,7 +12,7 @@
   margin: 0;
 }
 
-.card__img {
+.danilla-img {
   display: block;
   /* max-width: 100%; */
   width: 500px !important;
@@ -39,7 +39,7 @@
   position: relative;
 }
 
-.card__img {
+.danilla-img {
   display: block;
   max-width: 100%;
   height: auto;
@@ -49,7 +49,7 @@
 .card__data {
   width: 280px;
   background-color: rgba(255, 255, 255, 1);
-  padding: 1.5rem 2rem;
+  padding: 1rem 1.5rem;
   box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
   border-radius: 1rem;
   position: absolute;
@@ -142,37 +142,112 @@
   }
 }
 
+
 /*=============== BREAKPOINTS ===============*/
-/* For small devices */
-@media screen and (max-width: 340px) {
-  .container-card {
-    margin-inline: 1rem;
-  }
-
-  .card__data {
-    width: 150px;
-    padding: 1rem;
-  }
-}
-
-/* For medium devices */
-@media screen and (min-width: 768px) {
-  .card__container {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 1.5rem;
-  }
-}
 
 /* For large devices */
-@media screen and (min-width: 1120px) {
+@media screen and (max-width: 1200px) {
   .card__container {
-    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: repeat(3, 1fr); */
   }
-  .card__img {
-    width: 348px;
+  .danilla-img {
+    /* width: 700px !important; */
   }
   .card__data {
-    width: 316px;
+    width: 250px;
     padding-inline: 2.5rem;
   }
+  
+  .card__description {
+    display: block;
+    font-size: 15px;
+    margin-bottom: .25rem;
+  }
+  
+  .card__title {
+    font-size: 15px;
+    font-weight: 100;
+  }
+  
+  .card__button {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 100;
+  }
+
+  .btn-event {
+    margin-left: 100px !important;
+  }
 }
+
+@media (max-width: 1000px) {
+  .btn-event {
+    margin-bottom: 50px;
+    margin-top: -25px;
+  }
+  .card__data {
+    width: 235px;
+    padding: 1rem;
+  }
+
+  .card__description {
+    display: block;
+    font-size: 10px !important;
+    margin-bottom: .25rem;
+  }
+  
+  .card__title {
+    font-size: 13px !important;
+    /* font-weight: 100; */
+  }
+  
+  .card__button {
+    text-decoration: none;
+    font-size: 10px;
+    /* font-weight: 100; */
+  }
+}
+/* For medium devices */
+
+@media (max-width: 800px) {
+  .danilla-img {
+    width: 600px !important;
+  }
+  .rimba-img {
+    /* width: 900px !important; */
+  }
+  .card__data {
+    width: 185px;
+    padding: -3rem !important;
+  }
+  
+  .card__description {
+    font-size: 11px !important;
+    margin-bottom: .25rem;
+  }
+  
+  .card__title {
+    font-size: 11px !important;
+    font-weight: 100;
+  }
+  
+  .card__button {
+    text-decoration: none;
+    font-size: 10px !important;
+    font-weight: 100;
+  }
+}
+
+@media (max-width: 700px) {
+
+
+}
+
+@media (max-width: 600px) {
+ 
+  .card__data {
+    width: 145px;
+    padding: -3rem !important;
+  }
+}
+/* For small devices */

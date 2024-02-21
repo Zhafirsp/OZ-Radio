@@ -2,6 +2,7 @@ import React from "react";
 import { BsYoutube, BsInstagram, BsTwitter } from "react-icons/bs";
 import { FaFacebookF, FaSpotify, FaTiktok, FaRegCopyright } from "react-icons/fa";
 import {Container, Row, Button, Form, Col} from 'react-bootstrap';
+import '../../Assets/Css/footer.css'
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
     {/* <svg className="getwaves" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path fill="#FE9E0D" fill-opacity="1" d="M0,160L80,176C160,192,320,224,480,224C640,224,800,192,960,192C1120,192,1280,224,1360,240L1440,256L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
     </svg> */}
-     <div className="footer-wrapper">
+     <div className="footer-wrapper mx-5">
       <div className="footer-section-one col-md-3 ms-5">
         <div className="footer-section-columns ms-5">
           <h2 className="mt-4">Category</h2>

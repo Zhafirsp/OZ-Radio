@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Row, Container, Card, Button } from 'react-bootstrap';
 import CardEvent from "./cardEvent";
+import '../../Assets/Css/event.css'
 
 const Event = () => {
   return (
@@ -14,7 +15,7 @@ const Event = () => {
             </h1>
           </Col>
           <Col lg={2} className="mt-3 button-interview">
-          <a href="#"><Button variant="outline-dark ms-5">Load More</Button></a>
+          <a href="#"><Button variant="outline-dark ms-5 btn-event">Load More</Button></a>
           </Col>
         </Row>
       <CardEvent/>

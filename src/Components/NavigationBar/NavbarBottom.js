@@ -41,7 +41,7 @@ const NavBottom = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav navbarScroll " className='' />
                     <Navbar.Collapse id="basic-navbar-nav navbarScroll ">
                         <Nav className=" custom-nav fs-5 fw-medium col-md-6 offset-md-4" variant="underline">
-                        <Nav.Link onClick={handleShow} className='offcanvas-menu' ><GiHamburgerMenu className='pb-1' /> Menu</Nav.Link>
+                        <Nav.Link onClick={handleShow} className='offcanvas-menu'><GiHamburgerMenu className='pb-1' /></Nav.Link>
                         <Offcanvas show={show} onHide={handleClose}>
                           <Offcanvas.Header closeButton>
                             <Offcanvas.Title>Close</Offcanvas.Title>
@@ -72,7 +72,7 @@ const NavBottom = () => {
                             <Nav.Link href="/radio">Radio</Nav.Link>
                             <Nav.Link href="/youtube">TV</Nav.Link>
                             <Nav.Link href="/event">Events</Nav.Link>
-                            <Nav.Link href="/about">Visit OZ</Nav.Link>
+                            <Nav.Link href="/about">Visit</Nav.Link>
                             <Nav.Link href="#">Playlist</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

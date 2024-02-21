@@ -8,6 +8,7 @@ import oz_bali from '../../Assets/Img/logo_oz_bali.png'
 import song from '../../Assets/Img/song.jpg'
 import '../../Assets/Css/nav_top.css'
 import * as xml_js from 'xml-js';
+import { IcecastMetadataReader } from 'icecast-metadata-js';
 
 const NavTop = () => {
   const audioRef = useRef(null);
@@ -88,30 +89,22 @@ const NavTop = () => {
    useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://streaming.ozradiojakarta.com:8443/status.xsl');
-        const xmlData = await response.text();
-    
-        // Parse XML to JavaScript object using xml-js
-        const parsedData = xml_js.parse(xmlData, { compact: true });
-    
-        const parsedStreamData = {};
-        const sourceElements = parsedData.icestats.source;
-    
-        sourceElements.forEach(sourceElement => {
-          const streamName = sourceElement.Stream_Name._text;
-          const currentlyPlaying = sourceElement.title._text;
-    
-          const mountPoint = sourceElement.mount._text.split('/')[1];
-    
-          parsedStreamData[mountPoint] = {
-            streamName: streamName,
-            currentlyPlaying: currentlyPlaying
-          };
-        });
-    
-        setStreamData(parsedStreamData);
+        // Buat instance IcecastMetadataReader dengan URL server Icecast
+        const icecastReader  = new IcecastMetadataReader('https://streaming.ozradiojakarta.com:8443');
+
+        // Ambil metadata dari server Icecast
+        const metadata = await IcecastMetadataReader.getMetadata();
+
+        console.log(metadata); // Cetak metadata ke konsol
+
+        // Dapatkan informasi yang Anda perlukan dari metadata
+        const streamName = metadata.Stream_Name;
+        const currentlyPlaying = metadata.Stream_Title;
+
+        // Simpan data dalam state komponen
+        setStreamData({ streamName, currentlyPlaying });
       } catch (error) {
-        console.error('Error fetching ', error);
+        console.error('Error fetching metadata:', error);
       }
     };
 
@@ -144,8 +137,8 @@ const NavTop = () => {
           <img src={song} alt="" className="px-1 img-radio" style={{ width:'150px', height:'100px' }} />
                 <div className='song-text ms-3'>
                 <p className='fw-bold mt-2'>NOW PLAYING</p>
-                <p style={{ marginTop:'-10px' }}>Midnight in a Perfect World</p>
-                <p className='fw-bolder' style={{ marginTop:'-10px' }}>ML Buch -Kali Uchis</p>
+                <p style={{ marginTop:'-10px' }}>{streamData && streamData.streamName}</p>
+                <p className='fw-bolder' style={{ marginTop:'-10px' }}>{streamData && streamData.currentlyPlaying}</p>
                 </div>
           </div>
         </Container>
