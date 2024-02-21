@@ -4,7 +4,7 @@ import Footer from "./Components/Footer/Footer";
 import ScrollToTop from "react-scroll-to-top";
 import NavTop from "./Components/NavigationBar/NavbarTop";
 import NavBottom from "./Components/NavigationBar/NavbarBottom";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { Routes, Route, Navigate, Outlet, useLocation } from "react-router-dom";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
@@ -15,6 +15,11 @@ import Culture from "./Components/culture/Culture"
 import SinglePageSlider from "./Pages/singlePages/slider/singlePageSlider";
 import InterviewPage from "./Pages/interviewPage";
 import Youtube from "./Components/Youtube";
+import TV from "./Pages/tvPage/TvPage";
+import Video from "./Pages/tvPage/pages/Video";
+import EventPages from "./Pages/eventsPage/eventPage";
+import EventSinglePage from "./Pages/eventsPage/eventSinglePage/eventSinglePage";
+import News from "./Pages/home/News/News";
 
 function App() {
 
@@ -29,7 +34,7 @@ function App() {
       //This line will get the location on scroll
       if(scrollTop > lastScrollTop){ //if it will be greater than the previous
         navbarTop.style.top='-80px';
-        navbarBottom.style.top='-130px';
+        navbarBottom.style.top='-250px';
     //set the value to the negetive of height of navbar 
       }
       else if( scrollTop == 0) { // Jika scroll ke atas
@@ -53,10 +58,14 @@ function App() {
       <Route path="/about" element={<About />} />
       <Route path="/radio" element={<RadioPlayer />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/event" element={<EventPages />} />
+      <Route path="/single-event" element={<EventSinglePage />} />
       <Route path="/interview" element={<InterviewPage />} />
-      <Route exact path='/singlepage/:id' component={SinglePage} />
-      <Route path="/youtube" element={<Youtube />} />
+      <Route exact path='/singlepage/:id' element={<SinglePage/>} />
+      <Route path="/youtube" element={<TV />} />
+      <Route path="/news" element={<News />} />
       <Route exact path='/culture' component={Culture} />
+      <Route path="/video/test" element={<Video />} />
       </Routes>
       <Footer />
     </div>

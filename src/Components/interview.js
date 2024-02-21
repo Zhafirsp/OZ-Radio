@@ -58,9 +58,37 @@ const Interview = () => {
         }
       },
       {
-        breakpoint: 1024,
+        breakpoint: 1200,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 1000,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
           dots: true
@@ -86,14 +114,14 @@ const Interview = () => {
     <section>
     <Container>
       <div className="interview" data-aos="fade-up">
-        <Row>
+        <Row className="text-interview">
           <Col className="mb-3">
             <h1 className="display-5 fw-bold">
               Catch up with the laters interviews
             </h1>
           </Col>
           <Col sm={1} lg={2} className="mt-3 button-interview">
-          <a href="/interview"><Button variant="outline-dark ms-5">Load More</Button></a>
+            <a href="/interview"><Button variant="outline-dark ms-5">Load More</Button></a>
           </Col>
         </Row>
         <Row lg={12} md={8} xs={2} className="g-2 slider-row ">

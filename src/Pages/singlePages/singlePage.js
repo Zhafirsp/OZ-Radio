@@ -7,6 +7,7 @@ import "../home/sideContent/side/side.css"
 import SinglePageSlider from "./slider/singlePageSlider"
 import { hero } from "../../Data/dummyData"
 import { Container } from "react-bootstrap"
+import { FaEnvelope, FaFacebook, FaPinterest, FaQuoteLeft, FaTwitter } from "react-icons/fa"
 
 const SinglePage = () => {
   const { id } = useParams()
@@ -38,18 +39,20 @@ const SinglePage = () => {
 
               <div className='social'>
                 <div className='socBox'>
-                  <i className='fab fa-facebook-f'></i>
+                  <FaFacebook className="fab fa-facebook-f" />
                   <span>SHARE</span>
                 </div>
                 <div className='socBox'>
-                  <i className='fab fa-twitter'></i>
+                  <FaTwitter className="fab fa-twitter" />
                   <span>TWITTER</span>
                 </div>
                 <div className='socBox'>
-                  <i className='fab fa-pinterest'></i>
+                  <FaPinterest className="fab fa-pinterest" />
+                  <span>PINTEREST</span>
                 </div>
                 <div className='socBox'>
-                  <i className='fa fa-envelope'></i>
+                  <FaEnvelope className="fab fa-envelope" />
+                  <span>EMAIL</span>
                 </div>
               </div>
 
@@ -80,7 +83,7 @@ const SinglePage = () => {
               </div>
 
               <div className='quote'>
-                <i className='fa fa-quote-left'></i>
+                <FaQuoteLeft className="fa fa-quote-left"/>
                 {item.details.map((data) => (
                   <p>{data.quote}</p>
                 ))}
@@ -97,9 +100,9 @@ const SinglePage = () => {
                 })}
               </div>
             </section>
-            <section className='sideContent'>
+            {/* <section className='sideContent'>
               <Side />
-            </section>
+            </section> */}
           </div>
         </Container>
       ) : (

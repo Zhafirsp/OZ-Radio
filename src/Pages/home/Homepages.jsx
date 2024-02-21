@@ -10,6 +10,7 @@ import SinglePageSlider from "../singlePages/slider/singlePageSlider";
 import Interview from "../../Components/interview";
 import Event from "../../Components/event/events";
 import Logo from "../../Components/Logo";
+import Head from "../../Components/common/header/Head";
 
 const Homepages = () => {
   return (
@@ -17,7 +18,9 @@ const Homepages = () => {
       <Hero />
       {/* <Hero/> */}
       <Interview />
+      <Head />
       <Event/>
+      <Head />
       <Logo />
       {/* <RadioPlayer /> */}
       {/* <Youtube /> */}
