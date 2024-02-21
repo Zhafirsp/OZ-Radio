@@ -137,8 +137,8 @@ const NavTop = () => {
           <img src={song} alt="" className="px-1 img-radio" style={{ width:'150px', height:'100px' }} />
                 <div className='song-text ms-3'>
                 <p className='fw-bold mt-2'>NOW PLAYING</p>
-                <p style={{ marginTop:'-10px' }}>{streamData && streamData.streamName}</p>
-                <p className='fw-bolder' style={{ marginTop:'-10px' }}>{streamData && streamData.currentlyPlaying}</p>
+                <p style={{ marginTop:'-10px' }}>Midnight in a Perfect World</p>
+                <p className='fw-bolder' style={{ marginTop:'-10px' }}>ML Buch -Kali Uchis</p>
                 </div>
           </div>
         </Container>

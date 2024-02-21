@@ -60,7 +60,7 @@ const EventPages = () => {
                 <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-3 mt-3">Special Music Event on <span className="span-hero">MoPOP’s Sound Off! </span>Showcase</h1> 
                 <p className="lead fw-lighter">is your chance to witness the next big thing in NW music as young artists from around the region take to the Sky Church stage for three nights of heart, guts, and glory.</p>
                 <p className="lead fw-lighter">As a legacy under-21 music showcase in the Pacific Northwest, MoPOP’s Sound Off! connects young artists with the tools and resources to dig into their sound, grow their business skills, and level up their artistry.</p>
-              <Button variant="outline-dark" className="text-center  py-2 px-4 border border-secondary rounded-pill fs-5">Get Tickets Now</Button>
+              <Button variant="outline-dark" className="text-center  py-2 px-4 border border-secondary rounded-pill fs-5"><a href="https://mopop.org/sound-off" target="_blank">Get Tickets Now</a></Button>
               </div>
               <div className="col-10 col-sm-8 col-lg-6">
                 <img src={satine} className="hero-img d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy"/>
