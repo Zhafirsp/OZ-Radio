@@ -24,7 +24,7 @@ function TV() {
 
   return (
       <Container>
-          <Main>
+          <Main style={{ marginTop:"100px" }}>
             <Wrapper>
               <Routes>
                 <Route path="/">

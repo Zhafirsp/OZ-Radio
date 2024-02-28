@@ -1,9 +1,9 @@
 .eventPage{
-  margin-top: -155px;
+  margin-top: 100px;
 }
 
 .event-header {
-  margin-top: 150px;
+  margin-top: 50px;
   margin-bottom: -250px;
 }
 
@@ -50,7 +50,7 @@
 @media (max-width: 800px) {
   .event-header-text{
     margin-bottom: 200px;
-    margin-top: -120px;
+    margin-top: 150px;
   }
 
   .event_img{

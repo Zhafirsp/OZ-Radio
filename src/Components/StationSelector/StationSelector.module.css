@@ -1,0 +1,44 @@
+.station {
+  display: flex;
+}
+
+.stationLabel {
+  transition:
+    background-color 1.5s ease,
+    color 0.5s ease;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.stationLabel :hover {
+  color: #fff;
+}
+.selected {
+  color: #F49C27;
+  text-decoration: underline;
+}
+
+.stationRadio {
+  position: fixed;
+  opacity: 0;
+}
+
+.codecs {
+  display: flex;
+  flex-direction: row;
+  font-family: monospace;
+}
+
+.codecLabel {
+  user-select: none;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}

@@ -12,6 +12,9 @@
   margin-bottom:-230px;
 }
 
+.terms {
+  text-decoration: none;
+}
 
 .footer-logo {
   display: flex;
@@ -69,6 +72,23 @@
   justify-content: center;
   color: #4c4c4c;
   cursor: pointer;
+}
+
+.icons-footer{
+  font-size: 24px;
+  margin-left: -15px;
+}
+
+Link:visited{
+  color: #4c4c4c !important;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+Link:active{
+  color: #4c4c4c !important;
+  background-color: transparent;
+  text-decoration: none;
 }
 
 @media (max-width: 1100px) {

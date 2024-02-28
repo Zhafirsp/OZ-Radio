@@ -16,6 +16,8 @@
     "bootstrap": "^5.3.2",
     "buffer": "^6.0.3",
     "icecast-metadata-js": "^1.2.8",
+    "icecast-metadata-player": "^1.17.2",
+    "icecast-metadata-stats": "^0.1.11",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.0",
     "react-dom": "^18.2.0",

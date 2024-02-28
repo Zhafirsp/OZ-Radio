@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./news.css";
+import "../mainContent/Ppost/ppost.css"
 import Card from "./Card";
 import { hero, popular } from "../../../Data/dummyData";
 import { Button, Row, Col } from "react-bootstrap";

@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Reem Kufi", sans-serif !important;
+  font-family: "roboto", sans-serif !important;
 }
 img {
   max-width: 100%;
@@ -18,6 +18,10 @@ img {
   pointer-events: none;
 }
 
+.navbar {
+  padding-top: 10px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .rotating-image.rotate {
     animation: rotating-image-spin infinite 20s linear;
@@ -31,6 +35,10 @@ img {
   to {
     transform: rotate(360deg);
   }
+}
+
+.header-about{
+  margin-top: 100px !important;
 }
 
 /* Scroller styling */
@@ -79,6 +87,7 @@ body {
   background-color: #fff;
   max-width: 100%;
   overflow-x: hidden;
+  margin-top: 100px;
 }
 .home-oz {
   font-size: 100px;
@@ -142,7 +151,7 @@ body {
   display: block;
 }
 
-.dropdown-content a {
+.dropdown-content Link {
   color: #fff;
   display: block;
   padding: 10px;
@@ -155,11 +164,8 @@ body {
 
 
 .nav-logo {
-  display: flex;
-  justify-content: space-between;
-  width: 50px;
-  height: 50px;
-  margin: 5px;
+  width: 75px;
+  margin-top: 0px !important;
 }
 
 .navbar.scrolled {
@@ -372,23 +378,23 @@ margin-left: 175px !important;
   flex-direction: column;
   }
 
-a:link{
+Link:link{
   text-decoration: none;
   color: #4c4c4c;
 }
 
-a:visited {
+Link:visited {
   color: #4c4c4c;
   background-color: transparent;
   text-decoration: none;
 }
 
-a:hover {
+Link:hover {
   color: #FE9E0D;
   background-color: transparent;
 }
 
-a:active {
+Link:active {
   color: #FE9E0D;
   background-color: transparent;
 }
@@ -535,6 +541,9 @@ a:active {
   margin-left: 10px;
 }
 
+.station-selector {
+  margin-left: 50px !important;
+}
 
 }
 @media (max-width: 800px) {
@@ -576,7 +585,7 @@ a:active {
   .about-section-text-container {
     justify-content: center;
     align-items: center;
-    margin-top: 4rem;
+    margin-top: 14rem;
   }
   .secondary-button {
     font-size: 1rem;
@@ -642,13 +651,13 @@ a:active {
   flex-direction: column;
   }
 
-  .navbar-top {
-    /* display: flex;
+  /* .navbar-top {
+    display: flex;
     text-align: center;
     align-items: center;
     justify-content: center;
-    flex-direction: column; */
-    }
+    flex-direction: column;
+    } */
 
   .navbar-bottom {
     margin-top: 190px;
@@ -668,6 +677,11 @@ a:active {
 
 .scroller {
   margin-left: -170px !important;
+}
+
+
+.nav-logo {
+  margin-top: -50px;
 }
 
 @media (max-width: 600px) {
@@ -699,6 +713,16 @@ a:active {
     margin-left: -175px !important;
   }
 
- 
+  .about-section-text-container {
+    margin-top: 14rem;
+  }
+
+  .station-selector {
+    margin-left: 50px;
+  }
+
+  /* .nav-logo {
+    margin-top: -50px !important;
+  } */
 
 }

@@ -49,13 +49,6 @@ const Logo = () => {
             <h1 className="mx-3 mt-4"><span className="auto-type"></span></h1>
           </div>
         </div>
-        <div class="logo_nav">
-            <ul class="nav justify-content-center fw-bold fs-4">
-              <li><a href="/about" class="nav-link px-5">ABOUT</a></li>
-              <li><a href="#" class="nav-link px-5 ">PRIVACY POLICY/TERMS</a></li>
-              <li><a href="/contact" class="nav-link">CONTACT</a></li>
-            </ul>
-        </div>
       </Container>
     </section>
   );

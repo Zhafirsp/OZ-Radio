@@ -7,6 +7,7 @@ import { Col, Row, Container, Card, Button } from 'react-bootstrap';
 import Slider from "react-slick";
 import { BsCollectionPlay } from "react-icons/bs";
 import '../Assets/Css/interview.css'
+import { Link } from "react-router-dom";
 
 const Interview = () => {
   const interviewData = [
@@ -121,7 +122,7 @@ const Interview = () => {
             </h1>
           </Col>
           <Col sm={1} lg={2} className="mt-3 button-interview">
-            <a href="/interview"><Button variant="outline-dark ms-5">Load More</Button></a>
+            <Link to="/interview"><Button variant="outline-dark ms-5">Load More</Button></Link>
           </Col>
         </Row>
         <Row lg={12} md={8} xs={2} className="g-2 slider-row ">

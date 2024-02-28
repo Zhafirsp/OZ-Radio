@@ -9,7 +9,7 @@ const About = () => {
   return (
     <>
     <Container>
-    <h1 className=" mt-5"> <span style={{ color:"#FCBB33" }} className="home-oz">OZ Radio</span> Profile</h1>
+    <h1 className="header-about"> <span style={{ color:"#FCBB33" }} className="home-oz">OZ Radio</span> Profile</h1>
       <hr />
       <div className='d-flex flex-wrap justify-content-between align-items-center mx-5'>
         <div className='col-md-6 align-items-start left-paragraph'>

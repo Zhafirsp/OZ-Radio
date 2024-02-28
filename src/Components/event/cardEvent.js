@@ -10,8 +10,8 @@ const CardEvent = () => {
 
   return (
     <Container>
-        <div class="card_container d-flex">
-        <article class="card__article mx-5">
+        <div className="card_container d-flex">
+        <article className="card__article mx-5">
             <Row>
               <div className="card__content">
                 <img src={danilla} alt="image" className="danilla-img" />
@@ -23,7 +23,7 @@ const CardEvent = () => {
               </div>
               
     <Container>
-              <div class="mx-1 d-flex">
+              <div className="mx-1 d-flex">
                     <Col sm={2}>
                       <span className="card__description fw-lighter primary-text text-center fs-6">Feb 23</span>
                     </Col>
@@ -33,7 +33,7 @@ const CardEvent = () => {
                     </Col>
               </div>
               <hr style={{ color:"#F49C27" }}/>
-              <div class="mx-1 d-flex">
+              <div className="mx-1 d-flex">
                     <Col sm={2}>
                       <span className="card__description fw-lighter primary-text text-center fs-6">Feb 25</span>
                     </Col>
@@ -43,7 +43,7 @@ const CardEvent = () => {
                     </Col>
               </div>
               <hr style={{ color:"#F49C27" }}/>
-              <div class="mx-1 d-flex">
+              <div className="mx-1 d-flex">
                     <Col sm={2}>
                       <span className="card__description fw-lighter primary-text text-center fs-6">Feb 27</span>
                     </Col>
@@ -55,7 +55,7 @@ const CardEvent = () => {
               </Container>
               </Row>
             </article>
-            <article class="card__article">
+            <article className="card__article">
             <Row>
                   <div className="card__content">
                     <img src={rimba} alt="image" width={"1000px"} className="rimba-img rounded-5"/>

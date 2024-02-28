@@ -17,8 +17,8 @@ const EventPages = () => {
     <section style={{ backgroundColor:"#f6f6f6" }} className="event">
     <Container>
       <div className="about-section-text-container py-5">
-        <div class="card_container d-flex">
-          <article class="card__article d-flex">
+        <div className="card_container d-flex">
+          <article className="card__article d-flex">
             <Row>
               <Col>
                 <div className="card__content">
@@ -68,7 +68,7 @@ const EventPages = () => {
             </div>
           </div>
           <Container>
-          <table class="table table-borderless table-hover table-responsive table-event my-5">
+          <table className="table table-borderless table-striped table-responsive table-event my-5">
             <thead>
               <tr>
                 <th scope="col" className="text-secondary">FEBRUARY 20TH</th>
@@ -116,8 +116,8 @@ const EventPages = () => {
             src="https://www.youtube.com/embed/DxbRSL8-nB8?si=FEQCmpi5p3Z1oECK&autoplay=1" 
             title="YouTube video player"
             className="mb-5 d-block ms-auto me-auto"
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen
+            frameBorder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen
             style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%" }}
             >
             </iframe>
@@ -133,7 +133,7 @@ const EventPages = () => {
                     </h1>
                   </Col>
                 </Row>
-                <article class=" mx-5">
+                <article className=" mx-5">
               <div className="card__content">
                 <img src={danilla} alt="image" className="event_img img-fluid mb-3" />
                 <div className="card__data">
@@ -145,7 +145,7 @@ const EventPages = () => {
                 </div>
               </div>
       
-              <div class="col-md-6 offset-md-3">
+              <div className="col-md-6 offset-md-3">
                 <Row>
                     <Col sm={2} className="my-3">
                       <span className=" fw-lighter primary-text text-center fs-6 ">Feb 23</span>

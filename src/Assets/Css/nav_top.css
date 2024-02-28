@@ -1,35 +1,138 @@
 .navbar-top {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  align-self: stretch;
-  margin-top: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* margin-top: 10px; */
   margin-bottom: 20px;
   z-index: 2;
   transition: all 0.3s ease; /* Animasi ketika berubah ukuran */
-  z-index: 2;
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(../Img/concert4.jpg); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 30%;
 }
 
-.blur-navtop {
+.navbar-top::before {
+  content: ''; /* Diperlukan untuk menampilkan pseudo-element */
+  position: absolute; /* Atur posisi absolut */
+  top: 0; /* Tempatkan di bagian atas navbar */
+  left: 0; /* Tempatkan di sisi kiri navbar */
+  width: 100%; /* Menyamakan lebar dengan navbar */
+  height: 100%; /* Menyamakan tinggi dengan navbar */
+  background-image: url(../Img/concert4.jpg); /* Ganti dengan URL gambar latar belakang Anda */
+  background-size: cover;
+  background-position: center 30%;
+  filter: blur(5px); /* Efek blur dengan radius 5px */
+  z-index: -1; /* Mengatur z-index di belakang konten utama */
+}
+
+/* .blur-navtop {
   filter: blur(8px);
   -webkit-filter: blur(8px);
+  background-color: aliceblue;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 32%;
-  z-index: -1; /* Mengatur z-index agar berada di belakang konten */
-  }
+  height: 26%;
+  z-index: -1;
+  } */
 
+  .search {
+    position: relative;
+    width: 76px;
+    height: 76px;
+    background-color: var(--white-color);
+    /* box-shadow: 0 4px 14px hsla(222, 68%, 12%, 0.1); */
+    border-radius: 4rem;
+    padding: 10px;
+    overflow: hidden;
+    transition: width 0.5s cubic-bezier(0.9, 0, 0.3, 0.9);
+  }
+  .search__input {
+    border: none;
+    outline: none;
+    width: 40%;
+    height: 100%;
+    margin-top: -5px;
+    border-radius: 4rem;
+    padding-left: 14px;
+    font-family: var(--body-font);
+    font-size: var(--small-font-size);
+    font-weight: 500;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.5s;
+  }
+  .search__input:-webkit-autofill {
+    box-shadow: 0 0 0 100px var(--white-color) inset;
+  }
+  .search__button {
+    width: 56px;
+    height: 56px;
+    background-color: var(--dark-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: transform 0.6s cubic-bezier(0.9, 0, 0.3, 0.9);
+  }
+  .search__icon, .search__close {
+    color: var(--white-color);
+    font-size: 1.5rem;
+    position: absolute;
+    transition: opacity 0.5s cubic-bezier(0.9, 0, 0.3, 0.9);
+  }
+  .search__close {
+    opacity: 0;
+  }
+  
+  /* Search animated */
+  .show-search {
+    width: 300px;
+  }
+  .show-search .search__input {
+    opacity: 1;
+    pointer-events: initial;
+  }
+  .show-search .search__button {
+    transform: rotate(90deg);
+  }
+  .show-search .search__icon {
+    opacity: 0;
+  }
+  .show-search .search__close {
+    opacity: 1;
+  }
+  
 @media (max-width: 1100px) {
   .img-radio{
    margin-bottom: 100px;
   }
 
-  .navbar-song{
-    margin-top: -90px !important;
-  }
   .song-text {
-    margin-top: -90px;
+    /* margin-top: -90px; */
+  }
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For medium devices */
+@media (max-width: 600px) {
+  .show-search {
+    width: 300px;
+  }
+
+  .search__icon{
+    font-size: 30px;
   }
 }
