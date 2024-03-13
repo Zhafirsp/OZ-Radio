@@ -21,6 +21,7 @@ import News from "./Pages/home/News/News";
 import RadioPlayer from "./Pages/radioPage/RadioPlayer";
 import PlaylistPage from "./Pages/playlistPage";
 import PP_Terms from "./Pages/privacyPolicy";
+import Home from "./Pages/Homepages";
 
 function ScrollTop() {
   const location = useLocation();
@@ -38,6 +39,12 @@ function App() {
     let  lastScrollTop = 0; // This Varibale will store the top position
     const  navbarTop = document.querySelector('.navbar-top'); // Get The NavBar
     const  navbarBottom = document.querySelector('.navbar-bottom');
+    const searchButton2 = document.querySelector('.search__icon2');
+    const logoButton = document.querySelector('.logo_bottom');
+
+    // Hide the buttons initially
+    searchButton2.classList.remove('show');
+    logoButton.classList.remove('show');
 
     window.addEventListener('scroll',function(){
     //on every scroll this funtion will be called
@@ -46,12 +53,17 @@ function App() {
       //This line will get the location on scroll
       if(scrollTop > lastScrollTop && scrollTop > windowHeight / 10){ //if it will be greater than the previous
         navbarTop.style.top='-90px';
-        navbarBottom.style.top='-116px';
+        navbarBottom.style.top='-140px';
+        searchButton2.classList.add('show');
+        logoButton.classList.add('show');
     //set the value to the negetive of height of navbar 
       }
       else { // Jika scroll ke atas
         navbarTop.style.top = '0';
         navbarBottom.style.top = '0'; 
+        searchButton2.classList.remove('show');
+        logoButton.classList.remove('show');
+
     }
         lastScrollTop = scrollTop;
       });
@@ -66,7 +78,7 @@ function App() {
       {/* <SinglePageSlider /> */}
     </div>
     <Routes>
-        <Route path="/" element={<Homepages />} />
+        <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/radio" element={<RadioPlayer />} />
         <Route path="/contact" element={<Contact />} />

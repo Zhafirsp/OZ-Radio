@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect  } from 'react';
 import BannerBackground from "../../Assets/Img/home-banner-background.png";
-import BannerImage from "../../Assets/Img/Logo.png";
+import BannerImage from "../../Assets/Img/Logo2.jpeg";
 import PlayButton  from "./PlayButton";
 import RadioStationPicker from './RadioStationPicker';
 import { ToastContainer, toast } from "react-toastify";

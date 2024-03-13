@@ -13,7 +13,7 @@ const Logo = () => {
 
     // Buat instansi Typed.js dengan elemen DOM yang telah didapatkan
     var typed = new Typed(element, {
-      strings: ["Delivering music we do ...", "in style"],
+      strings: ["Delivering music we do", "in style"],
       typeSpeed: 150,
       backSpeed: 150,
       loop: true,
@@ -31,7 +31,7 @@ const Logo = () => {
     <section className="section-logo">
       <Container>
         <div className="logo_definition mt-5" data-aos="fade-up">
-          <div className="d-flex ">
+          <div className="d-flex">
             <img 
             src={logo_img} 
             className="img-fluid img-logo" 

@@ -18,29 +18,29 @@ const EventPages = () => {
     <Container>
       <div className="about-section-text-container py-5">
         <div className="card_container d-flex">
-          <article className="card__article d-flex">
-            <Row>
-              <Col>
+          <article className="card__article container col-xxl-8 px-4 py-5">
+            <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
+              <div className="col-lg-6">
                 <div className="card__content">
                   <img src={danilla} alt="image" width={"350px"} className="img-fluid" />
                   <div className="card__data">
-                        <span className="card__description">February 21</span>
+                        <span className="card__description">April 21</span>
                         <h3 className="card__title fw-bold fs-5"><a href="/single-event">DJ Shadow session on OZ Radio (BROADCAST ONLY)</a></h3>
                         <a href="/single-event" className="card__button">OZ - STUDIO (NW ROOMS)</a>
                   </div>
                 </div>
-              </Col>
-            <Col>
+              </div>
+              <div className="col-lg-6">
                 <div div className="card__content">
                   <img src={rimba} alt="image" width={"350px"} className="img-fluid"/>
                   <div className="card__data">
-                    <span className="card__description">February 20</span>
+                    <span className="card__description">April 20</span>
                     <h2 className="card__title fw-bold fs-5">Black History is Now</h2>
                     <a href="#" className="card__button">Learn More</a>
                   </div>
                 </div>
-              </Col>
-            </Row>
+              </div>
+            </div>
           </article>
         </div>
       </div>
@@ -63,7 +63,7 @@ const EventPages = () => {
               <Button variant="outline-dark" className="text-center  py-2 px-4 border border-secondary rounded-pill fs-5"><a href="https://mopop.org/sound-off" target="_blank">Get Tickets Now</a></Button>
               </div>
               <div className="col-10 col-sm-8 col-lg-6">
-                <img src={satine} className="hero-img d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy"/>
+                <img src={satine} className="hero-img d-block mx-lg-auto img-fluid ms-4" alt="Bootstrap Themes" width="700" height="500" loading="lazy"/>
               </div>
             </div>
           </div>
@@ -71,9 +71,9 @@ const EventPages = () => {
           <table className="table table-borderless table-striped table-responsive table-event my-5">
             <thead>
               <tr>
-                <th scope="col" className="text-secondary">FEBRUARY 20TH</th>
-                <th scope="col" className="text-secondary">FEBRUARY 24TH</th>
-                <th scope="col" className="text-secondary">MARCH 2ND</th>
+                <th scope="col" className="text-secondary">April 20TH</th>
+                <th scope="col" className="text-secondary">April 24TH</th>
+                <th scope="col" className="text-secondary">May 2ND</th>
               </tr>
             </thead>
             <tbody className="fs-6">
@@ -138,7 +138,7 @@ const EventPages = () => {
                 <img src={danilla} alt="image" className="event_img img-fluid mb-3" />
                 <div className="card__data">
                   <Row>
-                      <span className="card__description">February 21</span>
+                      <span className="card__description">April 21</span>
                       <h3 className="card__title fw-bold fs-5"><a href="/single-event">DJ Shadow session on OZ Radio (BROADCAST ONLY)</a></h3>
                       <a href="/single-event" className="card__button">OZ - STUDIO (NW ROOMS)</a>
                   </Row>
@@ -148,26 +148,29 @@ const EventPages = () => {
               <div className="col-md-6 offset-md-3">
                 <Row>
                     <Col sm={2} className="my-3">
-                      <span className=" fw-lighter primary-text text-center fs-6 ">Feb 23</span>
+                      <span className=" fw-lighter primary-text text-center fs-6 ">April<br/>23</span>
                     </Col>
                     <Col className="my-3">
                       <span className=" fs-5 mt-3"><a href="#">DeVotchKa LIVE on OZ (OPEN TO THE PUBLIC)</a></span>
+                      <br/>
                       <span className=""><a href="#">OZ - GATHERING SPACE</a></span>
                     </Col>
                     <hr style={{ color:"#F49C27" }}/>
                     <Col sm={2} className="my-3">
-                      <span className=" fw-lighter primary-text text-center fs-6">Feb 25</span>
+                      <span className=" fw-lighter primary-text text-center fs-6">April<br/>25</span>
                     </Col>
                     <Col className="my-3">
                       <span className=" fs-5"><a href="#">DJ Shadow session on OZ (BROADCAST ONLY)</a></span>
+                      <br/>
                       <span className=""><a href="#">OZ - STUDIO (NW ROOMS)</a></span>
                     </Col >
                     <hr style={{ color:"#F49C27" }}/>
                     <Col sm={2} className="my-3">
-                      <span className=" fw-lighter primary-text text-center fs-6">Feb 27</span>
+                      <span className=" fw-lighter primary-text text-center fs-6">April<br/>27</span>
                     </Col>
                     <Col className="my-3">
                       <span className=" fs-5"><a href="#">Drinking Boys and Girls Choir Live on OZ (OPEN TO THE PUBLIC)</a></span>
+                      <br/>
                       <span className=""><a href="#">OZ - STUDIO (NW ROOMS)</a></span>
                     </Col>
                   </Row>

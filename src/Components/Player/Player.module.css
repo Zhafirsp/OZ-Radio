@@ -14,6 +14,7 @@
   display: flex;
   align-items: center;
   padding-bottom: calc(1px + 0.5vmin);
+  margin-top: -50px;
 }
 
 .button {
@@ -26,6 +27,7 @@
   user-select: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
 
 .playPause {
   padding: calc(5px + 1vmin);
@@ -74,4 +76,22 @@
 
 svg {
   width: calc(40px + 2vmin);
+}
+
+@media (max-width: 1024px) {
+  .player{
+    margin-left: -190px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .player{
+    margin-left: -170px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .player{
+    margin-left: -40px !important;
+  }
 }

@@ -6,29 +6,38 @@
   top: 0;
   left: 0;
   width: 100%;
+  padding-bottom: 10px;
   /* margin-top: 10px; */
-  margin-bottom: 20px;
-  z-index: 2;
-  transition: all 0.3s ease; /* Animasi ketika berubah ukuran */
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(../Img/concert4.jpg); */
-  background-repeat: no-repeat;
+  /* margin-bottom: 20px; */
+  z-index: 1;
   background-size: cover;
   background-position: center 30%;
+  transition: all 0.3s ease; /* Animasi ketika berubah ukuran */
 }
 
-.navbar-top::before {
-  content: ''; /* Diperlukan untuk menampilkan pseudo-element */
-  position: absolute; /* Atur posisi absolut */
-  top: 0; /* Tempatkan di bagian atas navbar */
-  left: 0; /* Tempatkan di sisi kiri navbar */
-  width: 100%; /* Menyamakan lebar dengan navbar */
-  height: 100%; /* Menyamakan tinggi dengan navbar */
-  background-image: url(../Img/concert4.jpg); /* Ganti dengan URL gambar latar belakang Anda */
+
+.station-streaming {
+  color: #F49C27;
+  margin-top: -5px;
+}
+
+.song-text {
+  max-width: 300px;
+}
+
+/* .navbar-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../Img/concert4.jpg);
   background-size: cover;
   background-position: center 30%;
-  filter: blur(5px); /* Efek blur dengan radius 5px */
-  z-index: -1; /* Mengatur z-index di belakang konten utama */
-}
+  filter: blur(5px);
+  z-index: -1;
+} */
 
 /* .blur-navtop {
   filter: blur(8px);
@@ -49,21 +58,21 @@
     background-color: var(--white-color);
     /* box-shadow: 0 4px 14px hsla(222, 68%, 12%, 0.1); */
     border-radius: 4rem;
-    padding: 10px;
+    padding: 15px;
     overflow: hidden;
     transition: width 0.5s cubic-bezier(0.9, 0, 0.3, 0.9);
   }
   .search__input {
     border: none;
     outline: none;
-    width: 40%;
-    height: 100%;
-    margin-top: -5px;
+    width: 45%;
+    height: 70%;
+    /* margin-top: -5px; */
     border-radius: 4rem;
-    padding-left: 14px;
+    padding-left: 3px;
     font-family: var(--body-font);
     font-size: var(--small-font-size);
-    font-weight: 500;
+    font-weight: 300;
     opacity: 0;
     pointer-events: none;
     transition: opacity 1.5s;
@@ -79,19 +88,19 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0px;
-    right: 0px;
+    left: 0;
+    right: 0;
     margin: auto;
     display: grid;
     place-items: center;
     cursor: pointer;
     transition: transform 0.6s cubic-bezier(0.9, 0, 0.3, 0.9);
   }
+
   .search__icon, .search__close {
-    color: var(--white-color);
-    font-size: 1.5rem;
-    position: absolute;
-    transition: opacity 0.5s cubic-bezier(0.9, 0, 0.3, 0.9);
+    cursor: pointer;
+    font-size: 40px;
+    margin-top: 15px;
   }
   .search__close {
     opacity: 0;
@@ -99,7 +108,7 @@
   
   /* Search animated */
   .show-search {
-    width: 300px;
+    width: 200px;
   }
   .show-search .search__input {
     opacity: 1;
@@ -114,25 +123,126 @@
   .show-search .search__close {
     opacity: 1;
   }
+
+  .text-title{
+    margin-top: -17px;
+  }
+
+  .text-playing {
+    margin-top: -17px;
+    color: #7BA142;
+  }
+
+  @media (max-width: 1600px) {
+    
+    /* .navbar-top{
+      width: fit-content;
+  }  */
+    .song-player{
+        margin-left: -250px;
+    }
+  }
+
   
-@media (max-width: 1100px) {
-  .img-radio{
-   margin-bottom: 100px;
+  @media (max-width: 1440px) {
+    
+    /* .navbar-top{
+      width: fit-content;
+  }  */
+    .song-player{
+        margin-left: -250px;
+    }
   }
 
-  .song-text {
-    /* margin-top: -90px; */
+  @media (max-width: 1024px) {
+    
+    .navbar-top {
+      background-position: center 30%;
+    }
+
+    .search__input {
+      font-size: 15px;
+     }
+
+     .song-player{
+      margin-left: 0px;
   }
+     
+  }
+
+  @media (max-width: 895px) {
+    
+    .song-player{
+      margin-left: -115px;
+    }
+  }
+  @media (max-width: 767px) {
+    
+    /* .navbar-top{
+      width: fit-content;
+  }  */
+
+  .song-player{
+    margin-left: -100px;
+  }
+
+  .station-streaming{
+    margin-left: 90px;
+  }
+
+  .search__input {
+    font-size: 13px;
+   }
+
+   .nav-logo{
+    display: none;
+   }
+
+   .logo_topbar {
+    columns: 6;
+   }
+
+   .img-radio{
+    margin-top: 10px;
+   }
+
+   .search__icon{
+    margin-top: 20px;
+    opacity: 0;
+   }
+    
+  }
+
+  /*=============== BREAKPOINTS ===============*/
+  /* For medium devices */
+  @media (max-width: 600px) {
+    .show-search {
+      width: 300px;
+    }
+
+    .text-title {
+      font-size: 15px;
+    }
+    .song-player {
+      margin-left: -120px;
+    }
 }
 
-/*=============== BREAKPOINTS ===============*/
-/* For medium devices */
-@media (max-width: 600px) {
-  .show-search {
-    width: 300px;
+  @media (max-width: 435px) {
+    .song-player{
+      margin-left: -120px;
+      max-width: 350px;
+    }
+
+    .text-title {
+      font-size: 12px;
+    }
+
   }
 
-  .search__icon{
-    font-size: 30px;
+  @media (max-width: 375px) {
+    .song-player{
+      margin-left: -90px;
+    }
+
   }
-}

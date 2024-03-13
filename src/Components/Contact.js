@@ -7,7 +7,7 @@ const Contact = () => {
       <h1 className="primary-heading">Have Question In Mind?</h1>
       <h1 className="primary-heading">Contact Us</h1>
       <div className="contact-oz">
-        <p className="primary-text">101.2 FM OZ Radio Bali</p>
+        <p className="mt-5 fw-bold fs-3">101.2 FM OZ Radio Bali</p>
         <div className="custom-border"></div>
         <p className="primary-text">
         <a href="https://maps.app.goo.gl/8egLbd2N97EBE5JKA">
@@ -24,7 +24,7 @@ const Contact = () => {
           </p>
         </div>
         <div className="contact-oz">
-        <p className="primary-text">90.8 FM OZ Radio Jakarta</p>
+        <p className="mt-5 fw-bold fs-3">90.8 FM OZ Radio Jakarta</p>
         <div className="custom-border"></div>
         <p className="primary-text">
         <a href="https://maps.app.goo.gl/YAeU3hh9Sh1sKrRf7">
@@ -41,7 +41,7 @@ const Contact = () => {
         </p>
         </div>
       <div className="contact-oz">
-        <p className="primary-text">103.1 FM OZ Radio Bandung</p>
+        <p className="mt-5 fw-bold fs-3">103.1 FM OZ Radio Bandung</p>
         <div className="custom-border"></div>
         <p className="primary-text">
           <a href="https://maps.app.goo.gl/AnUiRBRNTJNHPY8J7">
@@ -57,7 +57,7 @@ const Contact = () => {
           </p>
         </div>
         <div className="contact-oz">
-        <p className="primary-text">Advertise With Us</p>
+        <p className="mt-5 fw-bold fs-3">Advertise With Us</p>
           <div className="custom-border"></div>
           <p className="primary-text">phone: <a href = "https://wa.me/6281210104908 ">+6281210104908</a><br/>
             email: <a href = "mailto: jelita@ozradiojakarta.com">jelita@ozradiojakarta.com</a>

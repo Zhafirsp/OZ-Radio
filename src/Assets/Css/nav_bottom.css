@@ -3,54 +3,259 @@
   top: 0;
   left: 0;
   width: 100%;
-  margin-top: 112px;
+  margin-top: 140px;
   padding: 10px 20px;
-  z-index: 1000;
+  /* z-index: 10; */
   transition: all 0.3s ease;
-  background-position: center 38.5%;
-  background-repeat: no-repeat;
   background-size: cover;
+  background-position: center 37.3%;
 }
 
-.navbar-bottom::before {
-  content: ''; /* Diperlukan untuk menampilkan pseudo-element */
-  position: absolute; /* Atur posisi absolut */
-  top: 0; /* Tempatkan di bagian atas navbar */
-  left: 0; /* Tempatkan di sisi kiri navbar */
-  width: 100%; /* Menyamakan lebar dengan navbar */
-  height: 100%; /* Menyamakan tinggi dengan navbar */
-  background-image: url(../Img/concert4.jpg); /* Ganti dengan URL gambar latar belakang Anda */
+.search__icon2 {
+  cursor: pointer;
+  font-size: 40px;
+  margin-left: -650px;
+}
+
+.border-streaming{
+  opacity: 0;
+}
+
+/* .navbar-bottom::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../Img/concert4.jpg);
   background-size: cover;
   background-position: center 38.5%;
-  filter: blur(5px); /* Efek blur dengan radius 5px */
-  z-index: -1; /* Mengatur z-index di belakang konten utama */
-}
+  filter: blur(5px);
+  z-index: -1;
+} */
 
 /* .navbar-item {
   margin-right: auto;
   margin-bottom: 20px;
 } */
 
-/* @media (max-width: 1600px) {
-  .navbar-bottom{
-    margin-left: -75px;
-  } 
-}  */
-
-/* @media (max-width: 1400px) {
-  .navbar-bottom{
-    margin-top: 400px;
+@media (max-width: 1800px) {
+  .search__icon2 {
+    margin-left: -580px;
   }
-} */
+} 
 
-/* @media (max-width: 1200px) {
-  .navbar-bottom{
-    margin-left: -135px;
-  } 
-} */
+@media (max-width: 1700px) {
+  .search__icon2 {
+    margin-left: -540px;
+  }
+} 
 
-/* @media (max-width: 600px) {
-  .navbar-bottom{
-    margin-left: 15px;
-  } 
-} */
+@media (max-width: 1600px) {
+  .search__icon2 {
+    margin-left: -490px;
+  }
+} 
+
+@media (max-width: 1500px) {
+  .search__icon2 {
+    margin-left: -450px;
+  }
+} 
+
+@media (max-width: 1400px) {
+  .navbar-bottom {
+    background-position: center 39%;
+  }
+
+  .search__icon2 {
+    margin-left: -410px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .search__icon2 {
+    margin-left: -370px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .search__icon2 {
+    margin-left: -340px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .search__icon2 {
+    margin-left: -220px;
+  }
+}
+
+@media (max-width: 1000px) {
+    
+  .navbar-bottom {
+    background-position: center 42.5%;
+  }
+
+  .search__icon2{
+    margin-left: -210px;
+  }
+}
+
+@media (max-width: 991px) {
+  .offcanvas-menu{
+    margin-top: -60px;
+    margin-left: 50px;
+  }
+
+  .search__icon2 {
+    margin-left: -160px;
+  }
+}
+
+@media (max-width: 890px) {
+  .search__icon2 {
+    margin-left: -80px;
+  }
+}
+
+@media (max-width: 760px) {
+    
+  .navbar-bottom {
+    background-position: center 50.5%;
+  }
+  .station-streaming{
+    font-size: 18px;
+  }
+  
+  .search__icon2 {
+    margin-left: -30px;
+    opacity: 1;
+  }
+
+  .offcanvas-menu{
+    margin-top: -60px;
+    margin-left: 50px;
+  }
+
+
+
+  .search-button-offcanvas {
+    display: block; /* Sesuaikan dengan tata letak Anda */
+  }
+
+  .station-selector {
+    margin-left: -50px !important;
+  }
+  .logo_bottom {
+    opacity: 1;
+  }
+
+  .navbar-bottom {
+    margin-top: 120px;
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .search__icon2 {
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 645px) {
+  .offcanvas-menu{
+    margin-left: 190px;
+  }
+}
+
+@media (max-width: 500px) {
+  .offcanvas-menu{
+    margin-left: 160px;
+  }
+
+
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For medium devices */
+@media (max-width: 425px) {
+    
+  .navbar-bottom {
+    background-position: center 67.6%;
+  }
+  
+  .station-streaming{
+    margin-left: 50px;
+  }
+
+  .offcanvas-menu{
+    font-size: 16px;
+    margin-left: 130px;
+  }
+
+  .station-streaming{
+    font-size: 16px;
+  }
+
+  .station-selector {
+    margin-top: 0px;
+    /* margin-left: 50px !important; */
+  }
+
+  .search__button2{
+    margin-left: -300px;
+  }
+
+  /* .logo_bottom{
+    margin-left: 150px;
+  } */
+
+  .navbar-bottom {
+    padding-top: 30px;
+  }
+
+  .search__icon2{
+    margin-left: 300px;
+    margin-top: -70px;
+  }
+  
+}
+
+@media (max-width: 375px) {
+    
+  .navbar-bottom {
+    background-position: center 74.5%;
+  }
+  .offcanvas-menu{
+    margin-left: 115px;
+  }
+
+  .search__icon2{
+    margin-left: 280px;
+    margin-top: -70px;
+  }
+}
+
+@media (max-width: 320px) {
+    
+  .navbar-bottom {
+    background-position: center 85.4%;
+  }
+
+  .station-streaming{
+    margin-left: 35px;
+  }
+
+  .offcanvas-menu{
+    margin-left: 90px;
+  }
+
+  
+  .search__icon2{
+    margin-left: 230px;
+    margin-top: -70px;
+  }
+
+}

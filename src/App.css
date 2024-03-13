@@ -11,7 +11,7 @@ img {
 .App {
   min-height: 100vh;
   /* width: 85vw; */
-  max-width: 1900px;
+  /* max-width: 1900px; */
   margin: 0rem auto;
 }
 .rotating-image {
@@ -20,6 +20,16 @@ img {
 
 .navbar {
   padding-top: 10px;
+  color: #fff;
+}
+
+.search__icon2, .logo_bottom {
+  opacity: 0;
+  transition: opacity 0.1s ease; /* Animasi transisi */
+}
+
+.show {
+  opacity: 1;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -38,7 +48,7 @@ img {
 }
 
 .header-about{
-  margin-top: 100px !important;
+  margin-top: 150px !important;
 }
 
 /* Scroller styling */
@@ -105,10 +115,11 @@ body {
   letter-spacing: 1px;
 }
 
-.navbar-container {
+/* .navbar-container {
   display: flex;
   flex-direction: column;
-}
+  width: fit-content !important;
+} */
 
 /* nav {
   display: flex;
@@ -121,13 +132,6 @@ body {
   height: 40px;
   width: auto;
   margin-right: 20px;
-}
-
-.navbar-link {
-  color: #fff;
-  margin-right: 20px;
-  text-decoration: none;
-  font-size: 18px;
 }
 
 .navbar-link.active {
@@ -143,7 +147,7 @@ body {
   position: absolute;
   background-color: #000;
   padding: 10px;
-  min-width: 200px;
+  /* min-width: 200px; */
   z-index: 1000; /* Mengatur urutan tumpukan agar di atas konten lain */
 }
 
@@ -659,11 +663,6 @@ Link:active {
     flex-direction: column;
     } */
 
-  .navbar-bottom {
-    margin-top: 190px;
-    display: flex;
-    /* margin-top: 150px; */
-  }
 }
 
 .terms {
@@ -725,4 +724,7 @@ Link:active {
     margin-top: -50px !important;
   } */
 
+  .App {
+    margin-top: 130px;
+  }
 }

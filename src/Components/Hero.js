@@ -43,7 +43,7 @@ const Hero = () => {
                 <p className="lead fw-lighter">Join our special music event on February 25, 2024. Enjoy live performances from renowned artists, and the opportunity to meet your favorite musicians!</p>
               </div>
               <div className="col-10 col-sm-8 col-lg-6">
-                <img src={heroImg} className="hero-img d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy"/>
+                <img src={heroImg} className="hero-img d-block mx-lg-auto img-fluid ms-4" alt="Bootstrap Themes" width="700" height="500" loading="lazy"/>
               </div>
             </div>
           </div>
@@ -59,7 +59,7 @@ const Hero = () => {
                 <p className="lead fw-lighter">Join our special music event on February 27, 2024. Enjoy live performances from renowned artists, and the opportunity to meet your favorite musicians!</p>
               </div>
               <div className="col-10 col-sm-8 col-lg-6">
-                <img src={heroImg1} className="hero-img d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy"/>
+                <img src={heroImg1} className="hero-img d-block mx-lg-auto img-fluid ms-4" alt="Bootstrap Themes" width="700" height="500" loading="lazy"/>
               </div>
             </div>
           </div>
@@ -75,7 +75,7 @@ const Hero = () => {
                 <p className="lead fw-lighter">Join our special music event on February 28, 2024. Enjoy live performances from renowned artists, and the opportunity to meet your favorite musicians!</p>
               </div>
               <div className="col-10 col-sm-8 col-lg-6">
-                <img src={heroImg2} className="hero-img d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy"/>
+                <img src={heroImg2} className="hero-img d-block mx-lg-auto img-fluid ms-4" alt="Bootstrap Themes" width="700" height="500" loading="lazy"/>
               </div>
             </div>
           </div>
@@ -91,7 +91,7 @@ const Hero = () => {
                 <p className="lead fw-lighter">Join our special music event on March 5, 2024. Enjoy live performances from renowned artists, and the opportunity to meet your favorite musicians!</p>
               </div>
               <div className="col-10 col-sm-8 col-lg-6">
-                <img src={heroImg3} className="hero-img d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy"/>
+                <img src={heroImg3} className="hero-img d-block mx-lg-auto img-fluid ms-4" alt="Bootstrap Themes" width="700" height="500" loading="lazy"/>
               </div>
             </div>
           </div>

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import Player from "../Player/Player";
 import styles from "./StationSelector.module.css";
+import axios from 'axios';
 
 const CodecButton = ({
   station,
@@ -70,6 +71,51 @@ const codecButtonWidths = {
 };
 
 const Station = ({ station, selectedStation, changeStation }) => {
+
+  const [currentRadio, setCurrentRadio] = useState('');
+  const [streamUrl, setStreamUrl] = useState('');
+  const [currentTitle, setCurrentTitle] = useState('');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        if (selectedStation) {
+          const response = await axios.get(`https://streaming.ozradiojakarta.com:8443/status-json.xsl?mount=${selectedStation.mount}`);
+          const data = response.data;
+          if (data && data.icestats && data.icestats.source) {
+            const { title, listenurl, server_url } = data.icestats.source;
+            setCurrentTitle(title || '');
+            setCurrentRadio(server_url || '');
+            if (listenurl) {
+              // Mengganti protokol HTTP menjadi HTTPS
+              const secureListenurl = listenurl.replace(/^http:/, 'https:');
+              setStreamUrl(secureListenurl || '');
+            } else {
+              console.error('Listen URL is not defined in the data');
+            }
+            console.log('Memutar musik dari:', listenurl);
+          } else {
+            console.error('Invalid or empty data received from API');
+          }
+        } 
+        // else {
+        //   console.error('Pilih stasiun terlebih dahulu');
+        // }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+  
+    fetchData();
+  
+    // Membuat interval untuk mengambil data setiap 10 detik
+    const interval = setInterval(fetchData, 10000);
+  
+    // Membersihkan interval saat komponen tidak lagi digunakan
+    return () => clearInterval(interval);
+  }, [selectedStation]);
+  
+
   let stationLabelStyle, codecButtonNotSelectedStyle;
 
   if (selectedStation?.name === station.name) {
@@ -85,12 +131,13 @@ const Station = ({ station, selectedStation, changeStation }) => {
 
   return (
     <>
-      <label
+       <label
         className={`${styles.stationLabel} ${stationLabelStyle}`}
         htmlFor={station.name + station.endpoints[0].codec}
       >
-        <div className={styles.stationName}>{station.city}</div>
-        {/* <img src={station.imageUrl} width={"200px"} style={{ cursor:"pointer", maxWidth:"100px" }}/> */}
+        <div className={styles.stationName}>{station.name}</div>
+        {/* <div className={styles.currentTitle}>{currentTitle}</div> */}
+        {/* <audio controls src={streamUrl} /> */}
         <CodecButtonGroup
           station={station}
           selectedStation={selectedStation}
@@ -104,7 +151,13 @@ const Station = ({ station, selectedStation, changeStation }) => {
   );
 };
 
+
+
 const StationSelector = (props) => {
+
+  if (!props.stations || props.stations.length === 0) {
+  return null; // Atau tindakan lain sesuai kebutuhan Anda
+}
   return props.stations.map((station, idx) => (
     <>
     <Station

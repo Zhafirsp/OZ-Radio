@@ -31,9 +31,9 @@
   margin-right: auto;
 }
 
-.event-content{
+/* .event-content{
   width: 90%;
-}
+} */
 
 .card__article {
   display: block;
@@ -41,22 +41,28 @@
   margin-right: auto;
 }
 
-@media (max-width: 1000px) {
-  .table-event {
-    margin-top: 300px !important;
-  }
+@media (max-width: 1024px) {
+ 
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   .event-header-text{
     margin-bottom: 200px;
     margin-top: 150px;
   }
 
   .event_img{
-    max-width: 400px;
+    max-width: 200px;
     display: block;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .table-event {
+    margin-top: 300px !important;
+  }
+
+  .home-oz {
+    font-size: xxx-large;
   }
 }

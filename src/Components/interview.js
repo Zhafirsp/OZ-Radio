@@ -125,18 +125,18 @@ const Interview = () => {
             <Link to="/interview"><Button variant="outline-dark ms-5">Load More</Button></Link>
           </Col>
         </Row>
-        <Row lg={12} md={8} xs={2} className="g-2 slider-row ">
+        <Row lg={12} className="g-2 slider-row ">
       <Slider {...settings}>
         {interviewData.map((data) => (
         <Col key={data.image}>
             <Card style={{ marginLeft:'10px' }}>
               <div className="info-boxes-img-container">
-                <Card.Img src={data.image} alt="" width={"150px"} />
+                <Card.Img src={data.image} alt="" width={"100px"} />
               </div>
               <Card.Body>
-                <Card.Title><h4 className="fw-light">{data.title}</h4></Card.Title>
+                <Card.Title><h3 className="fw-light">{data.title}</h3></Card.Title>
                 <Card.Text><p>{data.text}</p></Card.Text>
-                <Card.Text><a href={data.href} target="_blank"><p>{data.link} <BsCollectionPlay/></p></a></Card.Text>
+                <Card.Text><a href={data.href} target="_blank" rel="noreferrer"><p>{data.link} <BsCollectionPlay/></p></a></Card.Text>
               </Card.Body>
             </Card>
           </Col>

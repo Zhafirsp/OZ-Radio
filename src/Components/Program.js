@@ -1,7 +1,7 @@
 import React from "react";
-import crsl1 from "../Assets/Img/crsl1.png"
-import crsl2 from "../Assets/Img/crsl2.png"
-import crsl3 from "../Assets/Img/crsl3.jpg"
+import crsl1 from "../Assets/Img/satine_interview.jpg"
+import crsl2 from "../Assets/Img/rimba_interview.jpg"
+import crsl3 from "../Assets/Img/skastra_interview.jpg"
 
 const Program = () => {
   const programData = [

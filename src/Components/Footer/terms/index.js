@@ -19,12 +19,12 @@ const Terms = () => {
             onHide={handleClose} 
             className="tabs_content">
               <Modal.Header closeButton className="tab_head">
-                <Modal.Title>Terms & Conditions</Modal.Title>
+                <Modal.Title className="fw-bold fs-2">Terms & Conditions</Modal.Title>
               </Modal.Header>
               <Modal.Body className="tab_body">
               <div id="Terms">
-                  <h4 className="fw-bold"><u><i>Terms of use</i></u></h4>
-                  <p>This site, www.kexp.org, is operated by Friends of KEXP ("KEXP"). These Terms of Use apply exclusively to your access to, and use of, our site so please read them carefully. The do not alter in any way the terms or conditions of any other agreement you may have with us for other products or services.</p>
+              <h4 className="fw-bold"><u><i>Terms of use</i></u></h4>
+                  <p>This site, OZ Radio, is operated by of OZ Radio. These Terms of Use apply exclusively to your access to, and use of, our site so please read them carefully. The do not alter in any way the terms or conditions of any other agreement you may have with us for other products or services.</p>
                   <p>We reserve the right to change or modify any of the terms and conditions contained in our Terms of Use, at any time and in our sole discretion. Any changes or modification will be effective upon posting of the revisions. Your continued use of this site following the posting of such revisions will constitute your acceptance of such changes or modifications. Therefore, you should frequently review these Terms of Use from time to time to understand the terms and conditions that apply to your use of the site.</p>
                   <p>BY ACCESSING, BROWSING, AND USING THIS SITE, YOU AGREE TO BE BOUND BY THE TERMS AND CONDITIONS DESCRIBED BELOW, ALL POLICIES AND GUIDELINES INCORPORATED BY REFERENCE, AND ANY SUBSEQUENT CHANGES TO THE FOREGOING. IF YOU DO NOT AGREE TO THESE TERMS OF USE OR ANY SUBSEQUENT MODIFICATION, DO NOT ACCESS, BROWSE OR OTHERWISE USE THIS SITE.</p>
                    <ol type="a">
@@ -32,10 +32,10 @@ const Terms = () => {
                       <li>resell or make commercial use of the site or the Materials;</li>
                       <li>systematically collect or use any data or content, including the use of any data mining, robots, or similar data gathering and extraction methods; or</li>
                       <li>make derivative uses of the site or the Materials;</li>
-                      <li>use, frame or utilize framing techniques to enclose any KEXP trademark, logo or other proprietary information (including the images found at this site, the content of any text or the layout/design of any page or form contained on a page); or</li>
-                      <li>use any meta tags or any other "hidden text" utilizing a KEXP name, trademark, or product name.</li>
+                      <li>use, frame or utilize framing techniques to enclose any OZ Radio trademark, logo or other proprietary information (including the images found at this site, the content of any text or the layout/design of any page or form contained on a page); or</li>
+                      <li>use any meta tags or any other "hidden text" utilizing a OZ Radio name, trademark, or product name.</li>
                    </ol>
-                   <p>Except for the limited license granted to you, you are not conveyed any other right or license by implication, estoppel, or otherwise in or under any patent, trademark, copyright, or proprietary right of KEXP or any third party. Any unauthorized use of this site will terminate the permission or license granted by these Terms of Use and may violate applicable law including copyright laws, trademark laws (including trade dress), and communications regulations and statutes.</p>
+                   <p>Except for the limited license granted to you, you are not conveyed any other right or license by implication, estoppel, or otherwise in or under any patent, trademark, copyright, or proprietary right of OZ Radio or any third party. Any unauthorized use of this site will terminate the permission or license granted by these Terms of Use and may violate applicable law including copyright laws, trademark laws (including trade dress), and communications regulations and statutes.</p>
                 </div>
                 <div>
                 <h4 id="Copyright"><u><i>Copyright Agent</i></u></h4>
@@ -54,25 +54,25 @@ const Terms = () => {
                     <br/>
                     Copyright Agent
                     <br/>
-                    KEXP
+                    OZ Radio
                     <br/>
-                    472 1st Ave N
+                    Kompleks Pertokoan Sunset Indah IIB Blok 5 Sunset Road Kuta  
                     <br/>
-                    Seattle, WA 98109
+                    Bali, 80361
                     <br/>
-                    Phone: (206) 520-5873
+                    Phone: +62 899 940 101 2
                     <br/>
-                    Email: scottbell@kexp.org
+                    Email: programozbali@gmail.com
                   </p>
-                  <p>Only DMCA notices should be sent to the Copyright Agent. For other comments or questions regarding these Terms of Use, please contact legal@kexp.org.</p>
+                  <p>Only DMCA notices should be sent to the Copyright Agent. For other comments or questions regarding these Terms of Use, please contact legal programozbali@gmail.com</p>
                 </div>
                 <div >
                 <h4 id="Webcasts"><u><i>Webcasts</i></u></h4>
-                <p>KEXP is the copyright owner of or an authorized licensee for all webcasts (including all compositions and sound recordings contained therein), whether simulcast or archived, distributed on this site. You may stream the webcasts from the site for your personal, non-commercial use only. The webcasts, or any song contained within a webcast, may not be copied, reproduced, distributed, republished, downloaded, displayed, publicly performed, posted or transmitted in any form or by any means, including without limitation the transferring or downloading of a webcast or any portion thereof to a computer hard drive or other storage medium.</p>
+                <p>OZ Radio is the copyright owner of or an authorized licensee for all webcasts (including all compositions and sound recordings contained therein), whether simulcast or archived, distributed on this site. You may stream the webcasts from the site for your personal, non-commercial use only. The webcasts, or any song contained within a webcast, may not be copied, reproduced, distributed, republished, downloaded, displayed, publicly performed, posted or transmitted in any form or by any means, including without limitation the transferring or downloading of a webcast or any portion thereof to a computer hard drive or other storage medium.</p>
                 </div>
                 <div>
                     <h4 id="Trademarks"><u><i>Trademarks Notice</i></u></h4>
-                  <p>KEXP, our logo, and the products and services described in this site, are either trademarks, service marks or registered trademarks of KEXP or its licensors, and may not be copied, imitated or used, in whole or in part, without our prior written permission. In addition, all page headers, custom graphics, button icons, and scripts are service marks, trademarks, and/or trade dress of KEXP, and may not be copied, imitated, or used, in whole or in part, without our prior written permission. All other trademarks, registered trademarks, product names and KEXP names or logos mentioned herein are the property of their respective owners. Reference to any products, services, processes, or other information, by trade name, trademark, manufacturer, supplier, or otherwise, does not constitute or imply endorsement, sponsorship or recommendation thereof by us.</p>
+                  <p>OZ Radio, our logo, and the products and services described in this site, are either trademarks, service marks or registered trademarks of OZ Radio or its licensors, and may not be copied, imitated or used, in whole or in part, without our prior written permission. In addition, all page headers, custom graphics, button icons, and scripts are service marks, trademarks, and/or trade dress of OZ Radio, and may not be copied, imitated, or used, in whole or in part, without our prior written permission. All other trademarks, registered trademarks, product names and OZ Radio names or logos mentioned herein are the property of their respective owners. Reference to any products, services, processes, or other information, by trade name, trademark, manufacturer, supplier, or otherwise, does not constitute or imply endorsement, sponsorship or recommendation thereof by us.</p>
                 </div>
                 <div>
                 <h4 id="Linking"><u><i>Linking</i></u></h4>
@@ -84,7 +84,7 @@ const Terms = () => {
                 </div>
                 <div>
                 <h4 id="Limitation"><u><i>Limitation of Liability</i></u></h4>
-                  <p>IN NO EVENT SHALL KEXP BE LIABLE FOR ANY DIRECT, SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES, OR ANY OTHER DAMAGES OF ANY KIND, INCLUDING BUT NOT LIMITED TO LOSS OF USE, LOSS OF PROFITS, OR LOSS OF DATA, WHETHER IN AN ACTION IN CONTRACT, TORT (INCLUDING BUT NOT LIMITED TO NEGLIGENCE), EQUITY OR OTHERWISE, ARISING OUT OF OR IN ANY WAY CONNECTED WITH THE USE OF THIS SITE OR THE MATERIALS.</p>
+                  <p>IN NO EVENT SHALL OZ Radio BE LIABLE FOR ANY DIRECT, SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES, OR ANY OTHER DAMAGES OF ANY KIND, INCLUDING BUT NOT LIMITED TO LOSS OF USE, LOSS OF PROFITS, OR LOSS OF DATA, WHETHER IN AN ACTION IN CONTRACT, TORT (INCLUDING BUT NOT LIMITED TO NEGLIGENCE), EQUITY OR OTHERWISE, ARISING OUT OF OR IN ANY WAY CONNECTED WITH THE USE OF THIS SITE OR THE MATERIALS.</p>
                 </div>
                 <div>
                 <h4 id="ApplicableLaw"><u><i>Applicable Law and Venue</i></u></h4>

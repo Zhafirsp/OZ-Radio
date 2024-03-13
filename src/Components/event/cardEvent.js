@@ -10,62 +10,59 @@ const CardEvent = () => {
 
   return (
     <Container>
-        <div className="card_container d-flex">
-        <article className="card__article mx-5">
-            <Row>
-              <div className="card__content">
-                <img src={danilla} alt="image" className="danilla-img" />
-                <div className="card__data">
-                      <span className="card__description">February 21</span>
-                      <h3 className="card__title fw-bold fs-5"><a href="/single-event">DJ Shadow session on OZ Radio (BROADCAST ONLY)</a></h3>
-                      <a href="/single-event" className="card__button">OZ - STUDIO (NW ROOMS)</a>
-                </div>
-              </div>
-              
-    <Container>
-              <div className="mx-1 d-flex">
-                    <Col sm={2}>
-                      <span className="card__description fw-lighter primary-text text-center fs-6">Feb 23</span>
-                    </Col>
-                    <Col>
-                      <span className="card__description fs-5 mt-3"><a href="#">DeVotchKa LIVE on OZ (OPEN TO THE PUBLIC)</a></span>
-                      <span className="card__button"><a href="#">OZ - GATHERING SPACE</a></span>
-                    </Col>
-              </div>
-              <hr style={{ color:"#F49C27" }}/>
-              <div className="mx-1 d-flex">
-                    <Col sm={2}>
-                      <span className="card__description fw-lighter primary-text text-center fs-6">Feb 25</span>
-                    </Col>
-                    <Col>
-                      <span className="card__description fs-5"><a href="#">DJ Shadow session on OZ (BROADCAST ONLY)</a></span>
-                      <span className="card__button"><a href="#">OZ - STUDIO (NW ROOMS)</a></span>
-                    </Col>
-              </div>
-              <hr style={{ color:"#F49C27" }}/>
-              <div className="mx-1 d-flex">
-                    <Col sm={2}>
-                      <span className="card__description fw-lighter primary-text text-center fs-6">Feb 27</span>
-                    </Col>
-                    <Col>
-                      <span className="card__description fs-5"><a href="#">Drinking Boys and Girls Choir Live on OZ (OPEN TO THE PUBLIC)</a></span>
-                      <span className="card__button"><a href="#">OZ - STUDIO (NW ROOMS)</a></span>
-                    </Col>
-              </div>
-              </Container>
-              </Row>
-            </article>
-            <article className="card__article">
-            <Row>
-                  <div className="card__content">
-                    <img src={rimba} alt="image" width={"1000px"} className="rimba-img rounded-5"/>
+        <div className="card_container">
+        <article className="card__article container col-xxl-8 px-4 py-5">
+            <div className="row flex-lg-row-reverse align-items-center g-5">
+                  <div className="card__content col-lg-6">
+                    <img src={rimba} alt="image" className="rimba-img rounded-5 img-fluid mx-auto d-block"/>
                     <div className="card__data">
-                      <span className="card__description">February 20</span>
+                      <span className="card__description">April 20</span>
                       <h2 className="card__title fw-bold fs-5">Black History is Now</h2>
                       <a href="#" className="card__button">Learn More</a>
                     </div>
               </div>
-              </Row>
+              <div className="card__content col-lg-6">
+                <img src={danilla} alt="image" className="danilla-img rounded-5 img-fluid mx-auto d-block" />
+                <div className="card__data">
+                      <span className="card__description">April 21</span>
+                      <h3 className="card__title fw-bold fs-5"><a href="/single-event">DJ Shadow session on OZ Radio (BROADCAST ONLY)</a></h3>
+                      <a href="/single-event" className="card__button">OZ - STUDIO (NW ROOMS)</a>
+                </div>
+              </div>
+            </div>
+              
+    <Container>
+          <div className="col-md-12 mt-5">
+                <Row>
+                    <Col sm={2} className="my-3">
+                      <span className=" fw-lighter primary-text text-center fs-6 ">April<br/>23</span>
+                    </Col>
+                    <Col className="my-3">
+                      <span className=" fs-5 mt-3"><a href="#">DeVotchKa LIVE on OZ (OPEN TO THE PUBLIC)</a></span>
+                      <br/>
+                      <span className=""><a href="#">OZ - GATHERING SPACE</a></span>
+                    </Col>
+                    <hr style={{ color:"#F49C27" }}/>
+                    <Col sm={2} className="my-3">
+                      <span className=" fw-lighter primary-text text-center fs-6">April<br/>25</span>
+                    </Col>
+                    <Col className="my-3">
+                      <span className=" fs-5"><a href="#">DJ Shadow session on OZ (BROADCAST ONLY)</a></span>
+                      <br/>
+                      <span className=""><a href="#"> OZ - STUDIO (NW ROOMS)</a></span>
+                    </Col >
+                    <hr style={{ color:"#F49C27" }}/>
+                    <Col sm={2} className="my-3">
+                      <span className=" fw-lighter primary-text text-center fs-6">April<br/>27</span>
+                    </Col>
+                    <Col className="my-3">
+                      <span className=" fs-5"><a href="#">Drinking Boys and Girls Choir Live on OZ (OPEN TO THE PUBLIC)</a></span>
+                      <br/>
+                      <span className=""><a href="#">OZ - STUDIO (NW ROOMS)</a></span>
+                    </Col>
+                  </Row>
+              </div>
+              </Container>
             </article>
           </div>
           </Container>

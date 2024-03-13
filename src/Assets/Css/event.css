@@ -12,15 +12,15 @@
   margin: 0;
 }
 
-.danilla-img {
+/* .danilla-img {
   display: block;
-  /* max-width: 100%; */
+  max-width: 100%;
   width: 500px !important;
   height: auto;
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
+} */
 /*=============== CARD ===============*/
 .container-card{
   display: grid;
@@ -39,12 +39,12 @@
   position: relative;
 }
 
-.danilla-img {
+/* .danilla-img {
   display: block;
   max-width: 100%;
   height: auto;
   border-radius: 1.5rem;
-}
+} */
 
 .card__data {
   width: 280px;
@@ -211,7 +211,7 @@
 
 @media (max-width: 800px) {
   .danilla-img {
-    width: 600px !important;
+    /* width: 600px !important; */
   }
   .rimba-img {
     /* width: 900px !important; */
@@ -238,10 +238,13 @@
   }
 }
 
-@media (max-width: 700px) {
-
-
+@media (max-width: 768px) {
+  .btn-event{
+    margin-left: 150px !important;
+  }
 }
+
+/* For small devices */
 
 @media (max-width: 600px) {
  
@@ -249,5 +252,11 @@
     width: 145px;
     padding: -3rem !important;
   }
+
 }
-/* For small devices */
+
+@media (max-width: 425px) {
+  .btn-event{
+    margin-left: 100px !important;
+  }
+}

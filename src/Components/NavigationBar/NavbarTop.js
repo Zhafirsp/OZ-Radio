@@ -1,23 +1,23 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { lazy, useState, useRef, useEffect, useCallback } from 'react';
 import { Navbar, Container, Nav, NavDropdown, Offcanvas, Button, Form } from 'react-bootstrap';
 import { ToastContainer, toast } from "react-toastify";
 import oz_bdg from '../../Assets/Img/logo_oz_bdg.png'
 import oz_jkt from '../../Assets/Img/logo_oz_jkt.png'
 import oz_bali from '../../Assets/Img/logo_oz_bali.png'
-import oz_logo from '../../Assets/Img/Logo.png'
-import song from '../../Assets/Img/concert4.jpg'
+import oz_logo from '../../Assets/Img/Logo2.jpeg'
+import default_img from '../../Assets/Img/default_img.jpg'
 import '../../Assets/Css/nav_top.css'
-import PlayButton from '../../Pages/radioPage/PlayButton'
 import Player from "../Player/Player";
 import StationSelector from "../StationSelector/StationSelector";
-import stations from "../../Data/stations.json";
 import IcecastMetadataPlayer from "icecast-metadata-player";
 import { Link } from 'react-router-dom';
 import { GiHamburgerMenu } from "react-icons/gi";
 import '../../Assets/Css/nav_bottom.css'
 import { IoSearchCircle, IoCloseCircle  } from "react-icons/io5";
+import axios from 'axios';
 
-const VISIT_STATION = "Visit radio ";
+const NOW_PLAYING = <span style={{ color: '#7BA142' }}>Now Playing</span>;
+const VISIT_STATION = "Visit OZ ";
 const ICECAST_METADATA_JS_DEMO = "Icecast Metadata JS Demo";
 const SELECT_STATION = "Select a station";
 const SELECT_OR_PLAY = "Press play";
@@ -26,12 +26,13 @@ const RECONNECTING = "Lost Connection. Reconnecting...";
 const CONNECTED = "Waiting metadata...";
 const SWITCHING = "Switching...";
 
-const radioStations = [
+const stations = [
   { 
-    name: 'OZ RADIO Bali', 
+    name: 'Bali', 
+    mount: '/ozradiobali',
     image: oz_bali, 
     frequency: '101.2 FM', 
-    link: "https://streaming.ozradiojakarta.com:8443/",
+    link: "https://ozradiobali.id/",
     endpoints: [
       {
         "endpoint": "https://streaming.ozradiojakarta.com:8443/ozradiobali",
@@ -42,10 +43,11 @@ const radioStations = [
     ]
   },
   { 
-    name: 'OZ RADIO Jakarta', 
+    name: 'Jakarta', 
+    mount: '/ozjakarta',
     image: oz_jkt, 
     frequency: '90.8 FM', 
-    link: "https://streaming.ozradiojakarta.com:8443/",
+    link: "https://ozradiojakarta.com/",
     endpoints: [
       {
         "endpoint": "https://streaming.ozradiojakarta.com:8443/ozjakarta",
@@ -56,13 +58,14 @@ const radioStations = [
     ]
   },
   { 
-    name: 'OZ RADIO Bandung', 
+    name: 'Bandung', 
+    mount: '/ozradiobandung',
     image: oz_bdg, 
     frequency: '103.1 FM', 
-    link: "https://streaming.ozradiojakarta.com:8443/",
+    link: "https://bandung.ozradio.id/",
     endpoints: [
       {
-        "endpoint": "https://streaming.ozradiojakarta.com:8443/ozjakarta",
+        "endpoint": "https://streaming.ozradiojakarta.com:8443/ozradiobandung",
         "codec": "AAC",
         "metadataTypes": ["icestats"],
         "statsSources": ["icy", "icestats"]
@@ -77,13 +80,87 @@ const NavTop = () => {
   const [station, setStation] = useState();
   const [playing, setPlaying] = useState(false);
   const [volume, setVolume] = useState(60);
-
   const [metadata, setMetadata] = useState(SELECT_STATION);
   const [icecast, setIcecast] = useState();
 
+  const [selectedStation, setSelectedStation] = useState('');
   const [castSession, setCastSession] = useState();
   const [isScrolled, setIsScrolled] = useState(false);
   const [show, setShow] = useState(false);
+  const [currentTitle, setCurrentTitle] = useState('');
+  // const [currentRadio, setCurrentRadio] = useState('');
+  const [streamUrl, setStreamUrl] = useState('');
+  const [albumArtworkURL, setAlbumArtworkURL] = useState('');
+
+
+
+  useEffect(() => {
+      const fetchData = async () => {
+        try {
+          if (selectedStation) {
+          const response = await axios.get(`https://streaming.ozradiojakarta.com:8443/status-json.xsl?mount=${selectedStation.mount}`);
+          const data = response.data;
+          if (data && data.icestats && data.icestats.source) {
+            const { title, listenurl, server_url } = data.icestats.source;
+            setCurrentTitle(title || '');
+            // setCurrentRadio(server_url || '');
+            if (listenurl) {
+              // Mengganti protokol HTTP menjadi HTTPS
+              const secureListenurl = listenurl.replace(/^http:/, 'https:');
+              setStreamUrl(secureListenurl || '');
+            } else {
+              console.error('Listen URL is not defined in the data');
+            }
+            console.log('Memutar musik dari:', listenurl);
+             // Panggil pencarian album artwork hanya jika ada judul lagu yang baru
+         if (title) {
+            const searchResponse = await axios.get(`http://localhost:3001/api/song/search?q=${encodeURIComponent(title)}`);
+            const searchData = searchResponse.data;
+
+            // Ambil URL gambar album dari respons data
+            if (searchData && Array.isArray(searchData) && searchData.length > 0 && searchData[0].thumbnails && searchData[0].thumbnails.length > 0) {
+              // Get the URL of the first thumbnail
+              const thumbnailURL = searchData[0].thumbnails[1].url;
+              // Manipulasi URL untuk mendapatkan gambar dengan ukuran w300-h300
+              // const thumbnailURL = thumbnailURLImage.replace(/=w\d+-h\d+-/, "=w1000-h1000-");
+              setAlbumArtworkURL(thumbnailURL);
+            } else {
+              console.error('Thumbnail not found in search data');
+              setAlbumArtworkURL(default_img);
+            }
+          }
+        } else {
+          console.error('Invalid or empty data received from API');
+        }
+      } 
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      setAlbumArtworkURL(default_img);
+    }
+  };
+
+    fetchData();
+
+    // Membuat interval untuk mengambil data setiap 10 detik
+    const interval = setInterval(fetchData, 10000);
+
+    // Membersihkan interval saat komponen tidak lagi digunakan
+    return () => clearInterval(interval);
+  }, [selectedStation]);
+
+// const handlePlay = () => {
+//   if (setStreamUrl) {
+//     setPlaying(true)
+//     setStreamUrl('Playing');
+//     const audioElement = document.getElementById('audio-element');
+//     audioElement.play(); // Memulai pemutaran audio
+//   } else {
+//     setPlaying(false)
+//     setStreamUrl('Paused');
+//     const audioElement = document.getElementById('audio-element');
+//     audioElement.pause(); // Memulai pemutaran audio
+//   }
+// }
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -139,15 +216,13 @@ const [showSearch, setShowSearch] = useState(false);
     };
   }, []);
   
-  const handleVolumeChange = (event) => {
-    const newVolume = parseInt(event.target.value);
-    setVolume(newVolume);
-  };
-
-
   const changeStation = useCallback(
     async (newStation) => {
+    setSelectedStation(newStation);
+    setAlbumArtworkURL(default_img); // Tetapkan gambar default saat memilih stasiun baru
+    const selectedStationInfo = stations.find(s => s.name === station);
       if (
+        selectedStationInfo &&
         icecast &&
         station &&
         icecast.state !== "stopped" &&
@@ -156,6 +231,7 @@ const [showSearch, setShowSearch] = useState(false);
         station.switchable !== false
       ) {
         icecast.switchEndpoint(newStation.endpoint, newStation);
+        setStreamUrl(selectedStationInfo.streamUrl || '');
       } else {
         if (icecast) {
           await icecast.stop();
@@ -213,7 +289,7 @@ const [showSearch, setShowSearch] = useState(false);
           metadataTypes: newStation.metadataTypes,
           bufferLength: newStation.bufferLength,
           audioElement,
-          retryTimeout: 120,
+          retryTimeout: 1000,
           endpointOrder: "random",
         });
 
@@ -225,10 +301,18 @@ const [showSearch, setShowSearch] = useState(false);
 
       setStation(newStation);
     },
-    [icecast, station, audioElement, sendCastMessage],
+    [icecast, station, audioElement, sendCastMessage, setSelectedStation, selectedStation],
   );
 
   const play = useCallback(() => {
+    if (!selectedStation) {
+      toast.error("Please select streaming radio first", {
+        type: "warning",
+        theme:"dark",
+        pauseOnFocusLoss: false
+      });
+      return;
+    }
     icecast.play();
     sendCastMessage({ command: "play" });
   }, [icecast, sendCastMessage]);
@@ -288,7 +372,7 @@ const [showSearch, setShowSearch] = useState(false);
       });
 
       // Start playing the selected station
-      const selectedStation = radioStations.find(station => station.name === stationName);
+      const selectedStation = stations.find(station => station.name === stationName);
       if (selectedStation) {
       const endpoint = selectedStation.endpoints[0]; // Ambil endpoint pertama
       const streamUrl = endpoint.endpoint; // Dapatkan URL streaming dari endpoint
@@ -308,13 +392,17 @@ const [showSearch, setShowSearch] = useState(false);
 
   const Metadata = React.memo(({ metadata }) => (
     <div>
-      {typeof metadata === "object"
-        ? metadata.StreamTitle ||
-          (metadata.ARTIST
-            ? `${metadata.ARTIST} - ${metadata.TITLE}`
-            : metadata.TITLE) ||
-          metadata.VENDOR_STRING
-        : metadata}
+      {metadata && typeof metadata === "object" && metadata.StreamTitle ? (
+        <>{metadata.StreamTitle}</>
+      ) : (
+        <>
+          {metadata &&
+            (metadata.ARTIST
+              ? `${metadata.ARTIST} - ${metadata.TITLE}`
+              : metadata.TITLE) &&
+            (metadata.ARTIST || metadata.TITLE)}
+        </>
+      )}
     </div>
   ));
 
@@ -322,8 +410,11 @@ const [showSearch, setShowSearch] = useState(false);
     ({ station }) =>
       station?.link && (
         <div>
+          {NOW_PLAYING}
+          <br/>
           {VISIT_STATION}
           <a
+            className='text-white'
             href={station.link}
             target="_blank"
             rel="noopener noreferrer"
@@ -334,80 +425,89 @@ const [showSearch, setShowSearch] = useState(false);
       ),
   );
 
-
-  const title = metadata?.StreamTitle || metadata?.TITLE;
-  document.title = title
-    ? `${title} | ${ICECAST_METADATA_JS_DEMO}`
-    : ICECAST_METADATA_JS_DEMO;
-
   return (
     <>
     <div className='navbar'>
         {/* <div className="blur-navtop" style={{ backgroundImage: `url(${song})` }} /> */}
+        <audio ref={audioRef} />
+        <ToastContainer
+          closeOnClick
+          position="top-center"
+          pauseOnHover={false}
+        />
         <Container fluid>
-     <div 
-     className='topnav'
-     expand="lg"
-     fixed="top"
-    >
-          <div className="navbar-top navbar-song custom-nav pt-3 blur-navtop" variant="underline" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url(${song})` }}>
-              <div className='col-md-4 offset-md-1'>
+          <Navbar 
+          className="navbar-top navbar-song custom-nav pt-3 blur-navtop" 
+          variant="underline" 
+          style={{ 
+            // backdropFilter: isScrolled ? 'blur(40px)' : 'none',
+            // WebkitBackdropFilter: isScrolled ? 'blur(40px)' : 'none',
+            backgroundColor:"black"
+            // backgroundImage: selectedStation ? `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${albumArtworkURL})` : `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${default_img})`
+            }}>
+              <div className='logo_topbar col-md-6 offset-md-2'>
               <Link to="/">
-                <img className='nav-logo navbar-brand pb-5' src={oz_logo} width={150}/>
+                <img className='nav-logo navbar-brand pb-5' src={oz_logo} width={150} alt='logo-navtop' loading='lazy'/>
                 </Link>
                 </div>
-            <Player
-                  allow="autoplay"
-                  toggle={toggle}
-                  playing={playing}
-                  volume={volume}
-                  setVolume={setVolume}
-                />
-              <img src={song} alt="" className="ms-3 mb-5 img-radio img-fluid " style={{ width:'115px', height:'75px' }} />
-                <div className='song-text mb-4'>
-                      <Metadata 
-                      metadata={metadata} 
-                      className="metadata-text"
+                <div className='song-player d-flex col-md-6'>
+                  <Player
+                        allow="autoplay"
+                        toggle={toggle}
+                        playing={playing}
+                        volume={volume}
+                        setVolume={setVolume}
                       />
-                      <VisitStationLink station={station} />
+                        <img
+                          src={selectedStation ? albumArtworkURL : default_img}
+                          alt=""
+                          className=" mx-1 mb-5 img-radio img-fluid"
+                          style={{ width: '75px' }}
+                          loading='lazy'
+                        />
+                      <div className='song-text mt-4'>
+                            <p className='fw-lighter text-title'>
+                            <VisitStationLink station={station} />
+                            {currentTitle}
+                            </p>
+                        </div>
+                        <Link to="/about"><IoSearchCircle className='search__icon text-warning'/></Link>
                   </div>
-                  <form action="https://www.google.com/search" target='_blank' className={`search ${showSearch ? 'show-search' : ''}`} id="search-bar">
-                      <input type="search" placeholder="Type something..." name="q" className="search__input"/>
-                      <div className="search__button" id="search-button" onClick={toggleSearch}>
-                          <IoSearchCircle className='search__icon ms-3 mb-3' style={{ cursor:"pointer", fontSize:"50px" }} />
-                          <IoCloseCircle className='search__close mb-3' style={{ cursor:"pointer", fontSize:"50px" }} />
-                      </div>
-                  </form>
-          </div>
-        <br />
-        <audio ref={audioRef} volume={volume / 100} />
-        <ToastContainer/>
-      </div>
+          </Navbar>
         </Container>
       <Navbar
     expand="lg"
     fixed="top"
-    // bg={isScrolled ? 'white' : 'white'}
-    className='navbar-bottom'
+    className='navbar-bottom border-top'
     id='navbar-bottom'
     style={{
-      backdropFilter: isScrolled ? 'blur(40px)' : 'none',
-      WebkitBackdropFilter: isScrolled ? 'blur(40px)' : 'none',
-      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url(${song})`
-      // borderTop: isScrolled ? '1px solid #ccc' : 'none',
+      // filter: !isScrolled ? 'blur(5px)' : 'none',
+      // WebkitBackdropFilter: isScrolled ? 'blur(5px)' : 'none',
+      // backgroundImage: selectedStation ? `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${albumArtworkURL})` : `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${default_img})`
+      backgroundColor:"black"
     }}
   >
     <Container fluid>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav navbarScroll " className='' />
-                    <Navbar.Collapse id="basic-navbar-nav navbarScroll ">
-                        <Nav className=" custom-nav fs-5 fw-medium col-md-6 offset-md-2" variant="underline">
-                        <Nav.Link onClick={handleShow} className='offcanvas-menu'><GiHamburgerMenu className='pb-1' />Menu</Nav.Link>
+                    {/* <Navbar.Toggle aria-controls="basic-navbar-nav navbarScroll " className='' />
+                    <Navbar.Collapse id="basic-navbar-nav navbarScroll "> */}
+                        <Nav className=" custom-nav fs-5 fw-medium" variant="underline">
+                        <Link to="/">
+                          <img className='logo_bottom' src={oz_logo} width={50} alt='logo-navbottom'  loading='lazy'/>
+                        </Link>
+                        <Nav.Link onClick={handleShow} className='offcanvas-menu text-white'><GiHamburgerMenu className='pb-1' />Menu</Nav.Link>
                         <Offcanvas show={show} onHide={handleClose}>
                           <Offcanvas.Header closeButton>
                             <Offcanvas.Title>Close</Offcanvas.Title>
                           </Offcanvas.Header>
                           <Offcanvas.Body>
                             <div className='fs-5'>
+                            {/* <form action="https://www.google.com/search" target='_blank' className={`search ${showSearch ? 'show-search' : ''}`} id="search-bar">
+                            <input type="search" placeholder="Search..." name="q" className="search__input"/>
+                                <div class="search__button3" id="search-button" onClick={toggleSearch}>
+                                <IoSearchCircle className='search__icon text-warning'/>
+                                <IoCloseCircle className='search__close text-warning'/>
+                                </div>
+                            </form> */}
                             <Nav.Link><Link to="/">Home</Link></Nav.Link>
                             <Nav.Link><Link to="/news">News</Link></Nav.Link>
                             <Nav.Link><Link to="/radio">Radio</Link></Nav.Link>
@@ -430,16 +530,21 @@ const [showSearch, setShowSearch] = useState(false);
                                 <NavDropdown.Item href="#">Aceh (102.8 FM) </NavDropdown.Item>
                             </NavDropdown> */}
                                 </Nav>
-                          </Navbar.Collapse>
-                        <div className="station-selector fs-5 fw-medium mt-3 d-flex col-md-4">
-                          <p style={{ color:"#F49C27" }}>Live Streaming :</p>
+                            <Link to="/about"><IoSearchCircle className='search__icon2 text-warning'/></Link>
+                            
+                                {/* <form action="https://www.google.com/search" target='_blank' className={`search ${showSearch ? 'show-search' : ''}`} id="search-bar"> */}
+                              {/* </form> */}
+                          {/* </Navbar.Collapse> */}
+                        <div className="station-selector fs-5 fw-medium mt-4 d-flex">
+                          <p className='station-streaming'>Streaming: </p>
                           <StationSelector 
                             allow="autoplay"
                               stations={stations}
                               changeStation={changeStation}
                               selectedStation={station}
+                              // currentTitle={currentTitle}
                             />
-                        </div>
+                          </div>
                 </Container>
             </Navbar>
             </div>

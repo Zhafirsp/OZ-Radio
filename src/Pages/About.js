@@ -32,7 +32,7 @@ const About = () => {
           Hal ini pertama kalinya di Indonesia, sebuah radio memiliki radio dengan format khusus Kenal lebih dekat dengan OZ Radio yang bisa diakses dimanapun dan kapanpun, melalui website www.ozradio.id, Instagram, Twitter, Facebook, Tiktok dan Youtube</p>
         </div>
         <div className='col-md-6 align-item-end d-flex'>
-          <img src={aboutImg} alt="" width={"1500px"} className='ms-5' />
+          <img src={aboutImg} alt="" width={"1500px"} className='' />
         </div>
      </div>
     <Broadcaster/>    

@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { lazy, useState } from "react";
 
 import {Container, Row, Button, Form, Col, Modal} from 'react-bootstrap';
 import '../../Assets/Css/footer.css'
 import { Link } from 'react-router-dom';
-import SubscribeFooter from "./subscribeFooter";
-import CategoryFooter from "./categoryFooter";
-import EventFooter from "./eventFooter";
-import SocialFooter from "./socialFooter";
-import AboutFooter from "./aboutFooter";
-import Terms from "./terms";
+
+const SubscribeFooter = lazy(() => import ('./subscribeFooter'));
+const CategoryFooter = lazy(() => import ('./categoryFooter'));
+const EventFooter = lazy(() => import ('./eventFooter'));
+const SocialFooter = lazy(() => import ('./socialFooter'));
+const AboutFooter = lazy(() => import ('./aboutFooter'));
+const Terms = lazy(() => import ('./terms'));
+const Policy = lazy(() => import ('./policy'));
+
 
 const Footer = () => {
   const [show, setShow] = useState(false);
@@ -21,8 +24,8 @@ const Footer = () => {
       <div className="logo_nav">
             <ul className="nav justify-content-center fw-bold fs-4">
               <li><Link to="/about" className="px-5">ABOUT</Link></li>
-              <li><Link to="/pp_terms" className="px-5 ">PRIVACY POLICY/TERMS</Link></li>
-              <li><Link to="/contact" className="">CONTACT</Link></li>
+              <li><Link to="/pp_terms" className="px-5 ">PRIVACY/TERMS</Link></li>
+              <li><Link to="/contact" className="px-5">CONTACT</Link></li>
             </ul>
         </div>
     {/* <svg className="getwaves" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -57,10 +60,10 @@ const Footer = () => {
            <p>2024 OZ Radio Limited. All Rights Reserved. OZ Radio &copy; is a registered trademark of OZ Radio Indonesia. 
             <Terms/>
              | 
-            <Link className="terms"> Privacy Policy</Link> | 
+            <Policy/> | 
             <Link className="terms"> Cookie Policy</Link>
             </p>
-           <p className="ms-auto fw-bold "><Link to="/terms" className="terms">Indonesia</Link></p>
+           <p className="ms-auto fw-bold "><Link to="#" className="terms">Indonesia</Link></p>
           </div>
         </footer>
       </div>
