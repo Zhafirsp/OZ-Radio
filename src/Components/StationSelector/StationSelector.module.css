@@ -7,7 +7,7 @@
     background-color 1.5s ease,
     color 0.5s ease;
   display: flex;
-  flex: 1;
+  /* flex: 1; */
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -15,7 +15,9 @@
   color: #fff;
   margin-top: -3px;
   margin-right: 5px;
-  margin-left: 5px;
+  margin-left: 25px;
+  font-family: "Cooper Hewitt";
+  font-weight: 700;
 }
 
 .stationLabel :hover {
@@ -49,9 +51,9 @@
 
 @media (max-width: 768px) {
   .stationLabel{
-    font-size: 16px !important;
+    /* font-size: 16px !important; */
     margin-left: 30px;
-    margin-top: -3px;
+    /* margin-top: -60px; */
   }
 }
 
@@ -65,5 +67,6 @@
 @media (max-width: 320px) {
   .stationLabel{
     font-size: 13px !important;
+    margin-top: -27px;
   }
 }

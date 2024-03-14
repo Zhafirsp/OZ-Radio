@@ -15,14 +15,28 @@
   transition: all 0.3s ease; /* Animasi ketika berubah ukuran */
 }
 
+.text-title {
+  font-family: "Familjen Grotesk";
+}
 
 .station-streaming {
   color: #F49C27;
   margin-top: -5px;
+  margin-left: 110px;
 }
 
-.song-text {
-  max-width: 300px;
+.nav-logo {
+  margin-left: 125px;
+}
+
+.now-playing-text{
+  /* style={{ color: '#7BA142', fontFamily:"Cooper Hewitt" }} */
+  color: #7BA142;
+  font-family: "Cooper Hewitt";
+}
+
+img-radio {
+  width: 240px;
 }
 
 /* .navbar-top::before {
@@ -100,7 +114,8 @@
   .search__icon, .search__close {
     cursor: pointer;
     font-size: 40px;
-    margin-top: 15px;
+    margin-top: 10px;
+    margin-left: -500px;
   }
   .search__close {
     opacity: 0;
@@ -126,6 +141,7 @@
 
   .text-title{
     margin-top: -17px;
+    
   }
 
   .text-playing {
@@ -133,13 +149,25 @@
     color: #7BA142;
   }
 
+  .station-streaming {
+    font-family: "Cooper Hewitt";
+  }
+
   @media (max-width: 1600px) {
     
     /* .navbar-top{
       width: fit-content;
   }  */
-    .song-player{
+    /* .song-player{
         margin-left: -250px;
+    } */
+
+    /* .nav-logo {
+      margin-left: -210px;
+    } */
+    .station-streaming {
+      color: #F49C27;
+      margin-top: -5px;
     }
   }
 
@@ -150,7 +178,19 @@
       width: fit-content;
   }  */
     .song-player{
-        margin-left: -250px;
+        /* margin-left: -250px; */
+    }
+    .nav-logo {
+      /* margin-left: -180px; */
+    }
+  }
+  @media (max-width: 1100px) {
+    
+    .song-player{
+        margin-left: 100px;
+    }
+    .nav-logo {
+      margin-left: 200px;
     }
   }
 
@@ -164,17 +204,24 @@
       font-size: 15px;
      }
 
-     .song-player{
-      margin-left: 0px;
-  }
      
   }
 
-  @media (max-width: 895px) {
+  @media (max-width: 991px) {
     
     .song-player{
-      margin-left: -115px;
+      margin-left: -200px;
     }
+
+    .logo_topbar {
+      opacity: 0;
+      z-index: -1;
+    }
+
+    .search__icon {
+      opacity: 0;
+    }
+
   }
   @media (max-width: 767px) {
     
@@ -183,39 +230,45 @@
   }  */
 
   .song-player{
-    margin-left: -100px;
+    margin-left: -1000px;
   }
 
-  .station-streaming{
-    margin-left: 90px;
-  }
-
-  .search__input {
+  /* .search__input {
     font-size: 13px;
-   }
+   } */
 
-   .nav-logo{
+   /* .nav-logo{
     display: none;
-   }
+   } */
 
-   .logo_topbar {
+   /* .logo_topbar {
     columns: 6;
-   }
+   } */
 
    .img-radio{
-    margin-top: 10px;
+    max-width: 240px !important;
    }
 
-   .search__icon{
+   /* .search__icon{
     margin-top: 20px;
     opacity: 0;
-   }
+   } */
     
+  }
+
+  @media (max-width:700px) {
+    .song-player {
+      margin-left: -950px;
+
+    }
   }
 
   /*=============== BREAKPOINTS ===============*/
   /* For medium devices */
   @media (max-width: 600px) {
+    .navbar-top {
+      
+    }
     .show-search {
       width: 300px;
     }
@@ -224,14 +277,27 @@
       font-size: 15px;
     }
     .song-player {
-      margin-left: -120px;
+      margin-left: -900px;
     }
+
+}
+
+@media (max-width: 535px) {
+  .song-player{
+    margin-left: -800px;
+  
+  }
+
+  .text-title {
+    font-size: 12px;
+  }
+
 }
 
   @media (max-width: 435px) {
     .song-player{
-      margin-left: -120px;
-      max-width: 350px;
+      margin-left: -700px;
+    
     }
 
     .text-title {
@@ -242,7 +308,11 @@
 
   @media (max-width: 375px) {
     .song-player{
-      margin-left: -90px;
+      /* margin-left: -90px; */
     }
 
+    .text-title {
+      font-size: 12px;
+    }
+    
   }

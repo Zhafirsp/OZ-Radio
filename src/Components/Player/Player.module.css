@@ -15,6 +15,8 @@
   align-items: center;
   padding-bottom: calc(1px + 0.5vmin);
   margin-top: -50px;
+  margin-left: -35px;
+  margin-right: 25px;
 }
 
 .button {
@@ -80,18 +82,18 @@ svg {
 
 @media (max-width: 1024px) {
   .player{
-    margin-left: -190px !important;
+    /* margin-left: -190px !important; */
   }
 }
 
 @media (max-width: 768px) {
   .player{
-    margin-left: -170px !important;
+    /* margin-left: -170px !important; */
   }
 }
 
 @media (max-width: 600px) {
   .player{
-    margin-left: -40px !important;
+    /* margin-left: -40px !important; */
   }
 }

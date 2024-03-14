@@ -1,11 +1,11 @@
 import React, { lazy } from "react"
 import Head from "../Components/common/header/Head";
 import { Container } from "react-bootstrap";
+import Hero from '../Components/Hero';
+import Interview from '../Components/interview';
+import Event from '../Components/event/events';
+import Logo from '../Components/Logo';
 
-const Hero = lazy(() => import ('../Components/Hero'));
-const Interview = lazy(() => import ("../Components/event/events"));
-const Event = lazy(() => import ('../Components/event/events'));
-const Logo = lazy(() => import ('../Components/Logo'));
 const Home = () => {
   return (
     <>

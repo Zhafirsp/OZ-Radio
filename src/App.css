@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "roboto", sans-serif !important;
+  font-family: "roboto", sans-serif;
 }
 img {
   max-width: 100%;
@@ -21,15 +21,6 @@ img {
 .navbar {
   padding-top: 10px;
   color: #fff;
-}
-
-.search__icon2, .logo_bottom {
-  opacity: 0;
-  transition: opacity 0.1s ease; /* Animasi transisi */
-}
-
-.show {
-  opacity: 1;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -168,7 +159,7 @@ body {
 
 
 .nav-logo {
-  width: 75px;
+  width: 85px;
   margin-top: 0px !important;
 }
 

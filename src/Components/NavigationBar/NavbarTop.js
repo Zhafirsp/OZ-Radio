@@ -4,8 +4,11 @@ import { ToastContainer, toast } from "react-toastify";
 import oz_bdg from '../../Assets/Img/logo_oz_bdg.png'
 import oz_jkt from '../../Assets/Img/logo_oz_jkt.png'
 import oz_bali from '../../Assets/Img/logo_oz_bali.png'
-import oz_logo from '../../Assets/Img/Logo2.jpeg'
-import default_img from '../../Assets/Img/default_img.jpg'
+import oz_logo from '../../Assets/Img/Logo2.png'
+import default_img from '../../Assets/Img/bg-vinyl.png'
+import supergraphic from '../../Assets/Img/SUPERGRAPHIC.png'
+import bg_atas from '../../Assets/Img/bg-atas.png'
+import bg_bawah from '../../Assets/Img/bg-bawah.png'
 import '../../Assets/Css/nav_top.css'
 import Player from "../Player/Player";
 import StationSelector from "../StationSelector/StationSelector";
@@ -16,8 +19,8 @@ import '../../Assets/Css/nav_bottom.css'
 import { IoSearchCircle, IoCloseCircle  } from "react-icons/io5";
 import axios from 'axios';
 
-const NOW_PLAYING = <span style={{ color: '#7BA142' }}>Now Playing</span>;
-const VISIT_STATION = "Visit OZ ";
+const NOW_PLAYING = <span className='now-playing-text'>Now Playing</span>;
+const VISIT_STATION = <span className='text-title'>Visit OZ </span>;
 const ICECAST_METADATA_JS_DEMO = "Icecast Metadata JS Demo";
 const SELECT_STATION = "Select a station";
 const SELECT_OR_PLAY = "Press play";
@@ -93,7 +96,6 @@ const NavTop = () => {
   const [albumArtworkURL, setAlbumArtworkURL] = useState('');
 
 
-
   useEffect(() => {
       const fetchData = async () => {
         try {
@@ -114,7 +116,7 @@ const NavTop = () => {
             console.log('Memutar musik dari:', listenurl);
              // Panggil pencarian album artwork hanya jika ada judul lagu yang baru
          if (title) {
-            const searchResponse = await axios.get(`http://localhost:3001/api/song/search?q=${encodeURIComponent(title)}`);
+            const searchResponse = await axios.get(`http://localhost:4001/api/song/search?q=${encodeURIComponent(title)}`);
             const searchData = searchResponse.data;
 
             // Ambil URL gambar album dari respons data
@@ -442,15 +444,16 @@ const [showSearch, setShowSearch] = useState(false);
           style={{ 
             // backdropFilter: isScrolled ? 'blur(40px)' : 'none',
             // WebkitBackdropFilter: isScrolled ? 'blur(40px)' : 'none',
-            backgroundColor:"black"
-            // backgroundImage: selectedStation ? `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${albumArtworkURL})` : `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${default_img})`
+            backgroundImage:`linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${bg_atas})`
+            // backgroundColor:"black"
+
             }}>
-              <div className='logo_topbar col-md-6 offset-md-2'>
+              <div className='logo_topbar'>
               <Link to="/">
-                <img className='nav-logo navbar-brand pb-5' src={oz_logo} width={150} alt='logo-navtop' loading='lazy'/>
+                <img className='nav-logo navbar-brand pb-5' src={oz_logo} width={150} alt='logo-navtop'/>
                 </Link>
                 </div>
-                <div className='song-player d-flex col-md-6'>
+                <div className='song-player d-flex col-md-12'>
                   <Player
                         allow="autoplay"
                         toggle={toggle}
@@ -465,42 +468,43 @@ const [showSearch, setShowSearch] = useState(false);
                           style={{ width: '75px' }}
                           loading='lazy'
                         />
-                      <div className='song-text mt-4'>
+                      <div className='mt-4 ms-2 song-text col-md-12'>
                             <p className='fw-lighter text-title'>
                             <VisitStationLink station={station} />
                             {currentTitle}
                             </p>
                         </div>
-                        <Link to="/about"><IoSearchCircle className='search__icon text-warning'/></Link>
+                        <Link to="/search" className='search__icon text-warning'><IoSearchCircle /></Link>
                   </div>
           </Navbar>
         </Container>
       <Navbar
     expand="lg"
     fixed="top"
-    className='navbar-bottom border-top'
+    className='navbar-bottom'
     id='navbar-bottom'
     style={{
       // filter: !isScrolled ? 'blur(5px)' : 'none',
       // WebkitBackdropFilter: isScrolled ? 'blur(5px)' : 'none',
       // backgroundImage: selectedStation ? `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${albumArtworkURL})` : `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${default_img})`
-      backgroundColor:"black"
+      // backgroundColor:"black"
+      backgroundImage:`linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${bg_bawah})`
+
     }}
   >
     <Container fluid>
                     {/* <Navbar.Toggle aria-controls="basic-navbar-nav navbarScroll " className='' />
                     <Navbar.Collapse id="basic-navbar-nav navbarScroll "> */}
-                        <Nav className=" custom-nav fs-5 fw-medium" variant="underline">
+                        <Nav className="custom-nav fs-5 fw-medium">
                         <Link to="/">
-                          <img className='logo_bottom' src={oz_logo} width={50} alt='logo-navbottom'  loading='lazy'/>
+                          <img className='logo_bottom' src={oz_logo} width={50} alt='logo-navbottom'/>
                         </Link>
                         <Nav.Link onClick={handleShow} className='offcanvas-menu text-white'><GiHamburgerMenu className='pb-1' />Menu</Nav.Link>
-                        <Offcanvas show={show} onHide={handleClose}>
-                          <Offcanvas.Header closeButton>
-                            <Offcanvas.Title>Close</Offcanvas.Title>
+                        <Offcanvas show={show} onHide={handleClose} className='offcanvas-bg'>
+                          <Offcanvas.Header closeButton closeVariant='white'>
+                            <Offcanvas.Title className='offcanvas-title'>Close</Offcanvas.Title>
                           </Offcanvas.Header>
-                          <Offcanvas.Body>
-                            <div className='fs-5'>
+                          <Offcanvas.Body className='fs-5'>
                             {/* <form action="https://www.google.com/search" target='_blank' className={`search ${showSearch ? 'show-search' : ''}`} id="search-bar">
                             <input type="search" placeholder="Search..." name="q" className="search__input"/>
                                 <div class="search__button3" id="search-button" onClick={toggleSearch}>
@@ -508,19 +512,18 @@ const [showSearch, setShowSearch] = useState(false);
                                 <IoCloseCircle className='search__close text-warning'/>
                                 </div>
                             </form> */}
-                            <Nav.Link><Link to="/">Home</Link></Nav.Link>
-                            <Nav.Link><Link to="/news">News</Link></Nav.Link>
-                            <Nav.Link><Link to="/radio">Radio</Link></Nav.Link>
-                            <Nav.Link><Link to="/youtube">TV</Link></Nav.Link>
-                            <Nav.Link><Link to="/event">Events</Link></Nav.Link>
-                            <Nav.Link><Link to="/playlist">Playlist</Link></Nav.Link>
-                            <hr/>
-                            <Nav.Link><Link to="#">Sustainability</Link></Nav.Link>
-                            <Nav.Link><Link to="/contact">Advertising</Link></Nav.Link>
-                            <Nav.Link><Link to="#">Community</Link></Nav.Link>
-                            <Nav.Link><Link to="/contact">Contact Us</Link></Nav.Link>
-                            <Nav.Link><Link to="/about">About</Link></Nav.Link>
-                            </div>
+                              <Nav.Link><Link to="/" className='text-white'>Home</Link></Nav.Link>
+                              <Nav.Link><Link to="/news" className='text-white'>News</Link></Nav.Link>
+                              <Nav.Link><Link to="/radio" className='text-white'>Radio</Link></Nav.Link>
+                              <Nav.Link><Link to="/youtube" className='text-white'>TV</Link></Nav.Link>
+                              <Nav.Link><Link to="/event" className='text-white'>Events</Link></Nav.Link>
+                              <Nav.Link><Link to="/playlist" className='text-white'>Playlist</Link></Nav.Link>
+                            <hr className='devider-offcanvas'/>
+                              <Nav.Link><Link to="#" className='text-white'>Sustainability</Link></Nav.Link>
+                              <Nav.Link><Link to="/contact" className='text-white'>Advertising</Link></Nav.Link>
+                              <Nav.Link><Link to="#" className='text-white'>Community</Link></Nav.Link>
+                              <Nav.Link><Link to="/contact" className='text-white'>Contact Us</Link></Nav.Link>
+                              <Nav.Link><Link to="/about" className='text-white'>About</Link></Nav.Link>
                           </Offcanvas.Body>
                         </Offcanvas>
                             {/* <NavDropdown title="City" id="navbarScrollingDropdown">
@@ -530,12 +533,12 @@ const [showSearch, setShowSearch] = useState(false);
                                 <NavDropdown.Item href="#">Aceh (102.8 FM) </NavDropdown.Item>
                             </NavDropdown> */}
                                 </Nav>
-                            <Link to="/about"><IoSearchCircle className='search__icon2 text-warning'/></Link>
+                            <Link to="/search"><IoSearchCircle className='search__icon2 text-warning'/></Link>
                             
                                 {/* <form action="https://www.google.com/search" target='_blank' className={`search ${showSearch ? 'show-search' : ''}`} id="search-bar"> */}
                               {/* </form> */}
                           {/* </Navbar.Collapse> */}
-                        <div className="station-selector fs-5 fw-medium mt-4 d-flex">
+                        <div className="station-selector fs-5 fw-medium mt-4 d-flex col-md-12">
                           <p className='station-streaming'>Streaming: </p>
                           <StationSelector 
                             allow="autoplay"
