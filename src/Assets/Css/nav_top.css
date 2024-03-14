@@ -29,6 +29,10 @@
   margin-left: 125px;
 }
 
+.logo_topbar {
+  z-index: 1;
+}
+
 .now-playing-text{
   /* style={{ color: '#7BA142', fontFamily:"Cooper Hewitt" }} */
   color: #7BA142;
