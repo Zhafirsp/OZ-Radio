@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  margin-top: 126px;
+  margin-top: 140px;
   padding: 10px 20px 0px;
   /* z-index: 10; */
   transition: all 0.3s ease;
@@ -152,6 +152,7 @@
   .station-streaming {
     margin-left: -30px;
   }
+  
 }
 
 @media (max-width: 1000px) {
@@ -254,6 +255,7 @@
 
   .navbar-bottom {
     padding-bottom: -50px !important;
+    margin-top: 130px;
   }
 
   .search__icon2 {
