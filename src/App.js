@@ -23,6 +23,7 @@ import PlaylistPage from "./Pages/playlistPage";
 import PP_Terms from "./Pages/privacyPolicy";
 import Home from "./Pages/Homepages";
 import Search from "./Pages/Search";
+import Comingsoon from "./Pages/Comingsoon";
 
 function ScrollTop() {
   const location = useLocation();
@@ -34,68 +35,82 @@ function ScrollTop() {
   return null;
 }
 
-function App() {
 
-  useEffect(() => {
-    let  lastScrollTop = 0; // This Varibale will store the top position
-    const  navbarTop = document.querySelector('.navbar-top'); // Get The NavBar
-    const  navbarBottom = document.querySelector('.navbar-bottom');
-    const searchButton2 = document.querySelector('.search__icon2');
-    const logoButton = document.querySelector('.logo_bottom');
+  const LayoutWithFooter = ({ children }) => (
+      <>
+        <ScrollTop />
+        <div className="navbar-container">
+          <NavTop />
+        </div>
+        {children}
+        <Footer />
+      </>
+    );
+  const LayoutWithoutFooter = ({ children }) => <>{children}</>;
 
-    // Hide the buttons initially
-    searchButton2.classList.remove('showsearch');
-    logoButton.classList.remove('showlogo');
-
-    window.addEventListener('scroll',function(){
-    //on every scroll this funtion will be called
-     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-     const windowHeight = window.innerHeight;
-      //This line will get the location on scroll
-      if(scrollTop > lastScrollTop && scrollTop > windowHeight / 10){ //if it will be greater than the previous
-        navbarTop.style.top='-90px';
-        navbarBottom.style.top='-140px';
-        searchButton2.classList.add('showsearch');
-        logoButton.classList.add('showlogo');
-    //set the value to the negetive of height of navbar 
-      }
-      else { // Jika scroll ke atas
-        navbarTop.style.top = '0';
-        navbarBottom.style.top = '0'; 
+  function useScrollEffect() {
+    useEffect(() => {
+      let lastScrollTop = 0;
+      const navbarTop = document.querySelector('.navbar-top');
+      const navbarBottom = document.querySelector('.navbar-bottom');
+      const searchButton2 = document.querySelector('.search__icon2');
+      const logoButton = document.querySelector('.logo_bottom');
+  
+      if (navbarTop && navbarBottom && searchButton2 && logoButton) {
         searchButton2.classList.remove('showsearch');
         logoButton.classList.remove('showlogo');
-
-    }
-        lastScrollTop = scrollTop;
-      });
-  })
+  
+        window.addEventListener('scroll', function () {
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          const windowHeight = window.innerHeight;
+  
+          if (scrollTop > lastScrollTop && scrollTop > windowHeight / 10) {
+            navbarTop.style.top = "-90px";
+            navbarBottom.style.top = "-140px";
+            searchButton2.classList.add("showsearch");
+            logoButton.classList.add("showlogo");
+          } else {
+            navbarTop.style.top = "0";
+            navbarBottom.style.top = "0";
+            searchButton2.classList.remove("showsearch");
+            logoButton.classList.remove("showlogo");
+          }
+          lastScrollTop = scrollTop;
+        });
+      }
+    }, []);
+  }
+  
+  function App() {
   return (
     <>
     <div className="App">
-      <ScrollTop/>
-      {/* <ScrollToTop smooth color="#FE9E0D"/> */}
-    <div className="navbar-container">
-      <NavTop/>
-      {/* <SinglePageSlider /> */}
-    </div>
+    <div className="navbar-container"></div>
     <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/radio" element={<RadioPlayer />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/event" element={<EventPages />} />
-        <Route path="/single-event" element={<EventSinglePage />} />
-        <Route path="/interview" element={<InterviewPage />} />
-        <Route exact path='/singlepage/:id' element={<SinglePage/>} />
-        <Route path="/youtube" element={<TV />} />
-        <Route path="/news" element={<News />} />
-        <Route path="/playlist" element={<PlaylistPage />} />
+        <Route path="/" element={<LayoutWithFooter><Home /></LayoutWithFooter>} />
+        <Route path="/about" element={<LayoutWithFooter><About /></LayoutWithFooter>} />
+        <Route path="/search" element={<LayoutWithFooter><Search /></LayoutWithFooter>} />
+        <Route path="/radio" element={<LayoutWithFooter><RadioPlayer /></LayoutWithFooter>} />
+        <Route path="/contact" element={<LayoutWithFooter><Contact /></LayoutWithFooter>} />
+        <Route path="/event" element={<LayoutWithFooter><EventPages /></LayoutWithFooter>} />
+        <Route path="/single-event" element={<LayoutWithFooter><EventSinglePage /></LayoutWithFooter>} />
+        <Route path="/interview" element={<LayoutWithFooter><InterviewPage /></LayoutWithFooter>} />
+        <Route exact path='/singlepage/:id' element={<LayoutWithFooter><SinglePage/></LayoutWithFooter>} />
+        <Route path="/youtube" element={<LayoutWithFooter><TV /></LayoutWithFooter>} />
+        <Route path="/news" element={<LayoutWithFooter><News /></LayoutWithFooter>} />
+        <Route path="/playlist" element={<LayoutWithFooter><PlaylistPage /></LayoutWithFooter>} />
         <Route exact path='/culture' component={Culture} />
-        <Route path="/video/test" element={<Video />} />
-        <Route path="/pp_terms" element={<PP_Terms />} />
+        <Route path="/video/test" element={<LayoutWithFooter><Video /></LayoutWithFooter>} />
+        <Route path="/pp_terms" element={<LayoutWithFooter><PP_Terms /></LayoutWithFooter>} />
+        <Route
+            path="/comingsoon"
+            element={
+              <LayoutWithoutFooter>
+                <Comingsoon />
+              </LayoutWithoutFooter>
+            }
+          />
       </Routes>
-      <Footer />
     </div>
     </>
   );
