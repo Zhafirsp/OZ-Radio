@@ -82,6 +82,7 @@ function ScrollTop() {
   }
   
   function App() {
+    useScrollEffect();
   return (
     <>
     <div className="App">

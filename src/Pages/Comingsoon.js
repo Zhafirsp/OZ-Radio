@@ -467,8 +467,8 @@ const NavTop = () => {
       <img src={img} className="img-comingsoon"></img>
       <div className="capt-comingsoon">WE ARE COMING SOON</div>
 
-      <div className="streaming-radio">
-        <div className="song-player d-flex">
+      <div className="streaming-radio-comingsoon">
+        <div className="song-player-comingsoon d-flex">
           <Player
             allow="autoplay"
             toggle={toggle}
@@ -479,10 +479,10 @@ const NavTop = () => {
           <img
             src={selectedStation ? albumArtworkURL : default_img}
             alt=""
-            className="img-cover mx-1 mb-5 img-radio img-fluid"
+            className="img-cover-comingsoon mx-1 mb-5 img-radio img-fluid"
             loading="lazy"
           />
-          <div className="song-text">
+          <div className="song-text-comingsoon">
             <p className="fw-lighter text-title">
               <VisitStationLink station={station} />
               {currentTitle}
@@ -490,8 +490,8 @@ const NavTop = () => {
           </div>
           
         </div>
-        <div className="station-selector fs-5 fw-medium mt-4 ">
-          <p className="station-streaming">Streaming: </p>
+        <div className="station-selector-comingsoon fs-5 fw-medium mt-4 ">
+          <p className="station-streaming-comingsoon">Streaming: </p>
           <StationSelector
             allow="autoplay"
             stations={stations}
