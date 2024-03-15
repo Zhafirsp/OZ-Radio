@@ -3,8 +3,8 @@
   top: 0;
   left: 0;
   width: 100%;
-  margin-top: 130px;
-  padding: 10px 20px;
+  margin-top: 126px;
+  padding: 10px 20px 0px;
   /* z-index: 10; */
   transition: all 0.3s ease;
   background-size: cover;
@@ -15,6 +15,7 @@
 .search__icon2, .logo_bottom {
   opacity: 0;
   transition: opacity 0.3s ease; /* Animasi transisi */
+  z-index: -1;
 }
 
 .showlogo {
@@ -22,12 +23,14 @@
   transition: opacity 0.3s ease; /* Animasi transisi */
   margin-right: 80px;
   margin-left: 17px;
+  margin-top: -10px;
 }
 
 .showsearch {
   opacity: 1;
   transition: opacity 0.3s ease; /* Animasi transisi */
   cursor: pointer;
+  margin-top: -10px;
 }
 
 .search__icon2 {
@@ -35,9 +38,16 @@
   font-size: 40px;
 }
 
+.station-selector {
+  margin-top: 10px;
+  font-size: 22px;
+}
 
 .station-streaming{
- /* margin-left: -10px; */
+  color: #F49C27;
+  margin-top: -5px;
+  margin-left: 35px;
+  font-family: "Cooper Hewitt";
 }
 
 .border-streaming{
@@ -61,10 +71,11 @@
   font-weight: 700;
 }
 
-  .offcanvas-menu{
+.offcanvas-menu{
   margin-left: -60px;
   font-family: "Cooper Hewitt";
   font-weight: 700;
+  margin-top: -8px;
   width: 170px;
   }
 
@@ -139,7 +150,7 @@
   }
 
   .station-streaming {
-    margin-left: 35px;
+    margin-left: -30px;
   }
 }
 
@@ -152,13 +163,15 @@
   .search__icon2{
     /* margin-left: -210px; */
   }
+
+  .station-streaming {
+  }
 }
 
 @media (max-width: 991px) {
   .offcanvas-menu{
     margin-top: -50px;
     margin-left: 50px;
-    opacity: 1;
     width: 110px;
   }
 
@@ -170,7 +183,7 @@
 
   .logo_bottom{
     opacity: 1;
-    margin-top: 15px;
+    /* margin-top: 15px; */
   }
 
   .station-selector {
@@ -206,7 +219,7 @@
   
   .search__icon2 {
     margin-left: -80px;
-    margin-top: 20px;
+    margin-top: -10px;
     opacity: 1;
   }
 
@@ -215,15 +228,13 @@
     margin-left: 50px;
   }
 
-  .search-button-offcanvas {
-    display: block; /* Sesuaikan dengan tata letak Anda */
-  }
-
   .station-selector {
     /* margin-left: -50px !important; */
-    margin-top: 40px !important;
+    margin-top: 15px !important;
   }
+
   .logo_bottom {
+    margin-top: -10px;
     opacity: 1;
   }
 
@@ -240,17 +251,28 @@
 }
 
 @media (max-width: 645px) {
+
+  .navbar-bottom {
+    padding-bottom: -50px !important;
+  }
+
+  .search__icon2 {
+    margin-top: 10px;
+  }
+
   .offcanvas-menu{
     margin-left: 370px;
   }
 
   .logo_bottom {
-    margin-bottom: 5px;
+    margin-top: 5px;
   }
 
   .station-streaming {
-    margin-left: 90px;
+    margin-left: 140px;
+    margin-top: 0px;
   }
+
 }
 
 @media (max-width: 595px) {
@@ -263,15 +285,18 @@
   .offcanvas-menu{
     margin-left: 270px;
   }
+  .station-streaming {
+    margin-left: 100px;
+  }
 }
 
 @media (max-width: 500px) {
   .offcanvas-menu{
-    margin-left: 160px;
+    margin-left: 200px;
   }
 
   .station-streaming {
-    margin-left: 30px;
+    margin-left: 70px;
   }
 
 }
@@ -283,24 +308,16 @@
   .navbar-bottom {
     background-position: center 67.6%;
   }
-  
-  .station-streaming{
-    margin-left: 50px;
-  }
 
   .offcanvas-menu{
-    font-size: 16px;
     margin-left: 200px;
   }
 
+   
   .station-streaming{
-    margin-left: 10px;
+    margin-top: -20px;
+    margin-left: 60px;
     font-size: 16px;
-  }
-
-  .station-selector {
-    margin-top: 0px;
-    /* margin-left: 50px */
   }
 
   .search__button2{
@@ -310,10 +327,6 @@
   /* .logo_bottom{
     margin-left: 150px;
   } */
-
-  .navbar-bottom {
-    padding-top: 30px;
-  }
 
   .search__icon2{
     margin-left: 300px;
@@ -336,6 +349,10 @@
     margin-left: 260px;
     margin-top: -70px;
   }
+
+  .station-streaming{
+    margin-left: 40px;
+  }
 }
 
 @media (max-width: 320px) {
@@ -345,8 +362,8 @@
   }
 
   .station-streaming{
-    margin-left: -5px;
-    margin-top: -30px;
+    margin-left: 30px;
+    /* margin-top: -30px; */
   }
 
   .offcanvas-menu{

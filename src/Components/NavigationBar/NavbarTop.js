@@ -538,7 +538,7 @@ const [showSearch, setShowSearch] = useState(false);
                                 {/* <form action="https://www.google.com/search" target='_blank' className={`search ${showSearch ? 'show-search' : ''}`} id="search-bar"> */}
                               {/* </form> */}
                           {/* </Navbar.Collapse> */}
-                        <div className="station-selector fs-5 fw-medium mt-4 d-flex col-md-12">
+                        <div className="station-selector d-flex col-md-12">
                           <p className='station-streaming'>Streaming: </p>
                           <StationSelector 
                             allow="autoplay"

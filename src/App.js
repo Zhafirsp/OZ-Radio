@@ -53,8 +53,8 @@ function App() {
      const windowHeight = window.innerHeight;
       //This line will get the location on scroll
       if(scrollTop > lastScrollTop && scrollTop > windowHeight / 10){ //if it will be greater than the previous
-        navbarTop.style.top='-90px';
-        navbarBottom.style.top='-140px';
+        navbarTop.style.top='-100px';
+        navbarBottom.style.top='-126px';
         searchButton2.classList.add('showsearch');
         logoButton.classList.add('showlogo');
     //set the value to the negetive of height of navbar 
