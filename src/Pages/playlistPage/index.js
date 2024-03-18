@@ -15,7 +15,7 @@ const InterviewPage = () => {
    width: "100%",
    backgroundSize: "cover", 
    height: '500px',
-   marginTop: '30px'
+   marginTop: '130px'
   };
 
    return (

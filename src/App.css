@@ -38,7 +38,7 @@ img {
 }
 
 .header-about{
-  margin-top: 150px !important;
+  margin-top: 200px !important;
 }
 
 /* Scroller styling */
@@ -659,9 +659,9 @@ Link:active {
   text-decoration: underline !important;
 }
 
-  .button-navtop {
+  /* .button-navtop {
     margin-top: 150px !important;
-  }
+  } */
 
 
 .scroller {

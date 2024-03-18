@@ -1,5 +1,5 @@
 .eventPage{
-  margin-top: 100px;
+  margin-top: 180px;
 }
 
 .event-header {
@@ -43,6 +43,9 @@
 
 @media (max-width: 1024px) {
  
+  .table-event {
+    margin-top: 300px !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -58,9 +61,6 @@
     margin-right: auto;
   }
 
-  .table-event {
-    margin-top: 300px !important;
-  }
 
   .home-oz {
     font-size: xxx-large;

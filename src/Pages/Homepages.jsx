@@ -15,7 +15,7 @@ const Home = () => {
         <Head />
         <Event/>
         <Head />
-        <Logo />
+        {/* <Logo /> */}
       </Container>
     </>
   )

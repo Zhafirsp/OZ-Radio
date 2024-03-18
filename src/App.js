@@ -65,7 +65,7 @@ function ScrollTop() {
           const windowHeight = window.innerHeight;
   
           if (scrollTop > lastScrollTop && scrollTop > windowHeight / 10) {
-            navbarTop.style.top = "-90px";
+            navbarTop.style.top = "-110px";
             navbarBottom.style.top = "-140px";
             searchButton2.classList.add("showsearch");
             logoButton.classList.add("showlogo");

@@ -56,7 +56,7 @@ const EventPages = () => {
         </Row>
         <div className="container col-xxl-8 px-4 " style={{ height: 757 }}>
             <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
-            <div className="col-lg-6">
+            <div className="col-lg-6 px-4">
                 <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-3 mt-3">Special Music Event on <span className="span-hero">MoPOP’s Sound Off! </span>Showcase</h1> 
                 <p className="lead fw-lighter">is your chance to witness the next big thing in NW music as young artists from around the region take to the Sky Church stage for three nights of heart, guts, and glory.</p>
                 <p className="lead fw-lighter">As a legacy under-21 music showcase in the Pacific Northwest, MoPOP’s Sound Off! connects young artists with the tools and resources to dig into their sound, grow their business skills, and level up their artistry.</p>

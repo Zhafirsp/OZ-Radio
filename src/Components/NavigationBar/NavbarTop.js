@@ -116,7 +116,7 @@ const NavTop = () => {
             console.log('Memutar musik dari:', listenurl);
              // Panggil pencarian album artwork hanya jika ada judul lagu yang baru
          if (title) {
-            const searchResponse = await axios.get(`http://localhost:4001/api/song/search?q=${encodeURIComponent(title)}`);
+            const searchResponse = await axios.get(`https://ozbackend.santuy.info/api/song/search?q=${encodeURIComponent(title)}`);
             const searchData = searchResponse.data;
 
             // Ambil URL gambar album dari respons data
@@ -465,7 +465,6 @@ const [showSearch, setShowSearch] = useState(false);
                           src={selectedStation ? albumArtworkURL : default_img}
                           alt=""
                           className=" mx-1 mb-5 img-radio img-fluid"
-                          style={{ width: '75px' }}
                           loading='lazy'
                         />
                       <div className='mt-4 ms-2 song-text col-md-12'>

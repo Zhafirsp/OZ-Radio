@@ -10,7 +10,7 @@ const Search = () => {
       <Container>
       <h1 className="header-about"><span style={{ color:"#FCBB33" }}>Search</span></h1>
       <Form action="https://www.google.com/search" target='_blank'>
-          <Form.Control type="input" placeholder="Search OZ" name="q" style={{ borderRadius:"25px" }}></Form.Control>
+          <Form.Control type="input" placeholder="Search OZ" name="q" style={{ borderRadius:"25px", marginBottom:"50px" }}></Form.Control>
           {/* <IoSearchCircle className='text-warning'/> */}
       </Form>
       </Container>

@@ -10,7 +10,7 @@ import Card from "../components/Card";
 const Container = styled.div`
   display: flex;
   gap: 24px;
-  margin: 155px 20px 20px 10px;
+  margin: 200px 20px 20px 10px;
 `;
 
 const Content = styled.div`
