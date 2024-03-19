@@ -37,8 +37,12 @@ img {
   }
 }
 
+.search-page {
+  min-height: 385px;
+}
+
 .header-about{
-  margin-top: 200px !important;
+  margin-top: 250px !important;
 }
 
 /* Scroller styling */

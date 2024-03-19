@@ -18,6 +18,7 @@
   background-color: #111010;
 }
 
+
 .text-title {
   font-family: "Familjen Grotesk";
 }
@@ -38,6 +39,8 @@
 
 .img-radio {
   width: 90px;
+  margin-top: 10px;
+  border: 1px white solid;
 }
 
 /* .navbar-top::before {
@@ -214,10 +217,24 @@
     }
 
     .search__icon {
+      opacity: 1;
+      margin-left: -300px;
+    }
+    .now-playing-text {
       opacity: 0;
     }
-
+  
+    .text-title {
+      margin-top: -15px !important;
+    }
   }
+  
+@media (max-width: 900px) {
+  
+  
+  
+}
+
   @media (max-width: 767px) {
     
     /* .navbar-top{
@@ -225,7 +242,7 @@
   }  */
 
   .song-player{
-    margin-left: -900px;
+    margin-left: -300px;
   }
 
   .text-title {
@@ -248,19 +265,32 @@
     max-width: 80px;
    }
 
-   /* .search__icon{
+   .search__icon{
     margin-top: 20px;
-    opacity: 0;
-   } */
+    opacity: 1;
+    margin-left: 80px;
+   }
     
   }
 
   @media (max-width:700px) {
     .song-player {
-      margin-left: -800px;
+      margin-left: -300px;
 
     }
+    .search__icon {
+      opacity: 1;
+      margin-left: 20px !important;
+    }
   }
+
+  @media (max-width: 645px) {
+    .search__icon {
+      opacity: 0;
+      
+    }
+  }
+  
 
   /*=============== BREAKPOINTS ===============*/
   /* For medium devices */
@@ -277,14 +307,18 @@
     font-size: 15px;
     }
     .song-player {
-      margin-left: -800px;
+      margin-left: -300px;
+    }
+    .search__icon {
+      opacity: 0;
+      margin-left: 10px !important;
     }
 
 }
 
 @media (max-width: 535px) {
   .song-player{
-    margin-left: -800px;
+    margin-left: -250px;
   
   }
 
@@ -292,14 +326,21 @@
     font-size: 13px;
     width: 300px;
   }
+  .search__icon {
+    opacity: 0;
+    margin-left: -30px !important;
+  }
 
 }
 
+
   @media (max-width: 490px) {
     .song-player{
-      margin-left: -700px;
+      margin-left: -300px;
+      margin-top: -10px;
     
     }
+
 
     .text-title {
       font-size: 12px;
@@ -314,9 +355,11 @@
 
   @media (max-width: 375px) {
     .song-player{ 
-      margin-left: -650px;
+      margin-left: -350px;
 
     }
+
+
 
     .text-title {
       font-size: 12px;

@@ -74,7 +74,8 @@ const NavTop = () => {
             console.log('Memutar musik dari:', listenurl);
              // Panggil pencarian album artwork hanya jika ada judul lagu yang baru
          if (title) {
-            const searchResponse = await axios.get(`https://ozbackend.santuy.info/api/song/search?q=${encodeURIComponent(title)}`, {
+            // const searchResponse = await axios.get(`https://ozbackend.santuy.info/api/song/search?q=${encodeURIComponent(title)}`, {
+            const searchResponse = await axios.get(`http://localhost:4001/api/song/search?q=${encodeURIComponent(title)}`, {
               headers: {
                 "Content-Type": "application/json",
               }
@@ -449,7 +450,7 @@ const [showSearch, setShowSearch] = useState(false);
       // WebkitBackdropFilter: isScrolled ? 'blur(5px)' : 'none',
       // backgroundImage: selectedStation ? `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${albumArtworkURL})` : `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${default_img})`
       // backgroundColor:"black"
-      backgroundImage:`linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${bg_bawah})`
+      // backgroundImage:`linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${bg_bawah})`
 
     }}
   >

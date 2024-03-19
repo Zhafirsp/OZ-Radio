@@ -2,6 +2,16 @@
   margin: 290px 0 0 0;
   color: #fff;
 }
+
+.row-news {
+  margin-left: 50px;
+  margin-top: 0px;
+}
+
+.row-news h2 {
+  margin-bottom: 40px;
+}
+
 .news a {
   color: #fff;
 }
