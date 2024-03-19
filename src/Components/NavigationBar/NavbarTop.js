@@ -7,8 +7,8 @@ import oz_bali from '../../Assets/Img/logo_oz_bali.png'
 import oz_logo from '../../Assets/Img/Logo2.png'
 import default_img from '../../Assets/Img/bg-vinyl.png'
 import supergraphic from '../../Assets/Img/SUPERGRAPHIC.png'
-import bg_atas from '../../Assets/Img/bg-atas.png'
-import bg_bawah from '../../Assets/Img/bg-bawah.png'
+import bg_atas from '../../Assets/Img/header01.png'
+import bg_bawah from '../../Assets/Img/header02.png'
 import '../../Assets/Css/nav_top.css'
 import Player from "../Player/Player";
 import StationSelector from "../StationSelector/StationSelector";
@@ -18,6 +18,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import '../../Assets/Css/nav_bottom.css'
 import { IoSearchCircle, IoCloseCircle  } from "react-icons/io5";
 import axios from 'axios';
+import stations from './../../Data/stations.json'
 
 const NOW_PLAYING = <span className='now-playing-text'>Now Playing</span>;
 const VISIT_STATION = <span className='text-title'>Visit OZ </span>;
@@ -29,53 +30,6 @@ const RECONNECTING = "Lost Connection. Reconnecting...";
 const CONNECTED = "Waiting metadata...";
 const SWITCHING = "Switching...";
 
-const stations = [
-  { 
-    name: 'Bali', 
-    mount: '/ozradiobali',
-    image: oz_bali, 
-    frequency: '101.2 FM', 
-    link: "https://ozradiobali.id/",
-    endpoints: [
-      {
-        "endpoint": "https://streaming.ozradiojakarta.com:8443/ozradiobali",
-        "codec": "AAC",
-        "metadataTypes": ["icestats"],
-        "statsSources": ["icy", "icestats"]
-      }
-    ]
-  },
-  { 
-    name: 'Jakarta', 
-    mount: '/ozjakarta',
-    image: oz_jkt, 
-    frequency: '90.8 FM', 
-    link: "https://ozradiojakarta.com/",
-    endpoints: [
-      {
-        "endpoint": "https://streaming.ozradiojakarta.com:8443/ozjakarta",
-        "codec": "AAC",
-        "metadataTypes": ["icestats"],
-        "statsSources": ["icy", "icestats"]
-      }
-    ]
-  },
-  { 
-    name: 'Bandung', 
-    mount: '/ozradiobandung',
-    image: oz_bdg, 
-    frequency: '103.1 FM', 
-    link: "https://bandung.ozradio.id/",
-    endpoints: [
-      {
-        "endpoint": "https://streaming.ozradiojakarta.com:8443/ozradiobandung",
-        "codec": "AAC",
-        "metadataTypes": ["icestats"],
-        "statsSources": ["icy", "icestats"]
-      }
-    ]
-  },
-  ];
 
 const NavTop = () => {
   const audioRef = useRef(null);
@@ -100,7 +54,11 @@ const NavTop = () => {
       const fetchData = async () => {
         try {
           if (selectedStation) {
-          const response = await axios.get(`https://streaming.ozradiojakarta.com:8443/status-json.xsl?mount=${selectedStation.mount}`);
+          const response = await axios.get(`https://streaming.ozradiojakarta.com:8443/status-json.xsl?mount=${selectedStation.mount}`, {
+            headers: {
+              "Content-Type": "application/json",
+            }
+          });
           const data = response.data;
           if (data && data.icestats && data.icestats.source) {
             const { title, listenurl, server_url } = data.icestats.source;
@@ -116,7 +74,11 @@ const NavTop = () => {
             console.log('Memutar musik dari:', listenurl);
              // Panggil pencarian album artwork hanya jika ada judul lagu yang baru
          if (title) {
-            const searchResponse = await axios.get(`https://ozbackend.santuy.info/api/song/search?q=${encodeURIComponent(title)}`);
+            const searchResponse = await axios.get(`https://ozbackend.santuy.info/api/song/search?q=${encodeURIComponent(title)}`, {
+              headers: {
+                "Content-Type": "application/json",
+              }
+            });
             const searchData = searchResponse.data;
 
             // Ambil URL gambar album dari respons data
@@ -444,7 +406,7 @@ const [showSearch, setShowSearch] = useState(false);
           style={{ 
             // backdropFilter: isScrolled ? 'blur(40px)' : 'none',
             // WebkitBackdropFilter: isScrolled ? 'blur(40px)' : 'none',
-            backgroundImage:`linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${bg_atas})`
+            // backgroundImage:`linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${bg_atas})`,
             // backgroundColor:"black"
 
             }}>

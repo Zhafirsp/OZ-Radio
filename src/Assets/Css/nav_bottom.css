@@ -7,9 +7,13 @@
   padding: 10px 20px 0px;
   /* z-index: 10; */
   transition: all 0.3s ease;
-  background-size: cover;
-  background-position: center 37.3%;
+  /* background-size: cover; */
+  /* background-position: center 37.3%; */
   border-top: 1px solid #fcba33;
+  background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../Img/header02.png");
+  background-position: right bottom 10%;
+  background-repeat: no-repeat;
+  background-color: #111010;
 }
 
 .search__icon2, .logo_bottom {
@@ -211,9 +215,6 @@
 
 @media (max-width: 767px) {
     
-  .navbar-bottom {
-    background-position: center 50.5%;
-  }
   .station-streaming{
     font-size: 18px;
   }
@@ -307,9 +308,6 @@
 /* For medium devices */
 @media (max-width: 425px) {
     
-  .navbar-bottom {
-    background-position: center 67.6%;
-  }
 
   .offcanvas-menu{
     margin-left: 200px;
@@ -339,9 +337,6 @@
 
 @media (max-width: 375px) {
     
-  .navbar-bottom {
-    background-position: center 74.5%;
-  }
   .offcanvas-menu{
     margin-left: 150px;
     margin-top: -50px;
@@ -359,10 +354,6 @@
 
 @media (max-width: 320px) {
     
-  .navbar-bottom {
-    background-position: center 85.4%;
-  }
-
   .station-streaming{
     margin-left: 30px;
     /* margin-top: -30px; */

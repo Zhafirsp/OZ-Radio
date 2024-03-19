@@ -10,9 +10,12 @@
   /* margin-top: 10px; */
   /* margin-bottom: 20px; */
   z-index: 1;
-  background-size: cover;
-  background-position: center 30%;
   transition: all 0.3s ease; /* Animasi ketika berubah ukuran */
+  /* background-size: 25%; */
+  background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../Img/header01.png");
+  background-position: right bottom 10%;
+  background-repeat: no-repeat;
+  background-color: #111010;
 }
 
 .text-title {
@@ -190,10 +193,7 @@
   }
 
   @media (max-width: 1024px) {
-    
-    .navbar-top {
-      background-position: center 30%;
-    }
+  
 
     .search__input {
       font-size: 15px;
