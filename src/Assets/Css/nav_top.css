@@ -19,6 +19,8 @@
 }
 
 
+
+
 .text-title {
   font-family: "Familjen Grotesk";
 }
@@ -242,7 +244,7 @@
   }  */
 
   .song-player{
-    margin-left: -300px;
+    margin-left: -350px;
   }
 
   .text-title {
@@ -276,7 +278,6 @@
   @media (max-width:700px) {
     .song-player {
       margin-left: -300px;
-
     }
     .search__icon {
       opacity: 1;
@@ -286,8 +287,11 @@
 
   @media (max-width: 645px) {
     .search__icon {
-      opacity: 0;
-      
+      display: none;
+    }
+
+    .song-player {
+      margin-left: -370px;
     }
   }
   
@@ -324,7 +328,7 @@
 
   .text-title {
     font-size: 13px;
-    width: 300px;
+    width: 280px;
   }
   .search__icon {
     opacity: 0;
@@ -336,7 +340,7 @@
 
   @media (max-width: 490px) {
     .song-player{
-      margin-left: -300px;
+      margin-left: -350px;
       margin-top: -10px;
     
     }
@@ -353,13 +357,23 @@
 
   }
 
+  @media (max-width: 430px) {
+    .song-player{
+      margin-left: -200px;
+      margin-top: -10px;
+    }
+
+    .text-title {
+      width: 220px;
+    }
+
+  }
+
   @media (max-width: 375px) {
     .song-player{ 
       margin-left: -350px;
 
     }
-
-
 
     .text-title {
       font-size: 12px;
@@ -369,5 +383,8 @@
   }
 
   @media (max-width: 320px) {
+    .song-player{ 
+      margin-left: -200px;
 
+    }
   }

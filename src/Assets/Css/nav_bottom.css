@@ -16,6 +16,10 @@
   background-color: #111010;
 }
 
+.search-offcanvas {
+  display: none;
+}
+
 .search__icon2, .logo_bottom {
   opacity: 0;
   transition: opacity 0.3s ease; /* Animasi transisi */
@@ -188,12 +192,12 @@
 
   .logo_bottom{
     opacity: 1;
-    /* margin-top: 15px; */
+    margin-top: -15px;
   }
 
   .station-selector {
     margin-left: -20px !important;
-    margin-top: -35px !important;
+    /* margin-top: px !important; */
   }
 
   .station-streaming{
@@ -262,11 +266,17 @@
 
   .search__icon2 {
     margin-top: 10px;
-    opacity: 1;
+    margin-left: -1150px;
+    opacity: 0;
+    font-size: 0px;
+  }
+
+  .search-offcanvas {
+    display: contents;
   }
 
   .offcanvas-menu{
-    margin-left: 370px;
+    margin-left: 430px;
   }
 
   .logo_bottom {
@@ -282,13 +292,13 @@
 
 @media (max-width: 595px) {
   .offcanvas-menu{
-    margin-left: 320px;
+    margin-left: 400px;
   }
 }
 
 @media (max-width: 545px) {
   .offcanvas-menu{
-    margin-left: 270px;
+    margin-left: 350px;
   }
   .station-streaming {
     margin-left: 100px;
@@ -297,7 +307,7 @@
 
 @media (max-width: 500px) {
   .offcanvas-menu{
-    margin-left: 200px;
+    margin-left: 290px;
   }
 
   .station-streaming {
@@ -312,7 +322,7 @@
     
 
   .offcanvas-menu{
-    margin-left: 200px;
+    margin-left: 250px;
   }
 
    
@@ -340,7 +350,7 @@
 @media (max-width: 375px) {
     
   .offcanvas-menu{
-    margin-left: 150px;
+    margin-left: 200px;
     margin-top: -50px;
   }
 
@@ -362,7 +372,7 @@
   }
 
   .offcanvas-menu{
-    margin-left: 140px;
+    margin-left: 160px;
   }
 
   .logo_bottom{

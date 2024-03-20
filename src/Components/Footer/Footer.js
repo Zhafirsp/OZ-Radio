@@ -22,18 +22,19 @@ const Footer = () => {
 
   return (
     <div className="footer">
-      <div className="footer-social ms-5">
+      <div className="footer-social">
         <div>
           <img 
                 src={logo_img} 
                 className="img-fluid footer-logo" 
                 loading="lazy" 
+                alt="footer-logo"
                 />
         </div>
         {/* <p className="fs-5 mt-2">SHARING THE MESSAGE, CREATING CHANGE</p> */}
 
         {/* <div className="container col-xxl-8"> */}
-            <div className="row flex-lg-row-reverse g-5 py-5">
+            <div className="row flex-lg-row-reverse g-5 pt-5 pb-4">
             <div className="col-lg-6">
             <div className="offset-lg-6 offset-md-0">
               <SocialFooter/>
@@ -93,7 +94,7 @@ const Footer = () => {
         </div>
       </div>
     </div> */}
-      <div className="container bottom-footer ms-5">
+      <div className="container bottom-footer ms-3">
         <footer className="d-flex flex-wrap my-4">
           <div className="col-md-12 d-flex align-items-center">
            <p>2024 OZ Radio Limited. All Rights Reserved. OZ Radio &copy; is a registered trademark of OZ Radio Indonesia. 

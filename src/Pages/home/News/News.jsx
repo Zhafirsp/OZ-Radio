@@ -21,128 +21,190 @@ const News = () => {
 
   return (
     <>
-      <section className="news">
-        <div className="container my-5">
-          {items.slice(0, visibleItems).map((item) => (
-            <Card key={item.id} item={item} />
-          ))}
-        </div>
-      </section>
-        <div className="container my-5 loaded-item">
-          <Row>
-          <h1 className="display-5 fw-bold text-center">
-              Popular News from <span style={{ color:"#F49C27" }} className="home-oz">OZ Radio </span>
-            </h1>
-            {/* {items2.slice(0, visibleItems).map((items2) => (
-              <Col lg={6} className="news-load">
-                <Card key={items2.id} item={items2} />
-              </Col>
-            ))} */}
-          </Row>
-        </div>
-          {/* <div className="load-more text-center">
-            <Button variant="outline-dark" className="" onClick={loadMore}>Load More</Button>
-          </div> */}
-
-<section className="news-new">
-        <div className="row row-news">
-          <div className="col-sm-10">
-            <div className="row-text">
-              <h2>Catch Up On The News</h2>
-            </div>
+     <section className="head">
+        <div className="container flexSB paddingTB my-5 d-flex justify-content-between">
+          <div className="logo">
+            <img src="../images/headerb.png" alt="" />
           </div>
-          <div className="col-sm-2">
-            <div className="row-text">
-              <h2>FILTER BY CATEGORY</h2>
-            </div>
+          <div className="ad">
+            <img src="../images/headerb.png" alt="" />
           </div>
         </div>
       </section>
 
-      <section className="news-page">
-        <div className="row row-news">
-          <div className="col-sm-10">
-            {items2.slice(0, visibleItems).map((items2) => (
-              <Col lg={6} className="news-load">
-                <Card key={items2.id} item={items2} />
-              </Col>
-            ))}
-          </div>
-          <div className="col-sm-2">
-            <a href="/">
-              <h4>Music</h4>
-            </a>
-            <a href="/">
-              <h4>Film</h4>
-            </a>
-            <a href="/">
-              <h4>Entertainment</h4>
-            </a>
-            <a href="/">
-              <h4>Game</h4>
-            </a>
-            <a href="/">
-              <h4>Cultural</h4>
-            </a>
-            <a href="/">
-              <h4>Local Values</h4>
-            </a>
-            <a href="/">
-              <h4>Sustainability</h4>
-            </a>
-            <a href="/">
-              <h4>Environtment</h4>
-            </a>
-            <a href="/">
-              <h4>News</h4>
-            </a>
-            <a href="/">
-              <h4>Journalism</h4>
-            </a>
-            <a href="/">
-              <h4>Fashion</h4>
-            </a>
-            <a href="/">
-              <h4>Lifestyle</h4>
-            </a>
-            <a href="/">
-              <h4>Educational</h4>
-            </a>
-            <a href="/">
-              <h4>Travelling</h4>
-            </a>
-            <a href="/">
-              <h4>Exploration</h4>
-            </a>
-            <a href="/">
-              <h4>Technology</h4>
-            </a>
-            <a href="/">
-              <h4>Food</h4>
-            </a>
-            <a href="/">
-              <h4>Cooking</h4>
-            </a>
-            <a href="/">
-              <h4>Advertising</h4>
-            </a>
-            <a href="/">
-              <h4>Marketing</h4>
-            </a>
-            <a href="/">
-              <h4>Sports</h4>
-            </a>
-            <a href="/">
-              <h4>Health</h4>
-            </a>
-            <a href="/">
-              <h4>Wellness</h4>
-            </a>
-          </div>
-          <div className="load-more text-center">
-            <Button variant="outline-dark" className="" onClick={loadMore}>
-              Load More
-            </Button>
+      <section className="single-page-news">
+        <div className="container-fluid">
+          <div className="row row-pages">
+            <h1>Catch Up On The News</h1>
+            <div className="col-sm-10 d-flex">
+              <div className="col-sm-3">
+                <img
+                  className="SquareImage"
+                  src="../images/popular/pop1.jpg"
+                  alt=""
+                />
+                <img
+                  className="SquareImage"
+                  src="../images/popular/pop2.jpg"
+                  alt=""
+                />
+                <img
+                  className="SquareImage"
+                  src="../images/popular/pop4.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="col-sm-7">
+                <button type="Roundedbutton" className="btn btn-danger">
+                  Lorem ipsum dolor sit.
+                </button>
+                <div className="text-news">
+                  <h3>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Autem praesentium cumque tempore necessitatibus corrupti
+                    ipsam doloremque temporibus dicta pariatur fugit!
+                  </h3>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
+                    nulla, veritatis, necessitatibus odio nesciunt quidem
+                    doloribus laudantium repudiandae magnam, dolorem
+                    reprehenderit fuga voluptates repellendus beatae magni
+                    fugiat culpa suscipit eveniet sunt corrupti similique
+                    deleniti molestiae voluptas. Officia itaque dolorum
+                    dignissimos? Quisquam voluptatibus hic totam consectetur
+                    minus provident, neque enim molestias.
+                  </p>
+                  <hr />
+                  <a href="/">READ MORE</a>
+                </div>
+                <button type="Roundedbutton" className="btn btn-warning">
+                  Lorem ipsum dolor sit.
+                </button>
+                <div className="text-news">
+                  <h3>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Autem praesentium cumque tempore necessitatibus corrupti
+                    ipsam doloremque temporibus dicta pariatur fugit!
+                  </h3>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
+                    nulla, veritatis, necessitatibus odio nesciunt quidem
+                    doloribus laudantium repudiandae magnam, dolorem
+                    reprehenderit fuga voluptates repellendus beatae magni
+                    fugiat culpa suscipit eveniet sunt corrupti similique
+                    deleniti molestiae voluptas. Officia itaque dolorum
+                    dignissimos? Quisquam voluptatibus hic totam consectetur
+                    minus provident, neque enim molestias.
+                  </p>
+                  <hr />
+                  <a href="/">READ MORE</a>
+                </div>
+                <button type="Roundedbutton" className="btn btn-info">
+                  Lorem ipsum dolor sit.
+                </button>
+                <div className="text-news">
+                  <h3>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Autem praesentium cumque tempore necessitatibus corrupti
+                    ipsam doloremque temporibus dicta pariatur fugit!
+                  </h3>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
+                    nulla, veritatis, necessitatibus odio nesciunt quidem
+                    doloribus laudantium repudiandae magnam, dolorem
+                    reprehenderit fuga voluptates repellendus beatae magni
+                    fugiat culpa suscipit eveniet sunt corrupti similique
+                    deleniti molestiae voluptas. Officia itaque dolorum
+                    dignissimos? Quisquam voluptatibus hic totam consectetur
+                    minus provident, neque enim molestias.
+                  </p>
+                  <hr />
+                  <a href="/">READ MORE</a>
+                </div>
+                <div className="load-more text-center">
+                  <Button
+                    variant="outline-dark"
+                    className=""
+                    onClick={loadMore}
+                  >
+                    Load More
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-sm-2">
+              <h2>List Category</h2>
+              <a href="/">
+                <h4>Music</h4>
+              </a>
+              <a href="/">
+                <h4>Film</h4>
+              </a>
+              <a href="/">
+                <h4>Entertainment</h4>
+              </a>
+              <a href="/">
+                <h4>Game</h4>
+              </a>
+              <a href="/">
+                <h4>Cultural</h4>
+              </a>
+              <a href="/">
+                <h4>Local Values</h4>
+              </a>
+              <a href="/">
+                <h4>Sustainability</h4>
+              </a>
+              <a href="/">
+                <h4>Environtment</h4>
+              </a>
+              <a href="/">
+                <h4>News</h4>
+              </a>
+              <a href="/">
+                <h4>Journalism</h4>
+              </a>
+              <a href="/">
+                <h4>Fashion</h4>
+              </a>
+              <a href="/">
+                <h4>Lifestyle</h4>
+              </a>
+              <a href="/">
+                <h4>Educational</h4>
+              </a>
+              <a href="/">
+                <h4>Travelling</h4>
+              </a>
+              <a href="/">
+                <h4>Exploration</h4>
+              </a>
+              <a href="/">
+                <h4>Technology</h4>
+              </a>
+              <a href="/">
+                <h4>Food</h4>
+              </a>
+              <a href="/">
+                <h4>Cooking</h4>
+              </a>
+              <a href="/">
+                <h4>Advertising</h4>
+              </a>
+              <a href="/">
+                <h4>Marketing</h4>
+              </a>
+              <a href="/">
+                <h4>Sports</h4>
+              </a>
+              <a href="/">
+                <h4>Health</h4>
+              </a>
+              <a href="/">
+                <h4>Wellness</h4>
+              </a>
+            </div>
           </div>
         </div>
       </section>

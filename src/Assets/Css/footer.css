@@ -8,6 +8,7 @@
   /* background-size: 25%; */
   background-position: right bottom 10%;
   background-repeat: no-repeat;
+  max-height: fit-content;
 }
 
 .span-footer {
@@ -20,6 +21,11 @@
 
 .footer-social {
   padding-left: 30px;
+  margin-left: 30px;
+}
+
+.bottom-footer {
+  margin-left: 45px !important;
 }
 
 
@@ -182,6 +188,14 @@ Link:active{
   .footer-logo {
     width: 300px;
     height: auto;
+  }
+
+  .footer-social {
+    margin-left: 0px;
+  }
+  
+  .bottom-footer {
+    margin-left: 16px !important;
   }
   
 }

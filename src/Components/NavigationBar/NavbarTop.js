@@ -74,8 +74,8 @@ const NavTop = () => {
             console.log('Memutar musik dari:', listenurl);
              // Panggil pencarian album artwork hanya jika ada judul lagu yang baru
          if (title) {
-            // const searchResponse = await axios.get(`https://ozbackend.santuy.info/api/song/search?q=${encodeURIComponent(title)}`, {
-            const searchResponse = await axios.get(`http://localhost:4001/api/song/search?q=${encodeURIComponent(title)}`, {
+            const searchResponse = await axios.get(`https://ozbackend.santuy.info/api/song/search?q=${encodeURIComponent(title)}`, {
+            // const searchResponse = await axios.get(`http://localhost:4001/api/song/search?q=${encodeURIComponent(title)}`, {
               headers: {
                 "Content-Type": "application/json",
               }
@@ -149,7 +149,7 @@ const [showSearch, setShowSearch] = useState(false);
     setShowSearch(!showSearch);
   };
 
-  const namespace = "urn:x-cast:icecast-metadata-js-demo";
+  const namespace = "urn:x-cast:OZ MEDIA";
   const castAPIId = "E3C20492";
 
   const sendCastMessage = useCallback(
@@ -436,7 +436,7 @@ const [showSearch, setShowSearch] = useState(false);
                             {currentTitle}
                             </p>
                         </div>
-                        <Link to="/search" className='search__icon text-warning'><IoSearchCircle /></Link>
+                        <Link to="/search" className='search__icon text-warning' aria-label='search-top'><IoSearchCircle /></Link>
                   </div>
           </Navbar>
         </Container>
@@ -474,6 +474,10 @@ const [showSearch, setShowSearch] = useState(false);
                                 <IoCloseCircle className='search__close text-warning'/>
                                 </div>
                             </form> */}
+                            <Form action="https://www.google.com/search" target='_blank' className='search-offcanvas'>
+                                <Form.Control type="input" placeholder="Search OZ" name="q" style={{ borderRadius:"25px", marginBottom:"20px", width:"250px" }}></Form.Control>
+                                {/* <IoSearchCircle className='text-warning'/> */}
+                            </Form>
                               <Nav.Link><Link to="/" className='text-white'>Home</Link></Nav.Link>
                               <Nav.Link><Link to="/news" className='text-white'>News</Link></Nav.Link>
                               <Nav.Link><Link to="/radio" className='text-white'>Radio</Link></Nav.Link>
@@ -495,12 +499,12 @@ const [showSearch, setShowSearch] = useState(false);
                                 <NavDropdown.Item href="#">Aceh (102.8 FM) </NavDropdown.Item>
                             </NavDropdown> */}
                                 </Nav>
-                            <Link to="/search"><IoSearchCircle className='search__icon2 text-warning'/></Link>
+                            <Link to="/search" aria-label='search-bottom'><IoSearchCircle className='search__icon2 text-warning'/></Link>
                             
                                 {/* <form action="https://www.google.com/search" target='_blank' className={`search ${showSearch ? 'show-search' : ''}`} id="search-bar"> */}
                               {/* </form> */}
                           {/* </Navbar.Collapse> */}
-                        <div className="station-selector d-flex col-md-12">
+                        <div className="station-selector d-flex col-md-8 col-lg-12">
                           <p className='station-streaming'>Streaming: </p>
                           <StationSelector 
                             allow="autoplay"
