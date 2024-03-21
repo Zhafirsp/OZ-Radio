@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./news.css";
-import "../mainContent/Ppost/ppost.css"
+// import "../mainContent/Ppost/ppost.css"
 import Card from "./Card";
 import { hero, popular } from "../../../Data/dummyData";
 import { Button, Row, Col } from "react-bootstrap";
+import ads_img from '../../../Assets/Img/headerb.png'
 
 const News = () => {
   const [items, setItems] = useState(hero);
@@ -21,20 +22,17 @@ const News = () => {
 
   return (
     <>
-     <section className="head">
+     <section className="head-news">
         <div className="container flexSB paddingTB my-5 d-flex justify-content-between">
-          <div className="logo">
-            <img src="../images/headerb.png" alt="" />
-          </div>
-          <div className="ad">
-            <img src="../images/headerb.png" alt="" />
+          <div className="ads-topnews mx-auto">
+            <img src={ads_img} width={1000} alt="" />
           </div>
         </div>
       </section>
 
       <section className="single-page-news">
         <div className="container-fluid">
-          <div className="row row-pages">
+          <div className="row row-news">
             <h1>Catch Up On The News</h1>
             <div className="col-sm-10 d-flex">
               <div className="col-sm-3">
@@ -55,7 +53,7 @@ const News = () => {
                 />
               </div>
               <div className="col-sm-7">
-                <button type="Roundedbutton" className="btn btn-danger">
+                <button type="Roundedbutton" className="btn btn-news btn-danger">
                   Lorem ipsum dolor sit.
                 </button>
                 <div className="text-news">
@@ -77,7 +75,7 @@ const News = () => {
                   <hr />
                   <a href="/">READ MORE</a>
                 </div>
-                <button type="Roundedbutton" className="btn btn-warning">
+                <button type="Roundedbutton" className="btn btn-news btn-warning">
                   Lorem ipsum dolor sit.
                 </button>
                 <div className="text-news">
@@ -99,7 +97,7 @@ const News = () => {
                   <hr />
                   <a href="/">READ MORE</a>
                 </div>
-                <button type="Roundedbutton" className="btn btn-info">
+                <button type="Roundedbutton" className="btn btn-news btn-info">
                   Lorem ipsum dolor sit.
                 </button>
                 <div className="text-news">

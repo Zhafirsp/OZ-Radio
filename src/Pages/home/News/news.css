@@ -112,7 +112,7 @@
 .news-load img {
   width: 400px;
   height: 200px;
-  /* position: absolute; */
+  position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
@@ -175,7 +175,7 @@
 .SquareImage {
   width: 440px;
   margin-bottom: 20px;
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
 .text-news h3 {
@@ -184,20 +184,20 @@
   margin-left: 35px;
 }
 
-.row h2 {
+.row-news h2 {
   font-weight: bolder;
-  /* text-align: justify; */
+  text-align: justify;
   margin-left: 10px;
   margin-bottom: 15px;
 }
 
-.row h1 {
+.row-news h1 {
   font-weight: bolder;
-  text-align: justify;
+  /* text-align: justify; */
   margin-left: 10px;
 }
 
-.row h4 {
+.row-news h4 {
   text-align: justify;
   margin-left: 10px;
 }
@@ -214,12 +214,12 @@
   margin-left: 35px;
 }
 
-.btn {
+.btn-news {
   margin-top: 20px;
   margin-left: 35px;
   margin-bottom: 5px;
 }
 
-.head {
+.head-news {
   margin-top: 250px;
 }

@@ -41,7 +41,7 @@
   margin-right: auto;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 991px) {
  
   .table-event {
     margin-top: 300px !important;
