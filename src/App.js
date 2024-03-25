@@ -7,9 +7,7 @@ import NavBottom from "./Components/NavigationBar/NavbarBottom";
 import React, { useEffect } from "react";
 import { Routes, Route, Navigate, Outlet, useLocation } from "react-router-dom";
 import About from "./Pages/About";
-import Homepages from "./Pages/home/Homepages";
 import SinglePage from "./Pages/singlePages/singlePage";
-import Culture from "./Components/culture/Culture"
 import SinglePageSlider from "./Pages/singlePages/slider/singlePageSlider";
 import InterviewPage from "./Pages/interviewPage";
 import Youtube from "./Components/Youtube";
@@ -17,13 +15,19 @@ import TV from "./Pages/tvPage/TvPage";
 import Video from "./Pages/tvPage/pages/Video";
 import EventPages from "./Pages/eventsPage/eventPage";
 import EventSinglePage from "./Pages/eventsPage/eventSinglePage/eventSinglePage";
-import News from "./Pages/home/News/News";
+import News from "./Pages/newsPage/News";
 import RadioPlayer from "./Pages/radioPage/RadioPlayer";
 import PlaylistPage from "./Pages/playlistPage";
 import PP_Terms from "./Pages/privacyPolicy";
 import Home from "./Pages/Homepages";
 import Search from "./Pages/Search";
 import Comingsoon from "./Pages/Comingsoon";
+import Jobs from "./Pages/job/App";
+import JobsPage from "./Pages/job/pages/JobsPage";
+import AddJobPage from "./Pages/job/pages/AddJobPage";
+import EditJobPage from "./Pages/job/pages/EditJobPage";
+import JobPage, { jobLoader } from "./Pages/job/pages/JobPage";
+import NotFoundPage from "./Pages/job/pages/NotFoundPage";
 
 function ScrollTop() {
   const location = useLocation();
@@ -35,6 +39,37 @@ function ScrollTop() {
   return null;
 }
 
+  // Add New Job
+  const addJob = async (newJob) => {
+    const res = await fetch('jobs', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newJob),
+    });
+    return;
+  };
+
+  // Delete Job
+  const deleteJob = async (id) => {
+    const res = await fetch(`jobs/${id}`, {
+      method: 'DELETE',
+    });
+    return;
+  };
+
+  // Update Job
+  const updateJob = async (job) => {
+    const res = await fetch(`jobs/${job.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(job),
+    });
+    return;
+  };
 
   const LayoutWithFooter = ({ children }) => (
       <>
@@ -100,9 +135,21 @@ function ScrollTop() {
         <Route path="/youtube" element={<LayoutWithFooter><TV /></LayoutWithFooter>} />
         <Route path="/news" element={<LayoutWithFooter><News /></LayoutWithFooter>} />
         <Route path="/playlist" element={<LayoutWithFooter><PlaylistPage /></LayoutWithFooter>} />
-        <Route exact path='/culture' component={Culture} />
         <Route path="/video/test" element={<LayoutWithFooter><Video /></LayoutWithFooter>} />
         <Route path="/pp_terms" element={<LayoutWithFooter><PP_Terms /></LayoutWithFooter>} />
+        <Route path="/admin" element={<LayoutWithFooter><JobsPage/></LayoutWithFooter>} />
+        <Route path='/add-admin' element={<AddJobPage addJobSubmit={addJob} />} />
+        <Route
+          path='/edit-admin/:id'
+          element={<EditJobPage updateJobSubmit={updateJob} />}
+          loader={jobLoader}
+        />
+        <Route
+          path='/admin/:id'
+          element={<JobPage deleteJob={deleteJob} />}
+          loader={jobLoader}
+        />
+        <Route path='*' element={<NotFoundPage />} />
         <Route
             path="/comingsoon"
             element={

@@ -21,18 +21,18 @@ const EventPages = () => {
           <article className="card__article container col-xxl-8 px-5 py-5">
             <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
               <div className="col-lg-6">
-                <div className="card__content">
-                  <img src={danilla} alt="image" width={"350px"} className="img-fluid" />
+                <div className="card__content mx-auto">
+                  <img src={danilla} alt="image" className="img-fluid mx-auto" />
                   <div className="card__data">
                         <span className="card__description">April 21</span>
-                        <h3 className="card__title fw-bold fs-5"><a href="/single-event">DJ Shadow session on OZ Radio (BROADCAST ONLY)</a></h3>
+                        <h3 className="card__title fw-bold fs-5"><a href="/single-event" className="card__title">DJ Shadow session on OZ Radio (BROADCAST ONLY)</a></h3>
                         <a href="/single-event" className="card__button">OZ - STUDIO (NW ROOMS)</a>
                   </div>
                 </div>
               </div>
               <div className="col-lg-6">
-                <div div className="card__content">
-                  <img src={rimba} alt="image" width={"350px"} className="img-fluid"/>
+                <div div className="card__content mx-auto">
+                  <img src={rimba} alt="image" className="img-fluid"/>
                   <div className="card__data">
                     <span className="card__description">April 20</span>
                     <h2 className="card__title fw-bold fs-5">Black History is Now</h2>
@@ -113,7 +113,7 @@ const EventPages = () => {
             <iframe 
             width="770" 
             height="415" 
-            src="https://www.youtube.com/embed/DxbRSL8-nB8?si=FEQCmpi5p3Z1oECK&autoplay=1" 
+            src="https://www.youtube.com/embed/DxbRSL8-nB8?si=FEQCmpi5p3Z1oECK&" 
             title="YouTube video player"
             className="mb-5 d-block ms-auto me-auto"
             frameBorder="0" 
@@ -139,7 +139,7 @@ const EventPages = () => {
                 <div className="card__data">
                   <Row>
                       <span className="card__description">April 21</span>
-                      <h3 className="card__title fw-bold fs-5"><a href="/single-event">DJ Shadow session on OZ Radio (BROADCAST ONLY)</a></h3>
+                      <h3 className="card__title fw-bold fs-5"><a href="/single-event"  className="card__title">DJ Shadow session on OZ Radio (BROADCAST ONLY)</a></h3>
                       <a href="/single-event" className="card__button">OZ - STUDIO (NW ROOMS)</a>
                   </Row>
                 </div>

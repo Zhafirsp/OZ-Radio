@@ -1,15 +1,8 @@
 import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import styles from "./Player.module.css";
-import { PiPlayCircleThin , PiPauseCircleThin  } from "react-icons/pi";
-import {
-  IoMdVolumeHigh,
-  IoMdVolumeOff,
-  IoMdVolumeLow,
-} from 'react-icons/io';
+import { BsPlayCircle, BsPauseCircle } from "react-icons/bs";
 import axios from "axios";
 
-const VISIT_STATION = "Visit this station at ";
-const ICECAST_METADATA_JS_DEMO = "Icecast Metadata JS Demo";
 
 const CodecInfo = React.memo(({ codecInfo }) => {
   const canvas = useRef();
@@ -56,7 +49,7 @@ const CodecInfo = React.memo(({ codecInfo }) => {
   return <canvas ref={canvas} title={title} className={styles.codecInfo} />;
 });
 
-const PlayerButton = React.memo(({ station, toggle, playing, volume, setVolume, muteVolume, setMuteVolume }) => (
+const PlayerButton = React.memo(({ station, toggle, playing}) => (
   <div className="play-control">
     <a 
       disabled={!station}
@@ -67,41 +60,17 @@ const PlayerButton = React.memo(({ station, toggle, playing, volume, setVolume, 
     >
       {playing 
       ? 
-      <svg xmlns="http://www.w3.org/2000/svg" width="90" height="auto" fill="currentColor" class="bi bi-pause-circle" viewBox="0 0 16 16">
-        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-        <path d="M5 6.25a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0zm3.5 0a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0z"/>
-      </svg> 
+      <BsPauseCircle/>
       : 
-      <svg xmlns="http://www.w3.org/2000/svg" width="90" height="auto" fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
-        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-        <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445"/>
-      </svg>}
+      <BsPlayCircle/>}
     </a>
   </div>
 ));
 
-const Player = ({ station, playing, toggle, codecInfo }) => {
+const Player = ({ station, playing, toggle }) => {
   
   const audioRef = useRef(null);
-  const [volume, setVolume] = useState(60);
-  const [muteVolume, setMuteVolume] = useState(false);
-  const [metadata, setMetadata] = useState(null);
-
-  useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.volume = muteVolume ? 0 : volume / 100;
-    }
-  }, [volume, muteVolume]);
-
   
-  const handleToggleMute = () => {
-    setMuteVolume((prevMuteVolume) => !prevMuteVolume);
-  };
-  
-
-
-  const title = metadata?.StreamTitle || metadata?.TITLE;
-  document.title = title ? `${title} | ${ICECAST_METADATA_JS_DEMO}` : ICECAST_METADATA_JS_DEMO;
 
   return (
     <>
