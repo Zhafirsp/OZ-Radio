@@ -96,13 +96,16 @@
 }
 
 .card__content:hover {
+.card__content:hover {
   animation: remove-overflow 2s forwards;
 }
 
 .card__content:not(:hover) {
+.card__content:not(:hover) {
   animation: show-overflow 2s forwards;
 }
 
+.card__content:not(:hover) .card__data {
 .card__content:not(:hover) .card__data {
   animation: remove-data 1s forwards;
 } */
@@ -144,6 +147,7 @@
     overflow: hidden;
   }
 }
+
 
 
 /*=============== BREAKPOINTS ===============*/
@@ -189,6 +193,7 @@
     margin-top: -25px;
   }
   .card__data {
+    width: 235px;
     width: 235px;
     padding: 1rem;
   }
@@ -293,3 +298,4 @@
     margin-left: 100px !important;
   }
 }
+/* For small devices */

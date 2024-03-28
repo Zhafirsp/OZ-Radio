@@ -38,17 +38,23 @@ const SinglePage = () => {
               <div className='social'>
                 <div className='socBox'>
                   <FaFacebook className="fab fa-facebook-f" />
+                  <FaFacebook className="fab fa-facebook-f" />
                   <span>SHARE</span>
                 </div>
                 <div className='socBox'>
+                  <FaTwitter className="fab fa-twitter" />
                   <FaTwitter className="fab fa-twitter" />
                   <span>TWITTER</span>
                 </div>
                 <div className='socBox'>
                   <FaPinterest className="fab fa-pinterest" />
                   <span>PINTEREST</span>
+                  <FaPinterest className="fab fa-pinterest" />
+                  <span>PINTEREST</span>
                 </div>
                 <div className='socBox'>
+                  <FaEnvelope className="fab fa-envelope" />
+                  <span>EMAIL</span>
                   <FaEnvelope className="fab fa-envelope" />
                   <span>EMAIL</span>
                 </div>
@@ -82,6 +88,7 @@ const SinglePage = () => {
 
               <div className='quote'>
                 <FaQuoteLeft className="fa fa-quote-left"/>
+                <FaQuoteLeft className="fa fa-quote-left"/>
                 {item.details.map((data) => (
                   <p>{data.quote}</p>
                 ))}
@@ -99,7 +106,9 @@ const SinglePage = () => {
               </div>
             </section>
             {/* <section className='sideContent'>
+            {/* <section className='sideContent'>
               <Side />
+            </section> */}
             </section> */}
           </div>
         </Container>

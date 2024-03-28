@@ -88,7 +88,37 @@ const Interview = () => {
       },
       {
         breakpoint: 800,
+        breakpoint: 1200,
         settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 1000,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
@@ -115,6 +145,7 @@ const Interview = () => {
     <section>
     <Container>
       <div className="interview" data-aos="fade-up">
+        <Row className="text-interview">
         <Row className="text-interview">
           <Col className="mb-3">
             <h1 className="display-5 fw-bold">

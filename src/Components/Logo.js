@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
+import React, { useEffect } from "react";
 import { Container } from 'react-bootstrap';
 import logo_img from '../Assets/Img/Logo.png';
 import "../Assets/Css/logo_definition.css"
+import Typed from 'typed.js';
+
 import Typed from 'typed.js';
 
 
@@ -37,6 +40,16 @@ const Logo = () => {
             className="img-fluid img-logo" 
             loading="lazy" 
             />
+            {/* <div className="scroller">
+              <span>
+              Delivering <br/> 
+              music <br/> 
+              we do <br/> 
+              in style <br/> 
+              </span>
+            </div> */}
+            {/* <h1 className="mx-3 mt-4">Delivering music we do... in style</h1> */}
+            <h1 className="mx-3 mt-4"><span className="auto-type"></span></h1>
             {/* <div className="scroller">
               <span>
               Delivering <br/> 

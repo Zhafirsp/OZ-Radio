@@ -55,7 +55,6 @@ const CardEvent = () => {
                       <br/>
                       <span className=""><a href="#">OZ - STUDIO (NW ROOMS)</a></span>
                     </Col>
-                  </Row>
               </div>
               </Col>
             </Row>
