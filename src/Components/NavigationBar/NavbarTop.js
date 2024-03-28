@@ -74,7 +74,7 @@ const NavTop = () => {
             console.log('Memutar musik dari:', listenurl);
              // Panggil pencarian album artwork hanya jika ada judul lagu yang baru
          if (title) {
-            const searchResponse = await axios.get(`https://ozbackend.santuy.info/api/song/search?q=${encodeURIComponent(title)}`, {
+            const searchResponse = await axios.get(`https://ytmusic-api.cyclic.app/api/song/search?q=${encodeURIComponent(title)}`, {
             // const searchResponse = await axios.get(`http://localhost:4001/api/song/search?q=${encodeURIComponent(title)}`, {
               headers: {
                 "Content-Type": "application/json",
