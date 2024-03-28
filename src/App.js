@@ -5,7 +5,6 @@ import ScrollToTop from "react-scroll-to-top";
 import NavTop from "./Components/NavigationBar/NavbarTop";
 import NavBottom from "./Components/NavigationBar/NavbarBottom";
 import React, { useEffect } from "react";
-import React, { useEffect } from "react";
 import { Routes, Route, Navigate, Outlet, useLocation } from "react-router-dom";
 import About from "./Pages/About";
 import SinglePage from "./Pages/singlePages/singlePage";
