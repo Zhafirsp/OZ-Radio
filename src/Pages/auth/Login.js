@@ -101,15 +101,16 @@ export default function Login() {
                     name="password"
                   />
                 </div>
-
-                <Button
-                  variant="outline-dark"
-                  // onClick={() => onLogin()}
-                  className="col-12 mx-auto mt-4"
-                  id="submit"
-                >
-                  {loading ? "Loading..." : "Login"}
-                </Button>
+                <Link to={"/data-news"}>
+                  <Button
+                    variant="outline-dark"
+                    // onClick={() => onLogin()}
+                    className="col-12 mx-auto mt-4"
+                    id="submit"
+                  >
+                    {loading ? "Loading..." : "Login"}
+                  </Button>
+                </Link>
                 <p className="mt-4 text-center">
                 Don't have an account?{" "}
                   <Link to="/register" className="fw-bold">Register Here!</Link>

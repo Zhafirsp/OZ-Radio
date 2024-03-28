@@ -4,6 +4,8 @@ import { PiPencilSimpleBold } from "react-icons/pi";
 import { BiTrashAlt } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { hero } from "../../../Data/dummyData";
+
 // import {
 //   getPengumumanApi,
 //   getActivePengumumanApi,
@@ -11,10 +13,11 @@ import { useState, useEffect } from "react";
 // } from "../../../api/pengumuman/pengumumanApi";
 import { useAuth } from "../../../context/AuthContext";
 import ModalConfirm from "../../../Components/ModalConfirm";
+import { Button } from "react-bootstrap";
 
 export default function ListNews() {
   // const { userData } = useAuth();
-  const [listPengumuman, setListPengumuman] = useState([]);
+  const [listPengumuman, setListPengumuman] = useState(hero);
 
   const [selectedData, setSelectedData] = useState(null);
   const [loadingDelete, setLoadingDelete] = useState(false);
@@ -85,6 +88,16 @@ export default function ListNews() {
             <h1 className="fs-1 fw-bold mt-3"><span style={{ color:"#F49C27" }}>OZ Media</span></h1>
             <hr />
           </div>
+          <Link to={"/data-news/add-news"}>
+              <Button
+                variant="outline-success"
+                // onClick={() => onLogin()}
+                className="float-end mb-3"
+                id="submit"
+              >
+                Add News
+              </Button>
+            </Link>
           <table
             className="table table-bordered text-center"
             style={{
@@ -107,7 +120,7 @@ export default function ListNews() {
                 <th scope="col">Author</th>
                 <th scope="col">Img_url</th>
                 <th scope="col">Date</th>
-                <th scope="col">Link</th>
+                {/* <th scope="col">Link</th> */}
                 {/* {userData?.role === "Laboran" ? ( */}
                   <>
                     <th scope="col">Status</th>
@@ -117,6 +130,39 @@ export default function ListNews() {
               </tr>
             </thead>
             <tbody>
+              {listPengumuman.map((data, index) => {
+                return (
+                  <tr key={index}>
+                      <td>{index + 1}</td>
+                      <td>{data.title}</td>
+                      <td>{data.category}</td>
+                      <td>{data.desc.para1}</td>
+                      <td>{data.authorName}</td>
+                      <td>{data.cover}</td>
+                      <td>{data.time}</td>
+                      <td>{data.time}</td>
+                      <td>
+                              <Link
+                                to={`/edit-news/${data?.info_id}`}
+                                className="mx-2"
+                                >
+                                <Button className="btn-warning">
+                                  <PiPencilSimpleBold />
+                              </Button>
+                              </Link>
+                              <Button
+                                onClick={() => {
+                                  setOpenModalConfirm(true);
+                                  setSelectedData(data);
+                                }}
+                                className="btn-danger text-dark"
+                              >
+                                <BiTrashAlt />
+                              </Button>
+                            </td>
+                  </tr>
+                )
+              })} 
               {/* {listNews && listNews?.length > 0 ? (
                 <>
                   {listNews?.map((data, index) => {
