@@ -5,6 +5,7 @@ import SinglePageSlider from "./slider/singlePageSlider"
 import { hero } from "../../Data/dummyData"
 import { Container } from "react-bootstrap"
 import { FaEnvelope, FaFacebook, FaPinterest, FaQuoteLeft, FaTwitter } from "react-icons/fa"
+import NotFoundPage from "../NotFoundPage"
 
 const SinglePage = () => {
   const { id } = useParams()
@@ -103,7 +104,9 @@ const SinglePage = () => {
           </div>
         </Container>
       ) : (
-        <h1>not found</h1>
+        <Container fluid className="my-5 py-5">
+          <NotFoundPage/>
+       </Container>
       )}
     </>
   )

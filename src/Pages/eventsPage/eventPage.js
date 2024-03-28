@@ -2,14 +2,14 @@ import React from "react"
 import { Col, Row, Container, Card, Button } from 'react-bootstrap';
 import CardEvent from "../../Components/event/cardEvent";
 import satine from '../../Assets/Img/satine_interview.jpg'
-import '../eventsPage/evenPage.css'
+import './evenPage.css'
 import danilla from "../../Assets/Img/danilla_interview.jpg"
 import rimba from "../../Assets/Img/rimba_interview.jpg"
 
 const EventPages = () => {
   return (
     <div className="eventPage">
-      <div className="about-section-text-container py-5 event-header">
+      <div className="event-page-container py-5 event-header">
         <h1 className="display-5 fw-bold text-center event-header-text">
             Upcoming <span style={{ color:"#F49C27" }} className="home-oz">OZ Radio </span> Events
         </h1>

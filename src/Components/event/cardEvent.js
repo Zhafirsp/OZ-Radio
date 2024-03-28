@@ -11,7 +11,7 @@ const CardEvent = () => {
   return (
         <div className="card_container">
         <article className="card__article py-5">
-          <Row className=" g-5">
+          <Row className=" flex-row-reverse g-5">
             <Col lg={7} md={12} sm={12} className="card__content">
                     <img src={rimba} alt="image" className="rimba-img img-fluid mx-auto d-block"/>
                     <div className="card__data">

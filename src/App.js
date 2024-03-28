@@ -27,7 +27,15 @@ import JobsPage from "./Pages/job/pages/JobsPage";
 import AddJobPage from "./Pages/job/pages/AddJobPage";
 import EditJobPage from "./Pages/job/pages/EditJobPage";
 import JobPage, { jobLoader } from "./Pages/job/pages/JobPage";
-import NotFoundPage from "./Pages/job/pages/NotFoundPage";
+import NotFoundPage from "./Pages/NotFoundPage";
+import Login from "./Pages/auth/Login";
+import Register from "./Pages/auth/Register";
+import AddNews from "./Pages/admin/newsPage/add";
+import EditNews from "./Pages/admin/newsPage/edit";
+import NavAdmin from "./Components/NavigationBar/NavbarAdmin";
+import { BiSolidArrowToTop } from "react-icons/bi";
+import ListNews from "./Pages/admin/newsPage";
+import Unauthorized from "./Components/Unauthorized";
 
 function ScrollTop() {
   const location = useLocation();
@@ -76,6 +84,7 @@ function ScrollTop() {
         <ScrollTop />
         <div className="navbar-container">
           <NavTop />
+          <NavAdmin/>
         </div>
         {children}
         <Footer />
@@ -120,7 +129,9 @@ function ScrollTop() {
     useScrollEffect();
   return (
     <>
+    
     <div className="App">
+      <ScrollToTop smooth className="scroll_to_top"/>
     <div className="navbar-container"></div>
     <Routes>
         <Route path="/" element={<LayoutWithFooter><Home /></LayoutWithFooter>} />
@@ -137,7 +148,11 @@ function ScrollTop() {
         <Route path="/playlist" element={<LayoutWithFooter><PlaylistPage /></LayoutWithFooter>} />
         <Route path="/video/test" element={<LayoutWithFooter><Video /></LayoutWithFooter>} />
         <Route path="/pp_terms" element={<LayoutWithFooter><PP_Terms /></LayoutWithFooter>} />
-        <Route path="/admin" element={<LayoutWithFooter><JobsPage/></LayoutWithFooter>} />
+        <Route path="/login" element={<LayoutWithFooter><Login/></LayoutWithFooter>} />
+        <Route path="/register" element={<LayoutWithFooter><Register/></LayoutWithFooter>} />
+        <Route path="/data-news" element={<LayoutWithFooter><ListNews/></LayoutWithFooter>} />
+        <Route path="/data-news/add-news" element={<LayoutWithFooter><AddNews/></LayoutWithFooter>} />
+        <Route exact path="/data-news/edit-news" element={<LayoutWithFooter><EditNews/></LayoutWithFooter>} />
         <Route path='/add-admin' element={<AddJobPage addJobSubmit={addJob} />} />
         <Route
           path='/edit-admin/:id'
@@ -150,6 +165,7 @@ function ScrollTop() {
           loader={jobLoader}
         />
         <Route path='*' element={<NotFoundPage />} />
+        <Route path="unauthorized" element={<Unauthorized />} />
         <Route
             path="/comingsoon"
             element={

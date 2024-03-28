@@ -5,16 +5,20 @@ import Interview from '../Components/interview';
 import Event from '../Components/event/events';
 import Logo from '../Components/Logo';
 import Videos from "../Components/Videos/Videos";
+import News from "./newsPage/News";
+import ListRadio from "../Components/listRadio/listRadio";
 
 const Home = () => {
   return (
     <>
     <Container fluid>
-        <Hero />
-        <Interview />
+      <News isHomePage={true}/>
+        {/* <Hero /> */}
+        {/* <Interview /> */}
         <Event/>
         {/* <Logo /> */}
         <Videos />
+        <ListRadio />
       </Container>
     </>
   )

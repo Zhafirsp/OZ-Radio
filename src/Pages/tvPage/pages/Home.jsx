@@ -7,7 +7,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-top: 80px;
+  margin-top: -80px;
 `;
 
 const Home = () => {

@@ -21,7 +21,7 @@ const Footer = () => {
   const handleShow = () => setShow(true);
 
   return (
-    <div className="footer">
+    <div className="footer mt-auto">
       <div className="footer-social">
         <div>
           <img 

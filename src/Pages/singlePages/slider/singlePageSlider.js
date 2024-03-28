@@ -11,6 +11,7 @@ const SinglePageSlider = () => {
     speed: 500,
     slidesToShow: 7,
     slidesToScroll: 2,
+    autoplay: true,
     responsive: [
       {
         breakpoint: 1360,
@@ -23,6 +24,20 @@ const SinglePageSlider = () => {
         breakpoint: 1200,
         settings: {
           slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 1,
           slidesToScroll: 1,
         },
       },

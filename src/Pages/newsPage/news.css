@@ -181,3 +181,10 @@
     grid-row-end: 20;
   }
 } 
+
+@media (max-width: 645px) {
+  .ads-topnews {
+    margin-top: 50px;
+  }
+  
+}

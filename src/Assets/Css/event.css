@@ -232,6 +232,10 @@
   .btn-event {
     margin-left: 100px !important;
   }
+
+  .button-interview {
+    margin-left: 200px !important;
+  }
 }
 
 @media (max-width: 800px) {
@@ -265,6 +269,9 @@
   .btn-event{
     margin-left: 150px !important;
   }
+  .button-interview {
+    margin-left: 50px !important;
+  }
 }
 
 /* For small devices */
@@ -276,6 +283,9 @@
     padding: -3rem !important;
   }
 
+  .button-interview {
+    margin-left: 0px !important;
+  }
 }
 
 @media (max-width: 425px) {

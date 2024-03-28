@@ -30,7 +30,7 @@ const PlayButton = styled.p`
 `;
 
 const ThumbnailImage = styled.img`
-  width: 590px;
+  width: 550px;
   height: 333px;
 `;
 
@@ -58,7 +58,7 @@ const SingleVideo = ({videoId, thumbnailUrl}) => {
         <PlayButton variant="outline-light" size="lg"><BsPlayCircleFill /></PlayButton>
       </VideoThumbnail>
       )}
-      <p className="primary-text mx-auto">Episode 6: Lorem LoremLoremLoremLorem</p>
+      <p className="primary-text mx-auto">Episode 6: Lorem Lorem Lorem Lorem Lorem</p>
       </section>
     </>
   )
