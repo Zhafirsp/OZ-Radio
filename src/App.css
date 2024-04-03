@@ -23,9 +23,14 @@ img {
 }
 
 .scroll_to_top {
-  padding-right: 50px;
-  padding-left:-1px;
+  transition: ease-out 0.3s;
+  width: 60px !important;
+  opacity: 0.6;
   background-color: #fe9e0d !important;
+}
+
+.scroll_to_top:hover {
+  opacity: 1;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -88,15 +93,12 @@ img {
   }
 }
 
-
 .RadioStation{
   margin-left: 90px;
   margin-bottom: 10px;
 }
 
-
 body {
-  background-color: #fff;
   background-color: #fff;
   max-width: 100%;
   overflow-x: hidden;
@@ -276,9 +278,6 @@ margin-left: 175px !important;
     .play-button:hover {
       cursor: pointer;
     }
-    .play-button:hover {
-      cursor: pointer;
-    }
 }
 
 .secondary-button {
@@ -408,7 +407,6 @@ Link:active {
   color: #FE9E0D;
   background-color: transparent;
 }
-
 
 
 .testimonial-section-bottom {
