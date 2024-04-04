@@ -101,9 +101,9 @@ const Card = ({ post }) => {
                         <h3 className="mt-3">{post.title}</h3>
                     </Link>
                     <Link to={`/news/${post.author.id}`}>
-                        <h5>by {post.author.name}</h5>
+                        <h6>by {post.author.name}</h6>
                     </Link>
-                        <h5>{formattedUpdatedAt}</h5>
+                        <lab>{formattedUpdatedAt}</lab>
                     <p>{post.excerpt}</p>
                     <Link to={`/news/${post.id}`}>
                       <p className="border-top border-3 border-black fw-normal">READ MORE</p>
