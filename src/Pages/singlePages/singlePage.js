@@ -2,114 +2,137 @@ import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import "./singlePage.css"
 import SinglePageSlider from "./slider/singlePageSlider"
-import { hero } from "../../Data/dummyData"
 import { Container } from "react-bootstrap"
 import { FaEnvelope, FaFacebook, FaPinterest, FaQuoteLeft, FaTwitter } from "react-icons/fa"
 import NotFoundPage from "../NotFoundPage"
+import axios from "axios"
 
 const SinglePage = () => {
-  const { id } = useParams()
-  const [item, setItem] = useState(null)
+  const { newsId } = useParams(); // Ambil ID post dari URL
+  const [post, setPost] = useState(null); // State untuk menyimpan data post
 
   useEffect(() => {
-    const item = hero.find((item) => item.id === parseInt(id))
-    window.scrollTo(0, 0)
-    if (item) {
-      setItem(item)
-    }
-  }, [id])
+    // Panggil API untuk mendapatkan data penulis dan waktu
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`https://adminoz.santuy.info/api/posts/${newsId}`);
+        // const postData = response.data; // Data post dari response
+        setPost(response.data.post); // Simpan data post ke dalam state
+      } catch (error) {
+        console.error("Error fetching author, category and time data:", error);
+      }
+    };
+
+    fetchData();
+  }, [newsId]);
+
+  if (!post) {
+    return <div>Loading...</div>; // Tampilkan pesan loading jika data post belum dimuat
+  }
+
+      // Fungsi untuk mengubah format tanggal
+      const formatDate = (dateString) => {
+        const options = { year: "numeric", month: "short", day: "numeric" };
+        const date = new Date(dateString);
+        return date.toLocaleDateString("en-US", options);
+      }
+    
+      // Mengubah format tanggal updated_at
+      const formattedUpdatedAt = formatDate(post.updated_at);
+
+      
+      const getImageUrl = (imageUrl) => {
+        if (!imageUrl) return ""; // Tambahkan pengecekan kondisi agar tidak memanggil replace pada nilai null
+        
+        const baseUrl = 'https://adminoz.santuy.info/';
+        // Cek apakah URL mengandung 'public', jika iya, ganti dengan 'storage', jika tidak, tambahkan base URL
+        if (imageUrl.includes('public')) {
+          return baseUrl + imageUrl.replace('public', 'storage');
+        } else {
+          return baseUrl + imageUrl;
+        }
+      };
 
   return (
     <>
-      {item ? (
-        <Container Fluid>
-        <SinglePageSlider />
+      {post ? (
+        <Container fluid>
+          <SinglePageSlider />
           <div className='container'>
             <section className='mainContent details'>
-              <h1 className='title'>{item.title}</h1>
+              <h1 className='title'>{post.title}</h1>
 
               <div className='author'>
-                <span>by</span>
-                <img src={item.authorImg} alt='' />
-                <p> {item.authorName} on</p>
-                <label>{item.time}</label>
+                <span></span>
+                {/* <img src={author.authorImg} alt='' /> */}
+                <p>author: {post.author.name} on</p>
+                <label>{formattedUpdatedAt}</label>
               </div>
 
               <div className='social'>
                 <div className='socBox'>
                   <FaFacebook className="fab fa-facebook-f" />
-                  <FaFacebook className="fab fa-facebook-f" />
                   <span>SHARE</span>
                 </div>
                 <div className='socBox'>
-                  <FaTwitter className="fab fa-twitter" />
                   <FaTwitter className="fab fa-twitter" />
                   <span>TWITTER</span>
                 </div>
                 <div className='socBox'>
                   <FaPinterest className="fab fa-pinterest" />
                   <span>PINTEREST</span>
-                  <FaPinterest className="fab fa-pinterest" />
-                  <span>PINTEREST</span>
                 </div>
                 <div className='socBox'>
                   <FaEnvelope className="fab fa-envelope" />
                   <span>EMAIL</span>
-                  <FaEnvelope className="fab fa-envelope" />
-                  <span>EMAIL</span>
                 </div>
               </div>
 
-              <div className='desctop'>
-                {item.desc.map((val) => {
-                  return (
-                    <>
-                      <p>{val.para1}</p>
-                      <p>{val.para2}</p>
-                    </>
-                  )
-                })}
-              </div>
-              <img src={item.cover} alt='' />
-              {item.desc.map((val) => (
-                <p>{val.para3}</p>
-              ))}
+              {post.image ? (
+                  // Jika post.image tersedia, tampilkan gambar dari getImageUrl
+                  <img src={getImageUrl(post.image)} className="d-block mx-lg-auto img-fluid ms-4" alt="" width="fit-content" height="auto" loading="lazy" />
+                ) : (
+                  // Jika post.image tidak tersedia, tampilkan gambar default
+                  <img src={`https://source.unsplash.com/featured/?${post.category.name}`} className="d-block mx-lg-auto img-fluid ms-4" alt="" width="fit-content" height="auto" loading="lazy"/>
+                )}
 
-              <div className='descbot'>
-                {item.details.map((data) => {
+              <div className='desctop'  dangerouslySetInnerHTML={{ __html: post.body }}/>
+              {/* <p>{post.body}</p>
+              </div> */}
+              
+              {/* {post.desc.map((val, index) => (
+                <p key={index}>{val.para3}</p>
+              ))} */}
+
+              {/* <div className='descbot'>
+                {post.details.map((data, index) => {
                   return (
-                    <>
+                    <div key={index}>
                       <h1>{data.title}</h1>
                       <p>{data.para1}</p>
-                    </>
+                    </div>
                   )
                 })}
-              </div>
+              </div> */}
 
-              <div className='quote'>
+              {/* <div className='quote'>
                 <FaQuoteLeft className="fa fa-quote-left"/>
-                <FaQuoteLeft className="fa fa-quote-left"/>
-                {item.details.map((data) => (
-                  <p>{data.quote}</p>
+                {post.details.map((data, index) => (
+                  <p key={index}>{data.quote}</p>
                 ))}
-              </div>
+              </div> */}
 
-              <div className='desctop'>
-                {item.details.map((data) => {
+              {/* <div className='desctop'>
+                {post.details.map((data, index) => {
                   return (
-                    <>
+                    <div key={index}>
                       <p>{data.para2}</p>
                       <p>{data.para3}</p>
-                    </>
+                    </div>
                   )
                 })}
-              </div>
+              </div> */}
             </section>
-            {/* <section className='sideContent'>
-            {/* <section className='sideContent'>
-              <Side />
-            </section> */}
-            </section> */}
           </div>
         </Container>
       ) : (
@@ -121,4 +144,4 @@ const SinglePage = () => {
   )
 }
 
-export default SinglePage
+export default SinglePage;

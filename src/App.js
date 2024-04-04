@@ -84,7 +84,7 @@ function ScrollTop() {
         <ScrollTop />
         <div className="navbar-container">
           <NavTop />
-          <NavAdmin/>
+          {/* <NavAdmin/> */}
         </div>
         {children}
         <Footer />
@@ -142,7 +142,7 @@ function ScrollTop() {
         <Route path="/event" element={<LayoutWithFooter><EventPages /></LayoutWithFooter>} />
         <Route path="/single-event" element={<LayoutWithFooter><EventSinglePage /></LayoutWithFooter>} />
         <Route path="/interview" element={<LayoutWithFooter><InterviewPage /></LayoutWithFooter>} />
-        <Route exact path='/singlepage/:id' element={<LayoutWithFooter><SinglePage/></LayoutWithFooter>} />
+        <Route exact path='/news/:newsId' element={<LayoutWithFooter><SinglePage/></LayoutWithFooter>} />
         <Route path="/youtube" element={<LayoutWithFooter><TV /></LayoutWithFooter>} />
         <Route path="/news" element={<LayoutWithFooter><News /></LayoutWithFooter>} />
         <Route path="/playlist" element={<LayoutWithFooter><PlaylistPage /></LayoutWithFooter>} />
