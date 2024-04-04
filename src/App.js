@@ -148,7 +148,7 @@ function ScrollTop() {
         <Route path="/playlist" element={<LayoutWithFooter><PlaylistPage /></LayoutWithFooter>} />
         <Route path="/video/test" element={<LayoutWithFooter><Video /></LayoutWithFooter>} />
         <Route path="/pp_terms" element={<LayoutWithFooter><PP_Terms /></LayoutWithFooter>} />
-        <Route path="/login" element={<LayoutWithFooter><Login/></LayoutWithFooter>} />
+        {/* <Route path="/login" element={<LayoutWithFooter><Login/></LayoutWithFooter>} />
         <Route path="/register" element={<LayoutWithFooter><Register/></LayoutWithFooter>} />
         <Route path="/data-news" element={<LayoutWithFooter><ListNews/></LayoutWithFooter>} />
         <Route path="/data-news/add-news" element={<LayoutWithFooter><AddNews/></LayoutWithFooter>} />
@@ -163,7 +163,7 @@ function ScrollTop() {
           path='/admin/:id'
           element={<JobPage deleteJob={deleteJob} />}
           loader={jobLoader}
-        />
+        /> */}
         <Route path='*' element={<NotFoundPage />} />
         <Route path="unauthorized" element={<Unauthorized />} />
         <Route
