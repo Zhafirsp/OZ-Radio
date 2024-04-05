@@ -88,10 +88,10 @@ const Card = ({ post }) => {
               <Col lg={4} sm={12} className="col-10">
               {post.image ? (
                   // Jika post.image tersedia, tampilkan gambar dari getImageUrl
-                  <img src={getImageUrl(post.image)} className="d-block mx-lg-auto img-fluid ms-4" alt="" loading="lazy" style={{ width:"500px", height:"400px" }} />
+                  <img src={getImageUrl(post.image)} className="d-block mx-lg-auto img-fluid ms-4" alt="" loading="lazy" style={{ width:"300px", height:"300px" }} />
                 ) : (
                   // Jika post.image tidak tersedia, tampilkan gambar default
-                  <img src={`https://source.unsplash.com/featured/?${post.category.name}`} className="d-block mx-lg-auto img-fluid ms-4" alt="" loading="lazy" style={{ width:"500px", height:"400px" }} />
+                  <img src={`https://source.unsplash.com/featured/?${post.category.name}`} className="d-block mx-lg-auto img-fluid ms-4" alt="" loading="lazy" style={{ width:"300px", height:"300px" }} />
                 )}
               </Col>
             <Col lg={6} md={12} sm={12}>
